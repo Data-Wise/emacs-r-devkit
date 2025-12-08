@@ -25,7 +25,12 @@
       "Bash(unset GITHUB_TOKEN)",
       "Bash(/tmp/branch-protection.json <<'EOF'\n{\n  \"required_status_checks\": {\n    \"strict\": true,\n    \"contexts\": []\n  },\n  \"enforce_admins\": true,\n  \"required_pull_request_reviews\": {\n    \"dismiss_stale_reviews\": true,\n    \"require_code_owner_reviews\": false,\n    \"required_approving_review_count\": 0\n  },\n  \"restrictions\": null,\n  \"allow_force_pushes\": false,\n  \"allow_deletions\": false\n}\nEOF)",
       "Bash(GH_HOST=github.com gh auth switch:*)",
-      "Bash(unset GITHUB_TOKEN GH_TOKEN)"
+      "Bash(unset GITHUB_TOKEN GH_TOKEN)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git stash:*)",
+      "Bash(/tmp/topics.json <<'EOF'\n{\n  \"names\": [\n    \"emacs\",\n    \"r\",\n    \"ess\",\n    \"r-package-development\",\n    \"emacs-configuration\",\n    \"flycheck\",\n    \"lsp-mode\",\n    \"roxygen2\",\n    \"styler\",\n    \"macos\",\n    \"developer-tools\",\n    \"statistics\",\n    \"data-science\"\n  ]\n}\nEOF)",
+      "Bash(git reset:*)"
     ],
     "deny": [],
     "ask": []
