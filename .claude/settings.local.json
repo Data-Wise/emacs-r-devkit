@@ -17,7 +17,9 @@
       "Bash(git add:*)",
       "Bash(git commit -m \"$(cat <<''EOF''\nComplete Phase 1: Core functionality and documentation\n\nPhase 1 deliverables:\n- Fix init.el roxygen parameter parsing for complex function signatures\n- Fix macOS keybindings (Option=Meta, Command=Super)\n- Create comprehensive documentation suite:\n  * TUTORIAL.md - Complete user guide with macOS-specific keybindings\n  * CHEAT-SHEET.md - Quick reference for Emacs keybindings\n  * TROUBLESHOOTING.md - Comprehensive troubleshooting guide\n  * TEST-CHECKLIST.md - Systematic verification checklist\n- Create check-dependencies.sh - Automated dependency verification\n- Create test files (test-features.R, test-roxygen.R)\n- Create focused Claude skill (~/.claude/skills/emacs-r-devkit.md)\n- Remove obsolete installation scripts\n\nAll core features verified working:\n- ESS with R integration\n- Flycheck with lintr and styler\n- LSP mode with languageserver\n- Company completion\n- Styler auto-formatting on save\n- Roxygen skeleton insertion with parameter detection\n- S7 and usethis integration\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
       "Bash(git push:*)",
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "WebFetch(domain:data-wise.github.io)",
+      "Bash(git clone:*)"
     ],
     "deny": [],
     "ask": []

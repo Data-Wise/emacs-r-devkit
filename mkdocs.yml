@@ -1,0 +1,98 @@
+site_name: emacs-r-devkit
+site_description: Professional Emacs Environment for R Package Development on macOS
+site_author: Data-Wise
+site_url: https://data-wise.github.io/emacs-r-devkit/
+docs_dir: docs_mkdocs
+
+repo_name: Data-Wise/emacs-r-devkit
+repo_url: https://github.com/Data-Wise/emacs-r-devkit
+
+theme:
+  name: material
+  palette:
+    # Dark mode (default)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+    # Light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: purple
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+    - content.tabs.link
+  icon:
+    repo: fontawesome/brands/github
+
+plugins:
+  - search
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Features: features.md
+  - Keybindings Reference: keybindings.md
+  - Configuration: configuration.md
+  - Troubleshooting: troubleshooting.md
+  - Testing: testing.md
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/Data-Wise/emacs-r-devkit
+
+copyright: Copyright &copy; 2024-2025 Data-Wise
