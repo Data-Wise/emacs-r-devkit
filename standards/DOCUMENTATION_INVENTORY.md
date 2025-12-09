@@ -14,7 +14,9 @@ Last Updated: 2025-12-07
 |------------|---------------|--------------|----------|-------|
 | **emacs-r-devkit** | ✅ Standardized | No | - | Already follows DOCUMENTATION_STANDARDS.md |
 | **claude-r-dev** | ⚠️ Needs Update | Yes | High | Has MkDocs but needs standardization |
-| **[Other tools?]** | ❓ Unknown | TBD | - | User to identify |
+| **zsh-claude-workflow** | ❓ Unknown | TBD | Medium | Smart context manager for Claude Code + zsh |
+| **examark** | ❓ Unknown | TBD | Low | Markdown to Canvas QTI converter |
+| **claude-statistical-research-mcp** | ❓ Unknown | TBD | Medium | MCP server with R tools + 17 Claude skills |
 
 ### R Packages - MediationVerse Ecosystem
 
@@ -42,11 +44,12 @@ Last Updated: 2025-12-07
 **Status:** Fully standardized
 
 **Documentation:**
+
 - MkDocs with Material theme
 - Follows DOCUMENTATION_STANDARDS.md
 - Has all required pages
 - Cross-project links in place
-- Deployed to: https://data-wise.github.io/emacs-r-devkit/
+- Deployed to: <https://data-wise.github.io/emacs-r-devkit/>
 
 **Action Required:** None - serves as reference implementation
 
@@ -57,11 +60,13 @@ Last Updated: 2025-12-07
 **Status:** Has documentation but needs standardization
 
 **Current State:**
+
 - Uses MkDocs
 - Has some documentation pages
 - May not follow full standard navigation
 
 **Needs:**
+
 - [ ] Update mkdocs.yml to inherit from mkdocs-base.yml
 - [ ] Ensure all required pages present:
   - [ ] Home (index.md)
@@ -76,7 +81,7 @@ Last Updated: 2025-12-07
 
 **Priority:** High (framework used with emacs-r-devkit)
 
-**Expected URL:** https://data-wise.github.io/claude-r-dev/
+**Expected URL:** <https://data-wise.github.io/claude-r-dev/>
 
 ---
 
@@ -85,21 +90,24 @@ Last Updated: 2025-12-07
 **Status:** Has _pkgdown.yml, needs full site
 
 **Current State:**
+
 - Has `_pkgdown.yml` with established design system
 - Academic Blue (#0054AD) color scheme
 - Litera theme
 - Ecosystem navigation configured
 
 **Needs:**
+
 - [ ] Create/update README.md following standard structure
 - [ ] Create "Getting Started" vignette
 - [ ] Set up pkgdown GitHub Action for deployment
 - [ ] Organize function reference with @concept tags
 - [ ] Create NEWS.md with standard format
 - [ ] Add standard badges to README
-- [ ] Deploy to: https://data-wise.github.io/mediationverse/
+- [ ] Deploy to: <https://data-wise.github.io/mediationverse/>
 
 **Functions to document:**
+
 - mediationverse_packages()
 - mediationverse_update()
 - mediationverse_conflicts()
@@ -113,20 +121,23 @@ Last Updated: 2025-12-07
 **Status:** Has _pkgdown.yml with MathJax, needs full site
 
 **Current State:**
+
 - Has `_pkgdown.yml` with MathJax configuration
 - Uses S7 class system
 - Foundation for other packages
 
 **Needs:**
+
 - [ ] Create/update README.md
 - [ ] Create "Getting Started" vignette
 - [ ] Document S7 classes with @concept s7-classes
 - [ ] Document methods with @concept methods
 - [ ] Organize function reference
 - [ ] Set up pkgdown GitHub Action
-- [ ] Deploy to: https://data-wise.github.io/medfit/
+- [ ] Deploy to: <https://data-wise.github.io/medfit/>
 
 **Special Requirements:**
+
 - MathJax for mathematical notation
 - S7 class documentation
 - Technical articles for methodology
@@ -140,6 +151,7 @@ Last Updated: 2025-12-07
 **Status:** Unknown
 
 **Expected Needs:**
+
 - [ ] Create `_pkgdown.yml` using MEDIATIONVERSE_STANDARDS.md
 - [ ] Use Academic Blue (#0054AD) + Litera theme
 - [ ] Include complete ecosystem navigation
@@ -147,7 +159,7 @@ Last Updated: 2025-12-07
 - [ ] Create "Getting Started" vignette
 - [ ] Organize functions with @concept tags
 - [ ] Set up pkgdown GitHub Action
-- [ ] Deploy to: https://data-wise.github.io/probmed/
+- [ ] Deploy to: <https://data-wise.github.io/probmed/>
 
 **Priority:** High (core methodology package)
 
@@ -158,8 +170,9 @@ Last Updated: 2025-12-07
 **Status:** Unknown
 
 **Expected Needs:**
+
 - [ ] Same as probmed (full standardization)
-- [ ] Deploy to: https://data-wise.github.io/rmediation/
+- [ ] Deploy to: <https://data-wise.github.io/rmediation/>
 
 **Priority:** High (core methodology package)
 
@@ -170,8 +183,9 @@ Last Updated: 2025-12-07
 **Status:** Unknown
 
 **Expected Needs:**
+
 - [ ] Same as probmed (full standardization)
-- [ ] Deploy to: https://data-wise.github.io/medrobust/
+- [ ] Deploy to: <https://data-wise.github.io/medrobust/>
 
 **Priority:** Medium (specialized package)
 
@@ -182,8 +196,9 @@ Last Updated: 2025-12-07
 **Status:** Unknown
 
 **Expected Needs:**
+
 - [ ] Same as probmed (full standardization)
-- [ ] Deploy to: https://data-wise.github.io/medsim/
+- [ ] Deploy to: <https://data-wise.github.io/medsim/>
 
 **Priority:** Medium (support package)
 
@@ -214,6 +229,7 @@ Last Updated: 2025-12-07
 **For each repository, verify:**
 
 ### MkDocs Sites
+
 - [ ] mkdocs.yml inherits from mkdocs-base.yml
 - [ ] All required pages present
 - [ ] Standard badges on homepage
@@ -225,6 +241,7 @@ Last Updated: 2025-12-07
 - [ ] Deployed to data-wise.github.io
 
 ### R Package Sites
+
 - [ ] _pkgdown.yml created with correct standards
 - [ ] Academic Blue (#0054AD) for MediationVerse packages
 - [ ] Ecosystem navigation (MediationVerse only)
@@ -243,10 +260,12 @@ Last Updated: 2025-12-07
 All sites should link to each other:
 
 **MkDocs sites link to:**
+
 - Other MkDocs sites (emacs-r-devkit ↔ claude-r-dev)
 - Main MediationVerse hub (if applicable)
 
 **MediationVerse packages link to:**
+
 - All other ecosystem packages (via ecosystem menu)
 - Status dashboard
 - Development roadmap
@@ -257,6 +276,7 @@ All sites should link to each other:
 ## 📂 Documentation Files Location
 
 **Standards Documentation:**
+
 - MkDocs standards: `/Users/dt/emacs-r-devkit/DOCUMENTATION_STANDARDS.md`
 - Shared MkDocs config: `/Users/dt/emacs-r-devkit/mkdocs-base.yml`
 - Generic R package standards: `/Users/dt/emacs-r-devkit/R_PACKAGE_DOCS_STANDARDS.md`
@@ -265,6 +285,7 @@ All sites should link to each other:
 - **This inventory:** `/Users/dt/emacs-r-devkit/DOCUMENTATION_INVENTORY.md`
 
 **Skill File:**
+
 - `/Users/dt/.claude/skills/data-wise-documentation.md`
 
 ---
@@ -327,13 +348,24 @@ To complete this inventory, please identify:
 
 ## 📊 Progress Tracking
 
-**Overall Status:**
-- ✅ **Completed:** 1/9+ repositories (11%)
-- ⚠️ **In Progress:** 2/9+ repositories (22%)
-- ❓ **Unknown:** 6+ repositories (67%)
+**Overall Status (as of 2025-12-09):**
+
+- ✅ **Completed:** 1/20 repositories (5%) - emacs-r-devkit
+- ⚠️ **In Progress:** 3/20 repositories (15%) - claude-r-dev, mediationverse, medfit
+- ❓ **Needs Assessment:** 16/20 repositories (80%)
+
+**Discovered Ecosystem (20 repos):**
+
+- **Dev Tools:** emacs-r-devkit, claude-r-dev, zsh-claude-workflow, examark
+- **AI/MCP:** claude-statistical-research-mcp, mediationverse-gemini-extension, r-package-dev-gemini
+- **MediationVerse:** mediationverse, medfit, probmed, rmediation, medrobust, medsim, missingmed
+- **Other R:** regression, causal-inference
+- **Infrastructure:** docs-standards, data-wise, homebrew-tap
+- **Learning:** mixtape (fork)
 
 **Next Actions:**
-1. Complete inventory by identifying all repositories
+
+1. ✅ Inventory complete via GitHub API
 2. Update claude-r-dev documentation
 3. Deploy mediationverse and medfit pkgdown sites
 4. Standardize remaining MediationVerse packages
