@@ -34,7 +34,9 @@
       "Bash(git rm:*)",
       "Bash(tree:*)",
       "Bash(git mv:*)",
-      "Bash(/Users/dt/.claude/statusline-p10k.sh:*)"
+      "Bash(/Users/dt/.claude/statusline-p10k.sh:*)",
+      "WebSearch",
+      "Bash(grep:*)"
     ],
     "deny": [],
     "ask": []

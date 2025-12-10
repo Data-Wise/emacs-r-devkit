@@ -23,6 +23,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - **Session tracking**: Current time and duration (e.g., `21:13 │ ⏱ 45m`)
   - **Notifications**: macOS native + terminal bell when Claude transitions to ready or errors
   - **Config file**: `~/.claude/statusline-config.json` to toggle notifications on/off
+- **Quota Tracking System**: Monitor Claude usage limits
+  - `/quota` slash command for detailed quota status display
+  - `claude-quota` / `cq` shell commands for terminal access
+  - StatusLine shows session quota with color-coded warnings (⚡84%)
+  - Config file: `~/.claude/quota-config.json` for limit settings
+  - Manual update: `cq update SESSION WEEKLY_ALL WEEKLY_SONNET`
 
 ### Changed
 

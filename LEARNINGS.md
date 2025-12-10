@@ -160,3 +160,36 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
   }
   ```
   Toggle any setting to `false` to disable that feature.
+
+### 2025-12-09: Claude Quota Tracking System
+
+**Context:** Tracking Claude Pro/Max subscription usage limits.
+**Insight:**
+
+- **What Claude Desktop Shows:**
+  - Session limit (resets after inactivity) - e.g., 84%
+  - Weekly All Models (resets Tuesday ~2 PM) - e.g., 11%
+  - Weekly Sonnet Only (resets Tuesday ~8 PM) - e.g., 1%
+
+- **What's NOT Accessible Programmatically:**
+  - Claude Desktop doesn't expose quota data via API
+  - Claude Code's `/cost` and `/usage` show session info, not account quotas
+  - No direct API to Anthropic account usage (web console only)
+
+- **Solution: Manual Tracking System:**
+  - Config: `~/.claude/quota-config.json` stores limits and current values
+  - Shell command: `claude-quota` or `cq` for quick status
+  - Update command: `cq update 84 11 1` (session, weekly-all, weekly-sonnet)
+  - Slash command: `/quota` for in-Claude display
+  - StatusLine: Shows session % with color coding (green→yellow→orange→red)
+
+- **Commands Created:**
+  - `~/.claude/bin/claude-quota` - Main quota script
+  - `~/.claude/commands/quota.md` - Slash command template
+  - Symlinks: `claude-quota` and `cq` in workflow commands
+
+- **Color Thresholds:**
+  - Green: < 50%
+  - Yellow: 50-80%
+  - Orange: 80-95%
+  - Red: > 95%
