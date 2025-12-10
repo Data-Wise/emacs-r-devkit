@@ -130,5 +130,33 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 - **Implementation:** Created `~/.claude/statusline-p10k.sh` with:
   - 2-line layout matching P10k (`╭─` and `╰─` frame connectors)
   - Git status with branch, dirty indicator, ahead/behind counts
-  - Dynamic window title: `project-name: state`
+  - Dynamic window title: `project-name: Tool: description`
   - Smart path shortening for deep directories
+
+- **Enhanced Features (v2):**
+  - Project type detection with icons (R package, Quarto, MCP, Emacs, Node, Python)
+  - R package version from DESCRIPTION file
+  - Session duration tracking via temp files (`/tmp/claude-session-{id}`)
+  - Current time display
+  - Tool + description in window title (e.g., `Bash: Running: git status`)
+
+- **Notification System:**
+  - macOS native notifications via `osascript`
+  - Terminal bell (`\a`) for audio alert
+  - Triggers on: working → ready, error states
+  - Error notifications include sound ("Basso")
+  - State tracking via `/tmp/claude-state-{session_id}`
+
+- **Configuration File:** `~/.claude/statusline-config.json`
+  ```json
+  {
+    "notifications": {
+      "enabled": true,
+      "on_ready": true,
+      "on_error": true,
+      "bell": true,
+      "macos": true
+    }
+  }
+  ```
+  Toggle any setting to `false` to disable that feature.

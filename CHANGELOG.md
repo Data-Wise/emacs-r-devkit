@@ -16,8 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Powerline separators and gradient edges (`░▒▓`, `▓▒░`)
   - 2-line layout with frame connectors (`╭─`, `╰─`)
   - Git status: branch name, `*` dirty, `⇣n`/`⇡n` behind/ahead, `?n` untracked
-  - Dynamic window title: `project-name: state` (Thinking, Ready, etc.)
+  - Dynamic window title: `project-name: Tool: description` (e.g., `Read: Reading init.el`)
   - Smart path shortening for deep directories
+  - **Project type icons**: 📦 R package, 📓 Quarto, 🔌 MCP, ⚙️ Emacs, 🟢 Node, 🐍 Python
+  - **R package version**: Shows version from DESCRIPTION (e.g., `v0.2.1`)
+  - **Session tracking**: Current time and duration (e.g., `21:13 │ ⏱ 45m`)
+  - **Notifications**: macOS native + terminal bell when Claude transitions to ready or errors
+  - **Config file**: `~/.claude/statusline-config.json` to toggle notifications on/off
 
 ### Changed
 
