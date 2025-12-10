@@ -80,3 +80,55 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
   - MediationVerse: mediationverse, medfit, probmed, rmediation, medrobust, medsim, missingmed
   - Infrastructure: docs-standards, data-wise (org profile), homebrew-tap
 - Key finding: `docs-standards` repo already exists (Phase 1 foundation complete).
+
+### 2025-12-09: altdoc vs pkgdown for R Package Docs
+
+**Context:** Making MediationVerse docs match MkDocs Material design (zsh-claude-workflow).
+**Insight:**
+
+- **altdoc** is a CRAN package that generates Quarto websites for R packages.
+- Auto-generates function reference like pkgdown, but outputs to Quarto.
+- Setup: `altdoc::setup_docs("quarto_website")`, `altdoc::render_docs()`.
+- Benefits: Dark mode, top tabs, modern themes - matches MkDocs look.
+- Successfully deployed on `mediationverse` as pilot.
+
+### 2025-12-09: GitHub Projects Kanban for Ecosystem Management
+
+**Context:** Needed cross-repo project tracking.
+**Insight:**
+
+- GitHub Projects supports org-level Kanban boards.
+- Templates: Board, Table, Roadmap, Kanban (automated), Team planning.
+- Kanban template auto-moves items based on PR/issue status.
+- Can link multiple repos to one project for cross-repo visibility.
+
+### 2025-12-09: Claude Code Custom StatusLine with Powerlevel10k Theme
+
+**Context:** Customizing Claude Code's statusLine to match terminal Powerlevel10k setup.
+**Insight:**
+
+- **StatusLine Configuration:**
+  - Claude Code supports custom statusLine via shell scripts in `~/.claude/settings.json`
+  - Script receives JSON input via stdin with workspace, model, state info
+  - Script outputs formatted text (ANSI colors supported)
+  - Window title can be set via `printf '\033]0;title\007'`
+
+- **Key JSON Fields Available:**
+  - `.workspace.current_dir` - Current working directory
+  - `.workspace.project_dir` - Project root directory
+  - `.model.display_name` - Model name (e.g., "Claude 3.5 Sonnet")
+  - `.output_style.name` - Output style setting
+  - `.state`, `.status`, `.activity` - Claude's current state
+
+- **Powerlevel10k Mapping:**
+  - P10k uses ANSI 256 colors: `48;5;N` for background, `38;5;N` for foreground
+  - Directory: bg=4 (blue), fg=254 (white)
+  - VCS clean: bg=2 (green), VCS modified: bg=3 (yellow)
+  - Powerline separators: `\uE0B4` (left arrow), `\uE0B5` (thin separator)
+  - Gradient edges: `░▒▓` and `▓▒░`
+
+- **Implementation:** Created `~/.claude/statusline-p10k.sh` with:
+  - 2-line layout matching P10k (`╭─` and `╰─` frame connectors)
+  - Git status with branch, dirty indicator, ahead/behind counts
+  - Dynamic window title: `project-name: state`
+  - Smart path shortening for deep directories
