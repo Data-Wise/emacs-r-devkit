@@ -44,7 +44,10 @@
       "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit push)",
       "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit diff .claude/settings.local.json)",
       "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit add .claude/settings.local.json)",
-      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit commit -m \"$(cat <<''EOF''\nchore: Update allowed bash commands in local settings\n\nAdd quota and git commands to allow list for smoother workflow.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit commit -m \"$(cat <<''EOF''\nchore: Update allowed bash commands in local settings\n\nAdd quota and git commands to allow list for smoother workflow.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit log --oneline -10)",
+      "Bash(git -C /Users/dt/.claude status:*)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit commit -m \"$(cat <<''EOF''\nchore: Update allowed bash commands for statusLine work\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
