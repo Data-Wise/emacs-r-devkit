@@ -56,7 +56,12 @@
       "Bash(cq update:*)",
       "Bash(/Users/dt/.claude/bin/quota-auto-fetcher.sh:*)",
       "Bash(/Users/dt/.claude/bin/quota-refresh.sh:*)",
-      "Bash(plutil:*)"
+      "Bash(plutil:*)",
+      "Bash(launchctl unload:*)",
+      "Bash(/Users/dt/.claude/bin/quota-fetcher:*)",
+      "Bash(/Users/dt/.claude/bin/quota-fetcher)",
+      "Bash(/Users/dt/.claude/bin/qu:*)",
+      "Bash(/Users/dt/.claude/bin/setup-shortcuts)"
     ],
     "deny": [],
     "ask": []
