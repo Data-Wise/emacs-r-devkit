@@ -61,7 +61,9 @@
       "Bash(/Users/dt/.claude/bin/quota-fetcher:*)",
       "Bash(/Users/dt/.claude/bin/quota-fetcher)",
       "Bash(/Users/dt/.claude/bin/qu:*)",
-      "Bash(/Users/dt/.claude/bin/setup-shortcuts)"
+      "Bash(/Users/dt/.claude/bin/setup-shortcuts)",
+      "Bash(__NEW_LINE__ echo \"=== FINAL VERIFICATION ===\")",
+      "Bash(__NEW_LINE__ printf \"=== FINAL VERIFICATION ===\\n\\n\" printf \"1. Daemon Status:\\n\" launchctl list)"
     ],
     "deny": [],
     "ask": []

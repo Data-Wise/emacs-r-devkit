@@ -2,6 +2,10 @@
 
 Complete keybinding guide for emacs-r-devkit on macOS.
 
+# Keybindings Reference
+
+Complete keybinding guide for emacs-r-devkit on macOS.
+
 !!! warning "macOS Important"
     **Meta key** (`M-`) = **Option (⌥)**, NOT Command!
     Example: `M-x` means press `Option-x`, `M-.` means press `Option-.`

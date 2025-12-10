@@ -459,3 +459,17 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 
 - Created 8 new documentation files (~2,680 lines)
 - No code changes to init.el yet (pending user decision)
+
+### 2025-12-10: Troubleshooting Google Workspace Gemini Extension
+
+**Context:** Diagnosing and fixing startup errors with the `google-workspace` extension in the Gemini CLI.
+**Insight:**
+
+- **Symptom:** Extension failed to start with connection errors.
+- **Root Cause:**
+  - Missing `package.json` in the extension directory preventing standard `npm install`.
+  - Missing `jsdom` dependency in `node_modules`.
+- **Resolution:**
+  - Uninstalled the corrupted extension: `gemini extensions uninstall google-workspace`.
+  - Reinstall is the recommended fix (vs manual patching) to ensure file integrity.
+- **Key Takeaway:** Extension corruption can occur where metadata files are missing. Always check file structure (`ls -la`) before attempting manual repairs. Uninstall/reinstall is cleaner.

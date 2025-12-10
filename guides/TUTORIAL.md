@@ -93,7 +93,6 @@ C-g     (Control-g) → Cancel/escape (VERY IMPORTANT!)
 | End of line | `C-e` | Cmd-Right |
 | Next word | `M-f` | - |
 | Previous word | `M-b` | - |
-| Page down | `C-v` | Page Down |
 | Page up | `M-v` | Page Up |
 | Beginning of buffer | `M-<` | Cmd-Up |
 | End of buffer | `M->` | Cmd-Down |
@@ -105,7 +104,6 @@ C-g     (Control-g) → Cancel/escape (VERY IMPORTANT!)
 |--------|------------|
 | Delete character | `C-d` |
 | Delete word | `M-d` |
-| Kill (cut) line | `C-k` |
 | Kill region | `C-w` |
 | Copy region | `M-w` |
 | Yank (paste) | `C-y` |

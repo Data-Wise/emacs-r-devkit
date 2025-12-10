@@ -132,8 +132,8 @@
 
 ;; macOS-specific keybindings (both vanilla and emacs-plus)
 (when (emacs-r-devkit/is-macos)
-  (setq mac-command-modifier 'meta
-        mac-option-modifier 'super
+  (setq mac-command-modifier 'super
+        mac-option-modifier 'meta
         mac-right-option-modifier nil)) ; Allow right-option for special chars
 
 ;;; ============================================================================
