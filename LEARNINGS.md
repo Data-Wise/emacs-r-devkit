@@ -484,3 +484,13 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 - **Key Config:** Updated `zshrc` to point `PATH`, `EDITOR`, and `VISUAL` to the `emacs-mac` location.
 - **Spacemacs:** Cloned `develop` branch to `~/.emacs.d`.
 - **Config:** Created a robust `.spacemacs` template enabling `ess`, `lsp`, `git`, and `projectile` layers.
+
+### 2025-12-10: Spacemacs Installation Troubleshooting
+
+**Context:** Finalizing Spacemacs setup after migration.
+**Insight:**
+
+- **Errors:** `wrong-type-argument package-desc nil` during package install.
+- **Cause:** Corrupted ELPA metadata/cache from interrupted initial launch.
+- **Fix:** "Nuclear" cleanup required: `rm -rf ~/.emacs.d/elpa ~/.emacs.d/.cache` followed by a fresh Emacs launch.
+- **Projectile:** Spacemacs (develop branch) includes Projectile in core; explicit layer declaration might be redundant if it triggers "unknown layer" warning.
