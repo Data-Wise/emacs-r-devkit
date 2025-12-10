@@ -36,7 +36,15 @@
       "Bash(git mv:*)",
       "Bash(/Users/dt/.claude/statusline-p10k.sh:*)",
       "WebSearch",
-      "Bash(grep:*)"
+      "Bash(grep:*)",
+      "Bash(/Users/dt/.claude/bin/claude-quota update:*)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit status)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit log --oneline -3)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit commit -m \"$(cat <<''EOF''\ndocs: Document quota toggle and SessionStart hook features\n\n- Add reset time tracking (epoch-based countdown)\n- Add weekly usage display (W:11%)\n- Document SessionStart hook for startup quota display\n- Document /quota-toggle command and cqt alias\n- Add jq boolean gotcha learning (tostring vs fallback)\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit push)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit diff .claude/settings.local.json)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit add .claude/settings.local.json)",
+      "Bash(git -C /Users/dt/projects/dev-tools/emacs-r-devkit commit -m \"$(cat <<''EOF''\nchore: Update allowed bash commands in local settings\n\nAdd quota and git commands to allow list for smoother workflow.\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
