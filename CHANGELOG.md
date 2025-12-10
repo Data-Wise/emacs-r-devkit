@@ -27,8 +27,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - `/quota` slash command for detailed quota status display
   - `claude-quota` / `cq` shell commands for terminal access
   - StatusLine shows session quota with color-coded warnings (⚡84%)
+  - **Reset time tracking**: Shows countdown to session reset (e.g., `⚡84%(1h21m)`)
+  - **Weekly usage**: Shows weekly all-models percentage (e.g., `W:11%`)
   - Config file: `~/.claude/quota-config.json` for limit settings
-  - Manual update: `cq update SESSION WEEKLY_ALL WEEKLY_SONNET`
+  - Manual update: `cq update SESSION WEEKLY_ALL WEEKLY_SONNET "1h 30m"`
+  - **SessionStart hook**: Quota displayed automatically at Claude startup
+  - **Toggle command**: `/quota-toggle` or `cqt` to show/hide quota in statusLine
 
 ### Changed
 

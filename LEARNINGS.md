@@ -193,3 +193,25 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
   - Yellow: 50-80%
   - Orange: 80-95%
   - Red: > 95%
+
+- **Reset Time Tracking (v2):**
+  - Uses **epoch timestamps** for timezone-agnostic calculations
+  - Update: `cq update 84 11 1 "1h 29m"` - parses relative time to epoch
+  - Display: `⚡84%(1h21m)` - calculates remaining from stored epoch
+  - Avoids ISO date string timezone conversion issues
+
+- **SessionStart Hook:**
+  - Shows quota automatically when Claude Code starts
+  - Configured in `~/.claude/settings.json`:
+    ```json
+    "hooks": {
+      "SessionStart": [{"type": "command", "command": "/Users/dt/.claude/bin/claude-quota"}]
+    }
+    ```
+
+- **Toggle Command:**
+  - `/quota-toggle` slash command or `cqt` shell alias
+  - Toggles `.display.show_quota` in `~/.claude/statusline-config.json`
+  - **jq gotcha:** Boolean false vs missing value
+    - Wrong: `jq -r '.display.show_quota // true'` - treats `false` as falsy
+    - Right: `jq -r '.display.show_quota | tostring'` - returns literal "true"/"false"
