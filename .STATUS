@@ -1,0 +1,13 @@
+project: emacs-r-devkit
+status: stable
+priority: P2
+progress: 75
+updated: 2025-12-14
+Next: Maintenance mode
+
+# What it does
+Emacs configuration for R development - ESS, Flycheck, LSP.
+
+# Current state
+- Config: working
+- LSP: configured
