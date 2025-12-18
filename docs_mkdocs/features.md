@@ -1,6 +1,6 @@
 # Features
 
-emacs-r-devkit provides a complete, integrated development environment for R package development within Emacs.
+emacs-r-devkit provides a complete, integrated development environment for R package development powered by Spacemacs.
 
 ## Core Components
 
@@ -10,8 +10,8 @@ Full integration with R for interactive development.
 
 **Capabilities:**
 
-- Interactive R console (`M-x R`)
-- Send code from buffer to R (`C-RET`)
+- Interactive R console (`SPC SPC R` or `, s i`)
+- Send code from buffer to R (`, s l` for line, `, s r` for region)
 - Function and region evaluation
 - Syntax highlighting for R, Rmd, and Quarto
 - Smart indentation
@@ -21,17 +21,17 @@ Full integration with R for interactive development.
 
 ```r
 # Send line to R
-x <- 1:10              # Cursor here, press C-RET
+x <- 1:10              # Cursor here, press , s l (or C-RET)
 
 # Send region to R
-summary(mtcars)        # Select region, press C-RET
+summary(mtcars)        # Select region in Visual mode, press , s r
 plot(mpg ~ wt, mtcars)
 
 # Send entire function
 my_function <- function(x) {
   result <- x * 2
   return(result)
-}  # Cursor in function, press C-c C-c
+}  # Cursor in function, press , s f
 ```
 
 ### Flycheck Integration
@@ -55,8 +55,9 @@ Real-time syntax and style checking with multiple checkers.
 - Errors shown with red squiggles
 - Warnings with orange squiggles
 - Info with blue squiggles
-- List all issues: `C-c ! l`
-- Jump to next: `C-c ! n`
+- List all issues: `SPC e l`
+- Jump to next: `SPC e n`
+- Jump to previous: `SPC e p`
 
 ### LSP Mode
 
@@ -64,12 +65,13 @@ Language Server Protocol support for intelligent code navigation.
 
 **Features:**
 
-- Go to definition (`M-.`)
-- Find references (`M-?`)
+- Go to definition (`, g g`)
+- Find references (`, g r`)
+- Go back (`, g b`)
 - Symbol search
 - Hover documentation
 - Code actions
-- Rename refactoring
+- Rename refactoring (`, r s`)
 
 **Requirements:**
 
@@ -81,13 +83,13 @@ Language Server Protocol support for intelligent code navigation.
 
 ```r
 # Jump to function definition
-source_function()     # M-. on this
+source_function()     # , g g on this
 
 # Find all usages
-my_variable          # M-? on this
+my_variable          # , g r on this
 
 # Rename symbol
-old_name <- 1        # C-c l r r to rename
+old_name <- 1        # , r s to rename
 ```
 
 ### Company Mode
@@ -114,7 +116,7 @@ Context-aware code completion.
 
 Automatic documentation skeleton generation with parameter detection.
 
-**Command:** `C-c r r`
+**Command:** `, h i` (or `SPC m h i`)
 
 **Example:**
 
@@ -126,7 +128,7 @@ calculate_stats <- function(data,
   # implementation
 }
 
-# After pressing C-c r r (cursor before function)
+# After pressing , h i (cursor before function)
 #' Title
 #'
 #' @param data
@@ -157,11 +159,11 @@ Automatic code formatting on save using the styler R package.
 
 **Behavior:**
 
-- Runs on every save (`C-x C-s`)
+- Runs on every save (`SPC f s` or `:w` in Normal mode)
 - Formats entire buffer
 - Preserves cursor position
 - Guards against syntax errors
-- Toggle with `C-c r S`
+- Toggle with `, =` or disable in configuration
 
 **What It Fixes:**
 
@@ -201,18 +203,18 @@ Quick commands for R package scaffolding.
 
 **Commands:**
 
-- `C-c r u` - Create R file (`usethis::use_r()`)
-- `C-c r t` - Create test file (`usethis::use_test()`)
-- `C-c r p` - Create package doc (`usethis::use_package_doc()`)
+- `, u r` - Create R file (`usethis::use_r()`)
+- `, u t` - Create test file (`usethis::use_test()`)
+- `, u d` - Create data file
 
 **Example:**
 
 ```
-C-c r u
+, u r
 Prompt: utils
 Creates: R/utils.R
 
-C-c r t
+, u t
 Prompt: utils
 Creates: tests/testthat/test-utils.R
 ```
@@ -223,14 +225,14 @@ Built-in snippets and helpers for R's new S7 OOP system.
 
 **Commands:**
 
-- `C-c r s c` - Insert S7 class definition
-- `C-c r s m` - Insert S7 method
-- `C-c r s g` - Insert S7 generic
+- `, S c` - Insert S7 class definition
+- `, S m` - Insert S7 method
+- `, S g` - Insert S7 generic
 
 **Example Class:**
 
 ```r
-# After C-c r s c
+# After , S c
 MyClass <- S7::new_class(
   name = "MyClass",
   properties = list(
@@ -249,7 +251,7 @@ MyClass <- S7::new_class(
 
 Professional Git interface within Emacs.
 
-**Launch:** `C-x g`
+**Launch:** `SPC g s`
 
 **Common Operations:**
 
@@ -266,9 +268,9 @@ Navigate and manage projects efficiently.
 
 **Key Commands:**
 
-- `C-c p f` - Find file in project
-- `C-c p p` - Switch project
-- `C-c p s s` - Search in project
+- `SPC p f` - Find file in project
+- `SPC p p` - Switch project
+- `SPC p /` - Search in project
 
 ### Which-Key
 
@@ -276,10 +278,11 @@ Visual keybinding guide.
 
 **Usage:**
 
-- Press `C-c r` and wait
+- Press `SPC` or `,` (in R files) and wait
 - Popup shows all available commands
 - Shows keybindings and descriptions
 - Helps discover functionality
+- Press `SPC ?` to see all keybindings
 
 ### Vertico/Consult/Marginalia
 
@@ -307,9 +310,7 @@ Automatic PATH synchronization for GUI Emacs.
 
 **Manual Export:**
 
-```
-C-c r P         # Export PATH
-```
+Rarely needed with Spacemacs (uses `exec-path-from-shell` automatically).
 
 Or run:
 
@@ -362,10 +363,10 @@ rtest          # Run tests
 rdoc           # Build docs
 rcheck         # R CMD check
 
-# Emacs (editing)
-C-x C-f        # Open file
-C-c r r        # Add roxygen
-C-x C-s        # Save (auto-format)
+# Spacemacs (editing)
+SPC f f        # Open file
+, h i          # Add roxygen
+SPC f s        # Save (auto-format)
 ```
 
 ### Claude Code Integration

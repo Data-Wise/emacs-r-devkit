@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Solutions to common issues with emacs-r-devkit on macOS.
+Solutions to common issues with emacs-r-devkit Spacemacs environment on macOS.
 
 !!! tip "Quick Diagnosis"
     Run the dependency checker first:
@@ -11,22 +11,21 @@ Solutions to common issues with emacs-r-devkit on macOS.
 
 ## Installation Issues
 
-### init.el Not Found
+### Configuration Not Found
 
-**Symptom:** Emacs starts but emacs-r-devkit features don't work
+**Symptom:** Spacemacs starts but emacs-r-devkit features don't work
 
 **Solution:**
 
 ```bash
-# Check if init.el exists
-ls -la ~/.emacs.d/init.el
+# Check if .spacemacs exists
+ls -la ~/.spacemacs
 
-# If missing, run installer
+# If missing, copy from emacs-r-devkit
 cd ~/emacs-r-devkit
-./install-init.sh
+cp dotspacemacs.el ~/.spacemacs
 
-# Verify installation
-ls -la ~/.emacs.d/init.el
+# Verify helper scripts
 ls -la ~/.emacs.d/bin/
 ```
 
@@ -38,13 +37,13 @@ ls -la ~/.emacs.d/bin/
 
 ```bash
 # Backup existing config
-mv ~/.emacs.d ~/.emacs.d.backup
-mv ~/.emacs ~/.emacs.backup 2>/dev/null || true
+mv ~/.spacemacs ~/.spacemacs.backup
 
-# Clean install
-./install-init.sh
+# Copy fresh config
+cd ~/emacs-r-devkit
+cp dotspacemacs.el ~/.spacemacs
 
-# Restart Emacs
+# Restart Spacemacs
 open -a Emacs
 ```
 
@@ -54,12 +53,12 @@ open -a Emacs
 
 **Symptom:** First launch takes > 15 minutes
 
-**Expected:** This is normal! Package installation takes 10-15 minutes.
+**Expected:** This is normal! Spacemacs layer installation takes 10-15 minutes.
 
 **Solutions:**
 
-1. Be patient - watch for `Contacting host: melpa.org`
-2. Check progress: ++ctrl+h++ ++e++ (*Messages* buffer)
+1. Be patient - watch for layer installation progress
+2. Check progress: `SPC h d v` then type `*Messages*`
 3. If truly stuck (>30 min):
 
 ```bash
@@ -76,6 +75,7 @@ open -a Emacs
 ### Package Installation Errors
 
 **Symptom:**
+
 ```
 Error: Package ... is unavailable
 ```
@@ -95,6 +95,80 @@ rm -rf ~/.emacs.d/elpa/
 open -a Emacs
 ```
 
+## Spacemacs-Specific Issues
+
+### Stuck in Insert Mode
+
+**Symptom:** Can't execute commands, everything types text
+
+**Solution:**
+
+Press `ESC` or type `fd` quickly to return to Normal mode.
+
+**Prevention:** Learn the modes:
+
+- **Normal mode** (`<N>`) - For navigation and commands
+- **Insert mode** (`<I>`) - For typing text
+- **Visual mode** (`<V>`) - For selecting text
+
+### Leader Key Not Working
+
+**Symptom:** `SPC` just types a space
+
+**Diagnosis:**
+
+You're in Insert mode!
+
+**Solution:**
+
+1. Press `ESC` to return to Normal mode
+2. Then press `SPC` - should show which-key menu
+
+### Modal Editing Confusion
+
+**Symptom:** Commands don't work as expected
+
+**Solution:**
+
+Check your mode indicator in the status line:
+
+- `<N>` = Normal mode (for commands)
+- `<I>` = Insert mode (for typing)
+- `<V>` = Visual mode (for selecting)
+
+**Quick reference:**
+
+- `i` = Enter Insert mode
+- `ESC` or `fd` = Return to Normal mode
+- `v` = Enter Visual mode
+
+### Layer Not Loading
+
+**Symptom:** ESS or LSP features not working
+
+**Diagnosis:**
+
+```
+SPC h L    # List installed layers
+```
+
+**Solution:**
+
+Edit `~/.spacemacs` and verify layers:
+
+```elisp
+dotspacemacs-configuration-layers
+'(
+  auto-completion
+  ess
+  lsp
+  syntax-checking
+  git
+)
+```
+
+Then reload: `SPC f e R`
+
 ## ESS (R Mode) Issues
 
 ### No Syntax Highlighting
@@ -104,8 +178,9 @@ open -a Emacs
 **Diagnosis:**
 
 ```
-In Emacs with .R file open:
-M-: (package-installed-p 'ess) RET
+In Spacemacs with .R file open:
+SPC h d v package-installed-p RET
+Type: ess
 ```
 
 **Solutions:**
@@ -120,7 +195,7 @@ M-x ess-r-mode RET
 If ESS installed but not activating:
 
 ```
-M-x ess-r-mode RET
+SPC SPC ess-r-mode RET
 ```
 
 ### Can't Start R Console
@@ -128,7 +203,7 @@ M-x ess-r-mode RET
 **Symptom:**
 
 ```
-M-x R
+SPC SPC R
 Error: No such file or directory: R
 ```
 
@@ -139,23 +214,22 @@ Error: No such file or directory: R
 which R
 echo $PATH
 
-# In Emacs
-M-: (getenv "PATH") RET
-M-: (executable-find "R") RET
+# In Spacemacs
+SPC h d v getenv RET
+Type: PATH
+SPC h d v executable-find RET
+Type: R
 ```
 
 **Solutions:**
 
-macOS GUI PATH issue:
+macOS GUI PATH issue (Spacemacs uses `exec-path-from-shell`):
 
 ```
-In Emacs:
-C-c r P                # Export PATH
+In Spacemacs:
+SPC f e R              # Reload configuration
 
-# Or in terminal:
-~/.emacs.d/bin/export-gui-path.sh
-
-# Then restart Emacs
+# Then restart Spacemacs
 ```
 
 Verify PATH includes `/usr/local/bin` or `/opt/homebrew/bin`.
@@ -169,8 +243,8 @@ Verify PATH includes `/usr/local/bin` or `/opt/homebrew/bin`.
 **Diagnosis:**
 
 ```
-In Emacs:
-M-x flycheck-verify-setup RET
+In Spacemacs:
+SPC h d v flycheck-verify-setup RET
 ```
 
 **Solutions:**
@@ -178,8 +252,8 @@ M-x flycheck-verify-setup RET
 Enable Flycheck:
 
 ```
-M-x flycheck-mode RET
-M-x global-flycheck-mode RET
+SPC SPC flycheck-mode RET
+SPC SPC global-flycheck-mode RET
 ```
 
 Install lintr:
@@ -217,7 +291,7 @@ echo $?  # Should be 0 or 1, not 2
 
 ### LSP Not Starting
 
-**Symptom:** No `LSP` in mode line, `M-.` doesn't work
+**Symptom:** No `LSP` in mode line, `, g g` doesn't work
 
 **Diagnosis:**
 
@@ -242,13 +316,13 @@ install.packages("languageserver")
 Force LSP start (in R package):
 
 ```
-M-x lsp RET
+SPC SPC lsp RET
 ```
 
 Check LSP session:
 
 ```
-M-x lsp-describe-session RET
+SPC h d v lsp-describe-session RET
 ```
 
 ### LSP Is Slow
@@ -259,9 +333,9 @@ M-x lsp-describe-session RET
 
 ```
 # Disconnect LSP temporarily
-M-x lsp-disconnect RET
+SPC SPC lsp-disconnect RET
 
-# Or disable for large files (add to init.el):
+# Or disable for large files (add to ~/.spacemacs user-config):
 (setq lsp-file-watch-threshold 10000)
 ```
 
@@ -282,21 +356,21 @@ Styler failed: Error in parse(...)
 1. Disable styler temporarily:
 
 ```
-C-c r S                # Toggle off
+, =                    # Toggle formatting
 ```
 
 2. Fix syntax errors
 3. Re-enable:
 
 ```
-C-c r S                # Toggle on
+, =                    # Toggle on
 ```
 
 ### Don't Want Auto-Formatting
 
 **Solutions:**
 
-Disable globally (add to init.el):
+Disable globally (add to ~/.spacemacs user-config):
 
 ```elisp
 (setq emacs-r-devkit/styler-enabled nil)
@@ -311,7 +385,7 @@ Disable for specific project (`.dir-locals.el`):
 Toggle per session:
 
 ```
-C-c r S
+, =
 ```
 
 ## Company (Completion) Issues
@@ -323,16 +397,16 @@ C-c r S
 **Diagnosis:**
 
 ```
-M-: company-mode RET
+SPC h d v company-mode RET
 ```
 
 **Solutions:**
 
 ```
-M-x global-company-mode RET
+SPC SPC global-company-mode RET
 ```
 
-Adjust delay (add to init.el):
+Adjust delay (add to ~/.spacemacs user-config):
 
 ```elisp
 (setq company-idle-delay 0)  # Immediate
@@ -342,67 +416,58 @@ Adjust delay (add to init.el):
 
 ### M- Keys Don't Work
 
-**Symptom:** `M-f` doesn't move forward, `M-.` doesn't work
+**Symptom:** `SPC` doesn't work, `,` doesn't work
 
 **Diagnosis:**
 
+You're in Insert mode! Press `ESC` first.
+
+**In Normal mode:**
+
 ```
-C-h k M-f
+SPC h d k SPC
 ```
 
-Should say `M-f runs ...`
+Should say `SPC runs spacemacs-cmds`
 
 **Solutions:**
 
-On macOS: `M-` = **Option (⌥)**, NOT Command!
+Make sure you're in Normal mode (press `ESC`).
 
-Try `Option-f` instead of `Command-f`.
+For traditional Emacs keybindings, you can still use Option (⌥) as Meta:
 
-Verify configuration:
+- `M-x` = `Option-x` (or use `SPC SPC`)
+- `M-.` = `Option-.` (or use `, g g`)
 
-```
-M-: mac-option-modifier RET
-```
+### Major Mode Leader Not Working
 
-Should show: `meta`
-
-If wrong, restart Emacs.
-
-### C-c r Doesn't Work
-
-**Symptom:** `C-c r r` does nothing
+**Symptom:** `,` does nothing in R files
 
 **Diagnosis:**
 
+1. Make sure you're in Normal mode (press `ESC`)
+2. Make sure you're in an R file (`.R` extension)
+3. Check which-key:
+
 ```
-C-h k C-c r
+SPC h d v which-key-mode RET
 ```
 
 **Solutions:**
 
-Check which-key:
+Verify ESS mode is active:
 
 ```
-M-x which-key-mode RET
+SPC h d v major-mode RET
 ```
 
-Verify functions loaded:
-
-```
-M-: (fboundp 'emacs-r-devkit/insert-roxygen-skeleton) RET
-```
-
-Should return `t`. If `nil`:
-
-```
-M-x eval-buffer RET  # In init.el
-```
+Should return `ess-r-mode`.
 
 ## macOS Specific Issues
 
-### GUI Emacs Can't Find R
+### GUI Spacemacs Can't Find R
 
-**Symptom:** `M-x R` → "R not found" (but terminal finds R fine)
+**Symptom:** `SPC SPC R` → "R not found" (but terminal finds R fine)
 
 **Diagnosis:**
 
@@ -411,29 +476,29 @@ M-x eval-buffer RET  # In init.el
 which R
 echo $PATH
 
-# Emacs
-M-: (getenv "PATH") RET
-M-: (executable-find "R") RET
+# Spacemacs
+SPC h d v getenv RET (type PATH)
+SPC h d v executable-find RET (type R)
 ```
 
 **Solutions:**
 
-Export PATH:
+Spacemacs uses `exec-path-from-shell` automatically.
+
+If still having issues, reload configuration:
 
 ```
-In Emacs: C-c r P
-
-Or terminal:
-~/.emacs.d/bin/export-gui-path.sh
+SPC f e R
 ```
 
 Verify exec-path-from-shell:
 
 ```
-M-: (package-installed-p 'exec-path-from-shell) RET
+SPC h d v package-installed-p RET
+Type: exec-path-from-shell
 ```
 
-Manual PATH fix (add to init.el):
+Manual PATH fix (add to ~/.spacemacs user-config):
 
 ```elisp
 (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin:/opt/homebrew/bin"))
@@ -451,13 +516,13 @@ Manual PATH fix (add to init.el):
 Disable Flycheck temporarily:
 
 ```
-M-x flycheck-mode RET
+SPC SPC flycheck-mode RET
 ```
 
 Disable LSP:
 
 ```
-M-x lsp-disconnect RET
+SPC SPC lsp-disconnect RET
 ```
 
 Reduce company delay:
@@ -469,9 +534,9 @@ Reduce company delay:
 Check what's slow:
 
 ```
-M-x profiler-start RET
+SPC SPC profiler-start RET
 # Work for a bit
-M-x profiler-report RET
+SPC SPC profiler-report RET
 ```
 
 ## Getting Help
@@ -479,49 +544,49 @@ M-x profiler-report RET
 ### Check Messages
 
 ```
-C-h e                    # *Messages* buffer
-C-h w                    # *Warnings* (if exists)
+SPC h d v *Messages*    # View messages
+SPC b b *Warnings*      # View warnings (if exists)
 ```
 
 ### Describe Functions
 
 ```
-C-h f function-name      # Function docs
-C-h v variable-name      # Variable value
-C-h k C-c r              # What does this key do?
+SPC h d f function-name      # Function docs
+SPC h d v variable-name      # Variable value
+SPC h d k SPC                # What does this key do?
 ```
 
 ### Debug Mode
 
-Add to top of init.el:
+Add to top of ~/.spacemacs user-config:
 
 ```elisp
 (setq debug-on-error t)
 ```
 
-### Test in Clean Emacs
+### Test in Clean Spacemacs
 
 ```bash
 emacs -Q                 # Start without config
 
-# Then manually load:
-M-x load-file RET ~/.emacs.d/init.el RET
+# Then manually load Spacemacs:
+SPC h d v load-file RET ~/.emacs.d/init.el RET
 ```
 
 ## Emergency Recovery
 
-### Emacs Won't Start
+### Spacemacs Won't Start
 
 ```bash
 # Move config aside
-mv ~/.emacs.d ~/.emacs.d.broken
+mv ~/.spacemacs ~/.spacemacs.broken
 
-# Start fresh Emacs
-emacs -Q
+# Start fresh Spacemacs (will regenerate config)
+emacs
 
-# If that works, reinstall:
+# If that works, restore emacs-r-devkit config:
 cd ~/emacs-r-devkit
-./install-init.sh
+cp dotspacemacs.el ~/.spacemacs
 ```
 
 ### Corrupted Packages
@@ -537,8 +602,15 @@ open -a Emacs
 ```bash
 # Nuclear option
 rm -rf ~/.emacs.d/
+rm ~/.spacemacs
+
+# Reinstall Spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+cd ~/.emacs.d && git checkout develop
+
+# Install emacs-r-devkit config
 cd ~/emacs-r-devkit
-./install-init.sh
+cp dotspacemacs.el ~/.spacemacs
 open -a Emacs
 ```
 
@@ -546,11 +618,12 @@ open -a Emacs
 
 | Error | Meaning | Solution |
 |-------|---------|----------|
-| `Package ... is unavailable` | MELPA unreachable | `M-x package-refresh-contents` |
-| `No such file or directory: R` | PATH issue | `C-c r P` to export PATH |
+| `Package ... is unavailable` | MELPA unreachable | `SPC SPC package-refresh-contents` |
+| `No such file or directory: R` | PATH issue | `SPC f e R` to reload config |
 | `LSP :: not in project` | Not in R package | LSP needs `DESCRIPTION` file |
 | `STYLER-ERROR` | styler missing | `Rscript -e 'install.packages("styler")'` |
 | `Buffer is read-only` | Special buffer | Switch to different buffer |
+| Stuck in Insert mode | Modal editing | Press `ESC` or `fd` |
 
 ## Additional Resources
 
@@ -562,11 +635,12 @@ open -a Emacs
 ## Still Having Issues?
 
 1. Run dependency checker: `./check-dependencies.sh`
-2. Check Emacs version: `M-x emacs-version` (need 27+)
-3. Review error messages carefully
-4. Try minimal config (disable features one by one)
-5. Report issue on GitHub with error details
+2. Check Spacemacs version: `SPC h d v spacemacs-version`
+3. Check Emacs version: `SPC h d v emacs-version` (need 27+)
+4. Review error messages carefully
+5. Try minimal config (disable layers one by one)
+6. Report issue on GitHub with error details
 
 ---
 
-**Last updated:** 2025-12-07
+**Last updated:** 2025-12-18 (Updated for Spacemacs)
