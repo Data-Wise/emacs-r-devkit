@@ -1,6 +1,6 @@
 # emacs-r-devkit
 
-**Professional Emacs environment for R package development on macOS**
+**Professional Spacemacs environment for R package development on macOS**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub release](https://img.shields.io/github/v/release/Data-Wise/emacs-r-devkit)](https://github.com/Data-Wise/emacs-r-devkit/releases)
@@ -8,6 +8,7 @@
 [![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://data-wise.github.io/emacs-r-devkit/)
 [![CI](https://img.shields.io/github/actions/workflow/status/Data-Wise/emacs-r-devkit/mkdocs.yml?branch=main&label=docs)](https://github.com/Data-Wise/emacs-r-devkit/actions)
 [![Emacs](https://img.shields.io/badge/Emacs-27%2B-7F5AB6?logo=gnu-emacs)](https://www.gnu.org/software/emacs/)
+[![Spacemacs](https://img.shields.io/badge/Spacemacs-develop-9266CC)](https://www.spacemacs.org/)
 [![R](https://img.shields.io/badge/R-4.0%2B-276DC3?logo=r)](https://www.r-project.org/)
 [![macOS](https://img.shields.io/badge/macOS-12%2B-000000?logo=apple)](https://www.apple.com/macos/)
 
@@ -15,8 +16,9 @@
 
 ## ✨ Features
 
-A complete, integrated development environment for R package development within Emacs:
+A complete, integrated development environment for R package development powered by **Spacemacs**:
 
+- **🎯 Modal Editing** - Vim-style navigation with discoverable keybindings
 - **🔍 ESS Integration** - Full Emacs Speaks Statistics support with R console and code evaluation
 - **✅ Flycheck + Linters** - Real-time syntax checking with lintr and custom styler integration
 - **🚀 LSP Mode** - Language Server Protocol for intelligent code navigation and refactoring
@@ -27,25 +29,37 @@ A complete, integrated development environment for R package development within 
 - **📦 Usethis Integration** - Quick commands for creating R files, tests, and documentation
 - **🔗 Git Integration** - Magit for visual Git operations
 - **📚 Quarto/LaTeX** - Full support for Quarto documents and LaTeX writing
+- **🗝️ Which-Key** - Discoverable keybindings (press `SPC` and wait!)
 
 ## 🚀 Quick Start
 
 ### Prerequisites
 
 - **macOS** 12.0+ (tested on macOS 12+)
-- **Emacs** 27.1+ ([emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) recommended)
+- **Emacs** 27.1+ ([emacs-plus@30](https://github.com/d12frosted/homebrew-emacs-plus) recommended)
 - **R** 4.0+
+- **Git** 2.0+
 - **Homebrew** (recommended)
 
 ### Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/Data-Wise/emacs-r-devkit.git
-cd emacs-r-devkit
+# Install Emacs
+brew tap d12frosted/emacs-plus
+brew install emacs-plus@30 --with-native-comp
+ln -s /opt/homebrew/opt/emacs-plus@30/Emacs.app /Applications/Emacs.app
 
-# Run installer
-./install-init.sh
+# Install Spacemacs
+git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+cd ~/.emacs.d && git checkout develop
+
+# Clone emacs-r-devkit
+git clone https://github.com/Data-Wise/emacs-r-devkit.git ~/emacs-r-devkit
+cd ~/emacs-r-devkit
+
+# Install configuration
+cp dotspacemacs.el ~/.spacemacs
+mkdir -p ~/.emacs.d/bin && cp bin/* ~/.emacs.d/bin/ && chmod +x ~/.emacs.d/bin/*
 
 # Install required R packages
 Rscript -e 'install.packages(c("devtools", "usethis", "roxygen2", "testthat", "lintr", "styler", "languageserver"))'
@@ -57,47 +71,55 @@ Rscript -e 'install.packages(c("devtools", "usethis", "roxygen2", "testthat", "l
 ### First Launch
 
 ```bash
-# Start Emacs (first launch takes 10-15 minutes for package installation)
+# Start Spacemacs (first launch takes 10-15 minutes for layer installation)
 emacs
 
 # Or use GUI
 open -a Emacs
 ```
 
-**Note:** The first launch downloads and compiles packages from MELPA. Subsequent launches are fast (<5 seconds).
+**During first launch:**
+
+- Choose `vim` editing style (recommended)
+- Choose `spacemacs` distribution
+- Choose `helm` completion framework
+
+**Note:** The first launch installs Spacemacs layers and downloads packages from MELPA. Subsequent launches are fast (<5 seconds).
 
 ## 📚 Documentation
 
 Comprehensive documentation is available at **[data-wise.github.io/emacs-r-devkit](https://data-wise.github.io/emacs-r-devkit/)**
 
 - [**Getting Started**](https://data-wise.github.io/emacs-r-devkit/getting-started/) - Installation and setup guide
+- [**Migration Guide**](https://data-wise.github.io/emacs-r-devkit/migration-guide/) - Migrating from vanilla Emacs
+- [**Spacemacs Learning**](https://data-wise.github.io/emacs-r-devkit/spacemacs-learning/) - Complete learning curriculum
 - [**Features**](https://data-wise.github.io/emacs-r-devkit/features/) - Detailed feature documentation
-- [**Keybindings**](https://data-wise.github.io/emacs-r-devkit/keybindings/) - Complete keybinding reference for macOS
+- [**Keybindings**](https://data-wise.github.io/emacs-r-devkit/keybindings/) - Complete keybinding reference
 - [**Configuration**](https://data-wise.github.io/emacs-r-devkit/configuration/) - Customization options
 - [**Troubleshooting**](https://data-wise.github.io/emacs-r-devkit/troubleshooting/) - Common issues and solutions
-- [**Testing**](https://data-wise.github.io/emacs-r-devkit/testing/) - Verification guide
 
 ## 🎯 Key Keybindings
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| <kbd>⌃</kbd> <kbd>g</kbd> | Cancel | Escape/cancel (use when stuck!) |
-| <kbd>⌃</kbd> <kbd>x</kbd> <kbd>⌃</kbd> <kbd>f</kbd> | Find file | Open file |
-| <kbd>⌃</kbd> <kbd>x</kbd> <kbd>⌃</kbd> <kbd>s</kbd> | Save | Save file |
-| <kbd>⌥</kbd> <kbd>x</kbd> | Execute | Run command |
-| <kbd>⌃</kbd> <kbd>c</kbd> <kbd>r</kbd> | R prefix | emacs-r-devkit commands |
-| <kbd>⌃</kbd> <kbd>c</kbd> <kbd>r</kbd> <kbd>r</kbd> | Roxygen | Insert documentation |
-| <kbd>⌃</kbd> <kbd>⏎</kbd> | Send to R | Execute line/region |
-| <kbd>⌥</kbd> <kbd>.</kbd> | Go to def | Jump to definition |
-| <kbd>⌃</kbd> <kbd>c</kbd> <kbd>!</kbd> <kbd>l</kbd> | List errors | Show Flycheck errors |
+| `SPC f f` | Find file | Open file with fuzzy search |
+| `SPC f s` | Save file | Save current buffer |
+| `SPC b b` | Switch buffer | Switch to another buffer |
+| `SPC SPC` | Execute | Run command (M-x) |
+| `SPC p f` | Project file | Find file in project |
+| `, s l` | Send line to R | Execute current line in R |
+| `, s r` | Send region to R | Execute selected region in R |
+| `, h i` | Insert roxygen | Generate documentation |
+| `, g g` | Go to definition | Jump to function definition |
+| `SPC e l` | List errors | Show Flycheck errors |
 
-> **Note:** <kbd>⌥</kbd> = Option key (Meta), <kbd>⌃</kbd> = Control, <kbd>⇧</kbd> = Shift, <kbd>⌘</kbd> = Command
+> **Note:** `,` is the major mode leader key (equivalent to `SPC m`). Press `, ?` in any R file to see all available commands via which-key.
 
 See the [complete keybinding reference](https://data-wise.github.io/emacs-r-devkit/keybindings/) for more.
 
 ## 🔧 What's Included
 
-### Emacs Configuration (`init.el`)
+### Spacemacs Configuration (`~/.spacemacs`)
 
 - **Package Management** - Automatic package installation via MELPA
 - **ESS (R Mode)** - Full R integration with console and evaluation

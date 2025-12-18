@@ -1,355 +1,447 @@
 # Keybindings Reference
 
-Complete keybinding guide for emacs-r-devkit on macOS.
+Complete Spacemacs keybinding guide for R development on macOS.
 
-# Keybindings Reference
+## Understanding Spacemacs Keybindings
 
-Complete keybinding guide for emacs-r-devkit on macOS.
+**Spacemacs uses a mnemonic, discoverable keybinding system:**
 
-!!! warning "macOS Important"
-    **Meta key** (`M-`) = **Option (⌥)**, NOT Command!
-    Example: `M-x` means press `Option-x`, `M-.` means press `Option-.`
+- **Leader key** (`SPC`) - Primary entry point for all commands
+- **Major mode leader** (`,`) - Mode-specific commands (equivalent to `SPC m`)
+- **Which-key** - Press any prefix and wait - a menu appears showing available commands
 
-## Key Notation
+!!! tip "Discovery is Built-in"
+    Press `SPC` and wait 1 second - which-key shows all available commands!
 
-| Notation | macOS Key | Description |
-|----------|-----------|-------------|
-| `C-` | Control | Control key |
-| `M-` | Option (⌥) | Meta/Option key ← Important! |
-| `S-` | Command (⌘) | Super/Command key |
-| `Shift` | Shift | Shift key |
-| `RET` | Return | Return/Enter |
-| `SPC` | Space | Spacebar |
-| `TAB` | Tab | Tab key |
+    Press `,` in an R file to see all R-specific commands!
+
+## Modal Editing
+
+Spacemacs uses **Vim-style modal editing**:
+
+| Mode | Indicator | Purpose | How to Enter |
+|------|-----------|---------|--------------|
+| **Normal** | `<N>` | Navigate and manipulate text | Default mode, press `ESC` or `fd` |
+| **Insert** | `<I>` | Type text | Press `i`, `a`, `o`, etc. |
+| **Visual** | `<V>` | Select text | Press `v`, `V`, or `C-v` |
+
+!!! warning "Stuck in Insert Mode?"
+    Press `ESC` or type `fd` quickly to return to Normal mode!
 
 ## Survival Keys (Learn First!)
 
-!!! tip "Emergency Exit"
-    If you get stuck, press ++ctrl+g++ multiple times to cancel everything!
+### Emergency Exit
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| ++ctrl+g++ | Cancel | Escape/cancel current command |
-| ++ctrl+x++ ++ctrl+f++ | Find file | Open a file |
-| ++ctrl+x++ ++ctrl+s++ | Save | Save current file |
-| ++ctrl+x++ ++ctrl+c++ | Exit | Quit Emacs |
-| ++option+x++ | Execute | Run a command by name |
+| `ESC` or `fd` | Exit mode | Return to Normal mode |
+| `SPC q q` | Quit | Exit Spacemacs |
+| `SPC q s` | Save and quit | Save all and exit |
+| `u` (Normal mode) | Undo | Undo last change |
 
-## Movement
+### Essential File Operations
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC f f` | Find file | Open file with fuzzy search |
+| `SPC f s` | Save file | Save current buffer |
+| `SPC f r` | Recent files | Open recent files |
+| `SPC f R` | Rename file | Rename current file |
+
+### Essential Buffer Operations
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC b b` | Switch buffer | Switch to another buffer |
+| `SPC b d` | Delete buffer | Close current buffer |
+| `SPC b l` | List buffers | Show all buffers |
+| `SPC TAB` | Last buffer | Switch to previous buffer |
+
+## Movement (Normal Mode)
 
 ### Basic Movement
 
 | Key | Action |
 |-----|--------|
-| ++ctrl+a++ | Beginning of line |
-| ++ctrl+e++ | End of line |
-| ++ctrl+n++ | Next line |
-| ++ctrl+p++ | Previous line |
-| ++ctrl+f++ | Forward character |
-| ++ctrl+b++ | Backward character |
+| `h` | Left |
+| `j` | Down |
+| `k` | Up |
+| `l` | Right |
+| `0` | Beginning of line |
+| `$` | End of line |
+| `gg` | Beginning of buffer |
+| `G` | End of buffer |
 
-### Word/Sentence Movement
+### Word Movement
 
 | Key | Action |
 |-----|--------|
-| ++option+f++ | Forward word |
-| ++option+b++ | Backward word |
-| ++option+shift+less++ | Beginning of buffer |
-| ++option+shift+greater++ | End of buffer |
+| `w` | Forward word |
+| `b` | Backward word |
+| `e` | End of word |
 
 ### Page Movement
 
 | Key | Action |
 |-----|--------|
-| ++ctrl+v++ | Page down |
-| ++option+v++ | Page up |
-| ++option+g++ ++g++ | Go to line number |
+| `C-f` | Page down |
+| `C-b` | Page up |
+| `SPC j l` | Jump to line |
 
-## Editing
+## Editing (Normal Mode)
 
-### Cut, Copy, Paste
+### Text Manipulation
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `i` | Insert | Enter Insert mode before cursor |
+| `a` | Append | Enter Insert mode after cursor |
+| `o` | Open below | New line below and Insert mode |
+| `O` | Open above | New line above and Insert mode |
+| `d d` | Delete line | Cut current line |
+| `d w` | Delete word | Cut word forward |
+| `y y` | Yank line | Copy current line |
+| `y w` | Yank word | Copy word |
+| `p` | Paste after | Paste after cursor |
+| `P` | Paste before | Paste before cursor |
+| `c w` | Change word | Delete word and enter Insert mode |
+| `c c` | Change line | Delete line and enter Insert mode |
+
+### Visual Mode Selection
 
 | Key | Action |
 |-----|--------|
-| ++ctrl+space++ | Start selection (mark) |
-| ++ctrl+w++ | Cut (kill region) |
-| ++option+w++ | Copy |
-| ++ctrl+y++ | Paste (yank) |
-| ++ctrl+k++ | Cut to end of line |
-| ++option+d++ | Delete word forward |
+| `v` | Visual character | Select by character |
+| `V` | Visual line | Select by line |
+| `C-v` | Visual block | Select rectangular block |
 
-### Undo
-
-| Key | Action |
-|-----|--------|
-| ++ctrl+slash++ | Undo |
-| ++ctrl+x++ ++u++ | Undo (alternative) |
-
-## Files & Buffers
+## Spacemacs Leader Key (`SPC`)
 
 ### File Operations
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+x++ ++ctrl+f++ | Find/open file |
-| ++ctrl+x++ ++ctrl+s++ | Save file |
-| ++ctrl+x++ ++ctrl+w++ | Save as |
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC f f` | Find file | Open file |
+| `SPC f s` | Save file | Save current file |
+| `SPC f S` | Save all | Save all buffers |
+| `SPC f r` | Recent files | Open recent files |
+| `SPC f R` | Rename | Rename current file |
+| `SPC f D` | Delete | Delete current file |
+| `SPC f y` | Yank path | Copy file path |
 
-### Buffer Operations
+### Buffer Management
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+x++ ++b++ | Switch buffer |
-| ++ctrl+x++ ++k++ | Kill (close) buffer |
-| ++ctrl+x++ ++ctrl+b++ | List all buffers |
-
-## Windows & Frames
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC b b` | Switch buffer | Fuzzy buffer search |
+| `SPC b d` | Delete buffer | Close current buffer |
+| `SPC b k` | Kill buffer | Kill buffer (alternative) |
+| `SPC b l` | List buffers | Show all buffers |
+| `SPC b n` | Next buffer | Next buffer |
+| `SPC b p` | Previous buffer | Previous buffer |
+| `SPC TAB` | Last buffer | Toggle last two buffers |
 
 ### Window Management
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+x++ ++2++ | Split horizontally |
-| ++ctrl+x++ ++3++ | Split vertically |
-| ++ctrl+x++ ++1++ | Close other windows |
-| ++ctrl+x++ ++0++ | Close current window |
-| ++ctrl+x++ ++o++ | Switch to other window |
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC w /` | Split right | Split window vertically |
+| `SPC w -` | Split below | Split window horizontally |
+| `SPC w d` | Delete window | Close current window |
+| `SPC w m` | Maximize | Toggle maximize window |
+| `SPC w h/j/k/l` | Navigate | Move to window (left/down/up/right) |
+| `SPC w H/J/K/L` | Move window | Move window (left/down/up/right) |
 
-## Search & Replace
-
-| Key | Action |
-|-----|--------|
-| ++ctrl+s++ | Search forward (isearch) |
-| ++ctrl+r++ | Search backward |
-| ++ctrl+s++ ++ctrl+s++ | Search again |
-| ++option+shift+5++ | Query replace |
-
-## Help System
+### Project Management (Projectile)
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| ++ctrl+h++ ++k++ | Describe key | What does this key do? |
-| ++ctrl+h++ ++f++ | Describe function | Function documentation |
-| ++ctrl+h++ ++v++ | Describe variable | Variable documentation |
-| ++ctrl+h++ ++m++ | Describe mode | Current mode info |
-| ++ctrl+h++ ++e++ | View messages | Show `*Messages*` buffer |
+| `SPC p f` | Project file | Find file in project |
+| `SPC p p` | Switch project | Switch to another project |
+| `SPC p /` | Search project | Search in project (ag/rg) |
+| `SPC p t` | Project tree | Toggle file tree |
+| `SPC p R` | Replace | Find and replace in project |
 
-## emacs-r-devkit Prefix (C-c r)
-
-!!! tip "Discovery"
-    Press ++ctrl+c++ ++r++ and wait 1 second - Which-Key will show all available commands!
-
-### Core Commands
+### Search
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| ++ctrl+c++ ++r++ ++r++ | Roxygen | Insert roxygen skeleton |
-| ++ctrl+c++ ++r++ ++shift+s++ | Toggle styler | Enable/disable auto-format |
-| ++ctrl+c++ ++r++ ++shift+p++ | Export PATH | Fix macOS PATH issues |
+| `SPC s s` | Search buffer | Search in current buffer |
+| `SPC s p` | Search project | Search in project |
+| `SPC s f` | Search files | Search file names |
+| `/` (Normal) | Search forward | Incremental search |
+| `?` (Normal) | Search backward | Reverse search |
+| `n` | Next match | Next search result |
+| `N` | Previous match | Previous search result |
+
+### Git (Magit)
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC g s` | Git status | Open Magit status |
+| `SPC g b` | Git blame | Show git blame |
+| `SPC g l` | Git log | Show git log |
+| `SPC g d` | Git diff | Show git diff |
+
+#### In Magit Buffer
+
+| Key | Action |
+|-----|--------|
+| `s` | Stage |
+| `u` | Unstage |
+| `c c` | Commit |
+| `P p` | Push |
+| `F p` | Pull |
+| `TAB` | Toggle diff |
+| `q` | Quit |
+
+### Error Checking (Flycheck)
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC e l` | List errors | Show all errors |
+| `SPC e n` | Next error | Jump to next error |
+| `SPC e p` | Previous error | Jump to previous error |
+| `SPC e v` | Verify | Verify Flycheck setup |
+
+### Help System
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC h d k` | Describe key | What does this key do? |
+| `SPC h d f` | Describe function | Function documentation |
+| `SPC h d v` | Describe variable | Variable documentation |
+| `SPC h d m` | Describe mode | Current mode info |
+| `SPC ?` | Show keybindings | List all keybindings |
+
+## R Development (Major Mode Leader `,`)
+
+!!! tip "R Commands Discovery"
+    In any R file, press `, ?` to see all available R commands via which-key!
+
+### R Console
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `SPC SPC R` | Start R | Launch R console |
+| `, s i` | Start inferior | Start R (alternative) |
+| `, s l` | Send line | Execute current line |
+| `, s r` | Send region | Execute selected region |
+| `, s b` | Send buffer | Execute entire buffer |
+| `, s f` | Send function | Execute current function |
+| `, s s` | Switch to R | Jump to R console |
+| `C-RET` | Send line/region | Traditional keybinding (still works) |
+
+### R Package Development
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `, s b` | Build package | Build and load package |
+| `, t p` | Test package | Run all tests |
+| `, t f` | Test file | Run tests in current file |
+| `, t c` | Check package | R CMD check |
+| `, r d` | Document | Generate documentation (roxygen) |
+
+### Documentation (Roxygen)
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `, h i` | Insert roxygen | Generate roxygen skeleton |
+| `, h h` | Help at point | R help for object at cursor |
+
+### LSP Navigation
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `, g g` | Go to definition | Jump to function definition |
+| `, g r` | Find references | Find all references |
+| `, g b` | Go back | Return to previous location |
+| `, r s` | Rename symbol | Rename variable/function |
+| `, r o` | Organize imports | Organize imports |
+
+### Code Actions
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| `, =` | Format buffer | Format entire buffer |
+| `, = r` | Format region | Format selected region |
+
+## Completion (Company)
+
+| Key | Action | Description |
+|-----|--------|-------------|
+| (automatic) | Show completions | Appears after typing |
+| `C-n` | Next completion | Navigate down |
+| `C-p` | Previous completion | Navigate up |
+| `TAB` or `RET` | Accept | Accept completion |
+| `C-g` | Cancel | Cancel completion |
+| `SPC i c` | Complete | Manual trigger |
+
+## Custom emacs-r-devkit Commands
 
 ### Usethis Integration
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| ++ctrl+c++ ++r++ ++u++ | Use R | Create R file (`use_r()`) |
-| ++ctrl+c++ ++r++ ++t++ | Use test | Create test file (`use_test()`) |
-| ++ctrl+c++ ++r++ ++p++ | Package doc | Create package doc |
+| `, u r` | Use R | Create R file (`use_r()`) |
+| `, u t` | Use test | Create test file (`use_test()`) |
+| `, u d` | Use data | Create data file |
 
 ### S7 Integration
 
 | Key | Action | Description |
 |-----|--------|-------------|
-| ++ctrl+c++ ++r++ ++s++ ++c++ | S7 class | Insert class definition |
-| ++ctrl+c++ ++r++ ++s++ ++m++ | S7 method | Insert method |
-| ++ctrl+c++ ++r++ ++s++ ++g++ | S7 generic | Insert generic |
+| `, S c` | S7 class | Insert S7 class definition |
+| `, S m` | S7 method | Insert S7 method |
+| `, S g` | S7 generic | Insert S7 generic |
 
-## ESS (R Mode)
+## Common Workflows
 
-### R Console
+### Add Documentation to Function
 
-| Key | Action |
-|-----|--------|
-| ++option+x++ `R` | Start R console |
-| ++ctrl+enter++ | Send line/region to R |
-| ++ctrl+c++ ++ctrl+c++ | Send function to R |
-| ++ctrl+c++ ++ctrl+b++ | Send buffer to R |
-| ++ctrl+c++ ++ctrl+z++ | Switch to R console |
-| ++ctrl+c++ ++ctrl+l++ | Load file in R |
+```
+1. Place cursor on function definition
+2. , h i                # Insert roxygen skeleton
+3. Fill in @param, @return, @examples
+4. , s b                # Build package to update docs
+```
 
-### R Help
+### Navigate Code
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+c++ ++ctrl+v++ | R help on object |
+```
+1. , g g                # Jump to definition
+2. Explore code
+3. , g b                # Jump back
+```
 
-## Flycheck (Syntax Checking)
+### Fix Syntax Errors
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+c++ ++exclam++ ++l++ | List all errors |
-| ++ctrl+c++ ++exclam++ ++n++ | Next error |
-| ++ctrl+c++ ++exclam++ ++p++ | Previous error |
-| ++ctrl+c++ ++exclam++ ++question++ | Describe checker |
-| ++ctrl+c++ ++exclam++ ++v++ | Verify setup |
+```
+1. SPC e l              # List all errors
+2. SPC e n              # Jump to next error
+3. Fix code (in Insert mode: i)
+4. ESC                  # Return to Normal mode
+5. SPC f s              # Save
+```
 
-## LSP Mode
+### Test R Code Interactively
 
-| Key | Action |
-|-----|--------|
-| ++option+period++ | Go to definition |
-| ++option+comma++ | Go back |
-| ++option+question++ | Find references |
-| ++ctrl+c++ ++l++ ++r++ ++r++ | Rename symbol |
-| ++ctrl+c++ ++l++ ++g++ ++g++ | Find definition |
+```
+1. SPC SPC R            # Start R console
+2. Write code in R file
+3. , s l                # Send line to R
+4. Check output in R console
+5. , s s                # Jump to R console if needed
+```
 
-## Company (Completion)
+### Git Workflow
 
-| Key | Action |
-|-----|--------|
-| (automatic) | Completions appear |
-| ++ctrl+n++ | Next completion |
-| ++ctrl+p++ | Previous completion |
-| ++tab++ or ++enter++ | Accept completion |
-| ++ctrl+g++ | Cancel completion |
-| ++option+x++ `company-complete` | Manual trigger |
+```
+1. SPC g s              # Open Magit status
+2. s                    # Stage files
+3. c c                  # Commit
+4. Write commit message
+5. C-c C-c              # Confirm commit
+6. P p                  # Push
+```
 
-## Magit (Git)
+## macOS-Specific Notes
 
-### Launch
+### Meta Key Mapping
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+x++ ++g++ | Magit status |
+In Spacemacs, the traditional Emacs `M-` (Meta) key is still Option (⌥):
 
-### In Magit Buffer
+- `M-x` = `Option-x` (but use `SPC SPC` instead!)
+- `M-.` = `Option-.` (but use `, g g` instead!)
 
-| Key | Action |
-|-----|--------|
-| ++s++ | Stage file |
-| ++u++ | Unstage file |
-| ++c++ ++c++ | Commit |
-| ++shift+p++ ++p++ | Push |
-| ++shift+f++ ++p++ | Pull |
-| ++q++ | Quit magit |
-| ++tab++ | Toggle diff |
+### System Shortcuts Conflicts
 
-## Projectile
+Consider disabling these macOS shortcuts that conflict with Spacemacs:
 
-| Key | Action |
-|-----|--------|
-| ++ctrl+c++ ++p++ ++f++ | Find file in project |
-| ++ctrl+c++ ++p++ ++p++ | Switch project |
-| ++ctrl+c++ ++p++ ++s++ ++s++ | Search in project |
+**System Preferences → Keyboard → Shortcuts:**
 
-## Quarto
-
-| Key | Action |
-|-----|--------|
-| ++ctrl+c++ ++ctrl+c++ | Execute chunk |
-
-## Custom Keybinding Examples
-
-### Common Workflows
-
-=== "Add Documentation"
-
-    ```
-    1. C-c r r          # Insert roxygen
-    2. Fill in fields
-    3. C-x C-s          # Save (auto-formats)
-    ```
-
-=== "Navigate Code"
-
-    ```
-    1. M-.              # Jump to definition
-    2. Explore code
-    3. M-,              # Jump back
-    ```
-
-=== "Fix Errors"
-
-    ```
-    1. C-c ! l          # List errors
-    2. C-c ! n          # Next error
-    3. Fix code
-    4. C-x C-s          # Save
-    ```
-
-=== "Test in R"
-
-    ```
-    1. C-RET            # Send line to R
-    2. Check output in R console
-    3. C-c C-z          # Jump to R console
-    ```
-
-## Common Mistakes
-
-!!! failure "Using Command instead of Option"
-    `M-x` is `Option-x`, NOT `Command-x`
-    `M-.` is `Option-.`, NOT `Command-.`
-
-!!! failure "Forgetting to hold Control"
-    `C-x C-f` requires holding Control for both: `Ctrl-x` then `Ctrl-f`
-
-!!! failure "Not using C-g"
-    When stuck, press `C-g` repeatedly! It cancels everything.
-
-!!! failure "Trying to use mouse"
-    Emacs is keyboard-first. Learn the keybindings!
+- Mission Control (`C-↑`, `C-↓`)
+- Spotlight (`Cmd-Space` - use Alfred or disable)
+- Input Sources (Option shortcuts)
 
 ## Customizing Keybindings
 
-To add custom keybindings, edit `~/.emacs.d/init.el`:
+To add custom keybindings, edit `~/.spacemacs` in the `dotspacemacs/user-config` section:
 
 ```elisp
-;; Example: Add custom keybinding
-(define-key ess-r-mode-map (kbd "C-c m") 'my-custom-function)
-
-;; Example: Remap existing key
-(define-key ess-r-mode-map (kbd "C-c C-r") 'ess-eval-region)
+(defun dotspacemacs/user-config ()
+  "Configuration for user code."
+  
+  ;; Add custom R keybinding
+  (spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
+    "x" 'my-custom-r-function)
+  
+  ;; Add global keybinding
+  (spacemacs/set-leader-keys "o c" 'my-custom-function)
+)
 ```
-
-## Keybinding Conflicts
-
-If you have conflicts with macOS system shortcuts:
-
-**System Preferences → Keyboard → Shortcuts**
-
-Consider disabling:
-
-- Mission Control shortcuts
-- Spotlight shortcuts
-- Input Source shortcuts
-
-These often conflict with Emacs `M-` (Option) keys.
 
 ## Quick Reference Card
 
-Print this table for your desk:
+Print this for your desk:
 
 | Task | Keys |
 |------|------|
-| Open file | `C-x C-f` |
-| Save | `C-x C-s` |
-| Cancel | `C-g` |
-| Undo | `C-/` |
-| Start R | `M-x R` |
-| Send to R | `C-RET` |
-| Roxygen | `C-c r r` |
-| Go to def | `M-.` |
-| List errors | `C-c ! l` |
-| Help | `C-h k` |
+| **Files** | |
+| Open file | `SPC f f` |
+| Save | `SPC f s` |
+| Recent | `SPC f r` |
+| **Buffers** | |
+| Switch | `SPC b b` |
+| Close | `SPC b d` |
+| Last | `SPC TAB` |
+| **R Console** | |
+| Start R | `SPC SPC R` |
+| Send line | `, s l` |
+| Send region | `, s r` |
+| **R Development** | |
+| Roxygen | `, h i` |
+| Go to def | `, g g` |
+| Test package | `, t p` |
+| **Errors** | |
+| List errors | `SPC e l` |
+| Next error | `SPC e n` |
+| **Help** | |
+| Show keys | `SPC ?` |
+| Describe key | `SPC h d k` |
 
 ## Learning Strategy
 
-1. **Week 1:** Master survival keys (C-g, C-x C-f, C-x C-s)
-2. **Week 2:** Learn movement (C-a, C-e, M-f, M-b)
-3. **Week 3:** Learn editing (C-w, M-w, C-y)
-4. **Week 4:** Learn R workflow (C-RET, C-c r r, M-.)
-5. **Week 5+:** Explore advanced features
+### Week 1: Modal Editing Basics
+
+- Practice switching modes (`i`, `ESC`, `v`)
+- Learn basic navigation (`h`, `j`, `k`, `l`)
+- Master `SPC f f` (find file) and `SPC f s` (save)
+
+### Week 2: Spacemacs Leader Key
+
+- Explore `SPC` menu (wait for which-key)
+- Learn file operations (`SPC f ...`)
+- Learn buffer management (`SPC b ...`)
+
+### Week 3: R Workflow
+
+- Start R console (`SPC SPC R`)
+- Send code to R (`, s l`, `, s r`)
+- Insert roxygen (`, h i`)
+
+### Week 4: Advanced Features
+
+- LSP navigation (`, g g`, `, g r`)
+- Error checking (`SPC e l`, `SPC e n`)
+- Git workflow (`SPC g s`)
+
+### Week 5+: Customization
+
+- Explore layers
+- Add custom keybindings
+- Optimize your workflow
 
 ---
 
-**Next:** Learn how to [configure](configuration.md) emacs-r-devkit for your needs.
+**Next:** Learn how to [configure](configuration.md) Spacemacs for your needs.

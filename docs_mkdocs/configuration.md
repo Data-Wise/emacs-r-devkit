@@ -1,22 +1,82 @@
 # Configuration
 
-Customize emacs-r-devkit to fit your workflow and preferences.
+Customize emacs-r-devkit Spacemacs environment for your R development workflow.
 
 ## Configuration File
 
-All configuration is in `~/.emacs.d/init.el` (616 lines).
+All Spacemacs configuration is in `~/.spacemacs` (generated on first launch).
 
 !!! tip "Live Reload"
-    After editing `init.el`, reload with: `M-x eval-buffer`
+    After editing `~/.spacemacs`, reload with: `SPC f e R` (reload configuration)
+
+## Understanding Spacemacs Configuration
+
+The `~/.spacemacs` file has three main sections:
+
+### 1. `dotspacemacs/layers`
+
+Define which Spacemacs layers to load:
+
+```elisp
+dotspacemacs-configuration-layers
+'(
+  auto-completion
+  ess                    ; R support
+  git
+  lsp
+  syntax-checking
+  ;; Add more layers here
+)
+```
+
+### 2. `dotspacemacs/init`
+
+Set Spacemacs settings (theme, fonts, etc.):
+
+```elisp
+dotspacemacs-themes '(spacemacs-dark spacemacs-light)
+dotspacemacs-default-font '("Source Code Pro" :size 13)
+```
+
+### 3. `dotspacemacs/user-config`
+
+Your custom configuration and keybindings:
+
+```elisp
+(defun dotspacemacs/user-config ()
+  "Configuration for user code."
+  ;; Your customizations here
+)
+```
 
 ## Common Customizations
+
+### Change Theme
+
+```elisp
+;; In dotspacemacs/init
+dotspacemacs-themes '(doom-one spacemacs-dark spacemacs-light)
+
+;; Then install doom-themes layer
+;; In dotspacemacs/layers, add:
+dotspacemacs-additional-packages '(doom-themes)
+```
+
+### Adjust Completion Delay
+
+```elisp
+;; In dotspacemacs/user-config
+(setq company-idle-delay 0.2)  ; Faster (default: 0.2)
+(setq company-idle-delay 0.5)  ; Slower
+(setq company-idle-delay nil)  ; Manual only
+```
 
 ### Disable Auto-Formatting
 
 #### Globally
 
 ```elisp
-;; Add to init.el
+;; In dotspacemacs/user-config
 (setq emacs-r-devkit/styler-enabled nil)
 ```
 
@@ -28,196 +88,85 @@ Create `.dir-locals.el` in project root:
 ((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
 ```
 
-#### Per Session
-
-Toggle with ++ctrl+c++ ++r++ ++shift+s++
-
-### Adjust Company Delay
+### Configure Font
 
 ```elisp
-;; Faster completions (default: 0.1)
-(setq company-idle-delay 0)
-
-;; Slower completions
-(setq company-idle-delay 0.5)
-
-;; Disable automatic completions
-(setq company-idle-delay nil)
+;; In dotspacemacs/init
+dotspacemacs-default-font '("JetBrains Mono"
+                            :size 14
+                            :weight normal
+                            :width normal)
 ```
 
-### Disable Line Numbers
+Popular fonts for coding:
+
+- JetBrains Mono
+- Fira Code
+- Source Code Pro
+- Monaco (macOS default)
+
+### Line Numbers
 
 ```elisp
-;; Remove line numbers hook
-(remove-hook 'prog-mode-hook #'display-line-numbers-mode)
+;; In dotspacemacs/init
+dotspacemacs-line-numbers t           ; Enable
+dotspacemacs-line-numbers 'relative   ; Relative numbers
+dotspacemacs-line-numbers nil         ; Disable
 ```
 
-### Change Theme
+## Layer Configuration
 
-emacs-r-devkit uses `modus-vivendi` (dark) by default.
+### ESS Layer Options
 
 ```elisp
-;; Light theme
-(load-theme 'modus-operandi t)
-
-;; Other popular themes
-(use-package doom-themes
-  :ensure t
-  :config
-  (load-theme 'doom-one t))
+;; In dotspacemacs/layers
+(ess :variables
+     ess-r-backend 'lsp              ; Use LSP (default)
+     ess-r-backend 'ess              ; Use ESS only
+     ess-assign-key nil)             ; Disable _ -> <- conversion
 ```
 
-### Configure Flycheck
+### LSP Layer Options
 
 ```elisp
-;; Disable lintr checker
-(setq-default flycheck-disabled-checkers '(r-lintr))
-
-;; Only run on save (not while typing)
-(setq flycheck-check-syntax-automatically '(save mode-enabled))
-
-;; Adjust delay before checking (milliseconds)
-(setq flycheck-idle-change-delay 2.0)
+;; In dotspacemacs/layers
+(lsp :variables
+     lsp-ui-doc-enable t             ; Show documentation popup
+     lsp-ui-sideline-enable t        ; Show info in sideline
+     lsp-lens-enable nil)            ; Disable code lens
 ```
 
-### LSP Performance
+### Auto-Completion Layer
 
 ```elisp
-;; Increase file watch threshold for large projects
-(setq lsp-file-watch-threshold 10000)
-
-;; Disable LSP for specific projects
-;; Add to .dir-locals.el:
-((ess-r-mode . ((lsp-mode . nil))))
+;; In dotspacemacs/layers
+(auto-completion :variables
+                 auto-completion-enable-help-tooltip t
+                 auto-completion-enable-snippets-in-popup t
+                 auto-completion-enable-sort-by-usage t)
 ```
 
-## Advanced Customizations
-
-### Custom Keybindings
-
-```elisp
-;; Add to ESS mode hook
-(add-hook 'ess-r-mode-hook
-  (lambda ()
-    ;; Custom keybinding example
-    (define-key ess-r-mode-map (kbd "C-c m") 'my-function)
-
-    ;; Remap existing
-    (define-key ess-r-mode-map (kbd "C-c C-r") 'ess-eval-region)))
-```
-
-### Custom Roxygen Template
-
-```elisp
-;; Modify emacs-r-devkit/insert-roxygen-skeleton function
-;; in init.el around line 229-279
-
-;; Example: Add custom fields
-(defun emacs-r-devkit/insert-roxygen-skeleton ()
-  ;; ... existing code ...
-  (insert "#' @author Your Name\n")
-  (insert "#' @date " (format-time-string "%Y-%m-%d") "\n")
-  ;; ... rest of template ...
-)
-```
-
-### Styler Options
-
-Customize styler behavior by editing `~/.emacs.d/bin/r-styler-check.R`:
-
-```r
-# Current default:
-styled <- styler::style_text(code_lines)
-
-# Custom options:
-styled <- styler::style_text(
-  code_lines,
-  strict = FALSE,           # Less strict
-  indent_by = 4,            # 4-space indent
-  scope = "line_breaks"     # Only fix line breaks
-)
-```
-
-### Font Configuration
-
-```elisp
-;; Set font and size
-(set-frame-font "Monaco 14" nil t)
-
-;; Or with better fallback
-(when (find-font (font-spec :name "JetBrains Mono"))
-  (set-frame-font "JetBrains Mono 13" nil t))
-```
-
-## Project-Specific Configuration
-
-### Using .dir-locals.el
-
-Create `.dir-locals.el` in project root for project-specific settings:
-
-```elisp
-;; Example: Configure for specific package
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil)
-                (flycheck-disabled-checkers . (r-lintr))
-                (lsp-mode . nil))))
-```
-
-Common uses:
-
-- Disable styler for specific package
-- Turn off LSP for large packages
-- Project-specific indentation
-- Custom compile commands
-
-## Package Management
-
-### Update Packages
-
-```elisp
-M-x package-refresh-contents
-M-x package-upgrade-all
-```
-
-### Install Additional Packages
-
-```elisp
-M-x package-install RET package-name RET
-```
-
-Popular additions:
-
-- `helm` - Alternative completion framework
-- `ivy` - Another completion framework
-- `doom-themes` - Additional themes
-- `company-quickhelp` - Inline documentation
-- `smartparens` - Better paren handling
-
-### Pin Package Versions
-
-```elisp
-;; Add to init.el
-(setq package-pinned-packages
-      '((ess . "melpa-stable")))
-```
-
-## R Configuration
+## R-Specific Configuration
 
 ### Default R Options
 
 ```elisp
-;; Set default R options
-(setq inferior-R-args "--no-save --no-restore")
+;; In dotspacemacs/user-config
+(setq inferior-R-args "--no-save --no-restore --quiet")
+```
 
-;; Use radian instead of R
+### Use Radian Instead of R
+
+```elisp
+;; In dotspacemacs/user-config
 (setq inferior-R-program-name "radian")
 ```
 
 ### R Startup File
 
-Create `~/.Rprofile` for R-specific settings:
+Create `~/.Rprofile`:
 
 ```r
-# Load commonly used packages
 options(
   repos = c(CRAN = "https://cloud.r-project.org/"),
   browserNLdisabled = TRUE,
@@ -230,53 +179,152 @@ if (interactive()) {
 }
 ```
 
+## Custom Keybindings
+
+### Add Global Keybinding
+
+```elisp
+;; In dotspacemacs/user-config
+(spacemacs/set-leader-keys "o c" 'my-custom-function)
+;; Access with: SPC o c
+```
+
+### Add R Mode Keybinding
+
+```elisp
+;; In dotspacemacs/user-config
+(spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
+  "x" 'my-r-function)
+;; Access in R files with: , x
+```
+
+### Remap Existing Keybinding
+
+```elisp
+;; In dotspacemacs/user-config
+(define-key ess-r-mode-map (kbd "C-c C-r") 'ess-eval-region)
+```
+
 ## Performance Tuning
 
 ### Reduce Startup Time
 
 ```elisp
-;; Defer package loading
-(use-package package-name
-  :defer t  ; Load when needed
-  :commands (command1 command2))
-
-;; Increase GC threshold during startup
-(setq gc-cons-threshold (* 50 1000 1000))
+;; In dotspacemacs/init
+dotspacemacs-enable-lazy-installation 'unused  ; Lazy load layers
 ```
 
-### Reduce Memory Usage
+### LSP Performance
 
 ```elisp
-;; Lower GC threshold (default is high for performance)
-(setq gc-cons-threshold (* 20 1000 1000))
-
-;; Disable features you don't use
-(setq lsp-enable-symbol-highlighting nil)
-(setq lsp-ui-doc-enable nil)
+;; In dotspacemacs/user-config
+(setq lsp-file-watch-threshold 10000)  ; For large projects
+(setq lsp-enable-symbol-highlighting nil)  ; Disable if slow
 ```
 
-## Backup Configuration
+### Flycheck Configuration
+
+```elisp
+;; In dotspacemacs/user-config
+(setq flycheck-check-syntax-automatically '(save mode-enabled))
+(setq flycheck-idle-change-delay 2.0)
+```
+
+## Project-Specific Configuration
+
+### Using .dir-locals.el
+
+Create `.dir-locals.el` in project root:
+
+```elisp
+((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil)
+                (flycheck-disabled-checkers . (r-lintr))
+                (lsp-mode . nil))))
+```
+
+Common uses:
+
+- Disable styler for specific packages
+- Turn off LSP for large packages
+- Project-specific indentation
+- Custom R options
+
+## Adding Layers
+
+### Install Additional Layers
+
+Edit `~/.spacemacs`:
+
+```elisp
+dotspacemacs-configuration-layers
+'(
+  ;; Existing layers
+  ess
+  lsp
+  
+  ;; Add new layers
+  markdown
+  yaml
+  docker
+  python  ; If you also use Python
+)
+```
+
+Then reload: `SPC f e R`
+
+### Popular Layers for R Development
+
+- `markdown` - Markdown support (for README.md)
+- `yaml` - YAML support (for config files)
+- `org` - Org-mode (literate programming)
+- `latex` - LaTeX support
+- `spell-checking` - Spell checker
+- `version-control` - Enhanced git features
+
+## Customizing Roxygen Templates
+
+```elisp
+;; In dotspacemacs/user-config
+(defun my-roxygen-template ()
+  "Custom roxygen template."
+  (interactive)
+  (insert "#' Title\n")
+  (insert "#'\n")
+  (insert "#' @description Description\n")
+  (insert "#' @param x Parameter\n")
+  (insert "#' @return Return value\n")
+  (insert "#' @export\n")
+  (insert "#' @examples\n")
+  (insert "#' # Example code\n"))
+
+;; Bind to keybinding
+(spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
+  "h c" 'my-roxygen-template)
+```
+
+## Environment Variables
+
+```elisp
+;; In dotspacemacs/user-config
+(setenv "R_LIBS_USER" "~/R/library")
+(setenv "GITHUB_PAT" "your-token")
+```
+
+## Backup and Auto-Save
 
 ### Change Backup Directory
 
 ```elisp
-;; Already configured in init.el, but can customize:
+;; In dotspacemacs/user-config
 (setq backup-directory-alist
       '((".*" . "~/.emacs.d/backups/")))
-
-;; Or disable backups entirely
-(setq make-backup-files nil)
 ```
 
-### Auto-Save Configuration
+### Disable Backups
 
 ```elisp
-;; Already configured, but can adjust:
-(setq auto-save-file-name-transforms
-      '((".*" "~/.emacs.d/auto-saves/" t)))
-
-;; Adjust auto-save interval (default: 300 characters)
-(setq auto-save-interval 200)
+;; In dotspacemacs/user-config
+(setq make-backup-files nil)
 ```
 
 ## Debugging Configuration
@@ -284,121 +332,106 @@ if (interactive()) {
 ### Enable Debug Mode
 
 ```elisp
-;; Add to top of init.el temporarily
+;; Add to top of dotspacemacs/user-config temporarily
 (setq debug-on-error t)
+```
 
-;; See full error traces
+### Check Startup Time
+
+```
+SPC h d v emacs-init-time RET
 ```
 
 ### Profile Startup
 
-```elisp
-M-x emacs-init-time       # Total startup time
-M-x profiler-start        # Start profiling
-M-x profiler-report       # See results
+```
+M-x profiler-start RET
+M-x profiler-report RET
 ```
 
-## Environment Variables
+## Reset Configuration
 
-### Set Environment Variables
-
-```elisp
-;; Add to init.el
-(setenv "R_LIBS_USER" "~/R/library")
-(setenv "GITHUB_PAT" "your-token")
-
-;; Or load from file
-(when (file-exists-p "~/.emacs.d/env.el")
-  (load "~/.emacs.d/env.el"))
-```
-
-## Integration with External Tools
-
-### Configure External Tools
-
-```elisp
-;; Quarto
-(setq quarto-program "/opt/homebrew/bin/quarto")
-
-;; Custom R checker
-(setq flycheck-r-lintr-linters
-      "with_defaults(line_length_linter(120))")
-```
-
-## Reset to Defaults
-
-### Full Reset
+### Reset to Defaults
 
 ```bash
 # Backup current config
-mv ~/.emacs.d ~/.emacs.d.backup
+mv ~/.spacemacs ~/.spacemacs.backup
 
-# Reinstall
-cd ~/emacs-r-devkit
-./install-init.sh
+# Restart Spacemacs - will regenerate ~/.spacemacs
+emacs
 ```
 
-### Partial Reset
+### Reset Packages
 
 ```bash
-# Just reset packages
+# Remove installed packages
 rm -rf ~/.emacs.d/elpa/
 
-# Restart Emacs to reinstall
+# Restart Spacemacs to reinstall
 ```
 
 ## Configuration Examples
 
-### Minimal Setup
-
-For low-powered machines:
+### Minimal Setup (Low-Powered Machines)
 
 ```elisp
-;; Disable heavy features
-(setq emacs-r-devkit/styler-enabled nil)
-(setq lsp-mode nil)
-(setq company-idle-delay nil)  ; Manual completion only
+;; In dotspacemacs/layers
+dotspacemacs-configuration-layers
+'(
+  ess
+  syntax-checking  ; Flycheck only, no LSP
+)
 
-;; Keep essential features
-;; - ESS
-;; - Flycheck with lintr only
-;; - Basic completion
+;; In dotspacemacs/user-config
+(setq company-idle-delay nil)  ; Manual completion
+(setq emacs-r-devkit/styler-enabled nil)
 ```
 
-### Maximum Features
-
-For powerful machines:
+### Maximum Features (Powerful Machines)
 
 ```elisp
-;; Enable all features at max
-(setq company-idle-delay 0)
-(setq flycheck-idle-change-delay 0.5)
-(setq lsp-file-watch-threshold 50000)
+;; In dotspacemacs/layers
+dotspacemacs-configuration-layers
+'(
+  (auto-completion :variables
+                   auto-completion-enable-help-tooltip t)
+  ess
+  (lsp :variables
+       lsp-ui-doc-enable t
+       lsp-ui-sideline-enable t)
+  syntax-checking
+  git
+  version-control
+)
 
-;; Add extra packages
-(use-package company-quickhelp
-  :ensure t
-  :config
-  (company-quickhelp-mode))
+;; In dotspacemacs/user-config
+(setq company-idle-delay 0)
+(setq lsp-file-watch-threshold 50000)
 ```
 
 ## Getting Help
 
-### Check Current Values
+### Check Configuration Values
 
-```elisp
-M-: variable-name RET           # Check variable value
-C-h v variable-name RET         # Describe variable
-C-h f function-name RET         # Describe function
+```
+SPC h d v variable-name RET    ; Describe variable
+SPC h d f function-name RET    ; Describe function
+```
+
+### Reload Configuration
+
+```
+SPC f e R    ; Reload configuration
+SPC f e d    ; Open ~/.spacemacs
 ```
 
 ### Test Configuration
 
 ```bash
-# Test with fresh config
+# Start with minimal config
 emacs -Q
 
-# Load init.el manually
+# Load Spacemacs manually
 M-x load-file RET ~/.emacs.d/init.el RET
 ```
 

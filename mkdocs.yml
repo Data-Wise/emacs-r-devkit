@@ -84,8 +84,12 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Migration Guide: migration-guide.md
+  - Spacemacs Learning: spacemacs-learning.md
   - Features: features.md
   - Keybindings Reference: keybindings.md
+  - API Reference: api-reference.md
+  - Performance Analysis: performance.md
   - Configuration: configuration.md
   - Troubleshooting: troubleshooting.md
   - Testing: testing.md
