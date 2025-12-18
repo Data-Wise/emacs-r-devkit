@@ -4,15 +4,34 @@ The emacs-r-devkit includes a comprehensive installation management system that 
 
 ## System Overview
 
-The installation management system consists of 5 scripts:
+The installation management system consists of 5 scripts with **automatic pre-flight checks**:
 
 | Script | Purpose | Use When |
 |--------|---------|----------|
-| `install.sh` | Smart installer | Fresh install or major updates |
-| `health-check.sh` | System diagnostics | Checking installation health |
+| `install.sh` | Smart installer with pre-flight | Fresh install or major updates |
+| `health-check.sh` | System diagnostics + pre-flight | Checking installation health |
 | `patch.sh` | Update existing | Minor updates to config/scripts |
 | `repair.sh` | Fix issues | Troubleshooting problems |
 | `uninstall.sh` | Clean removal | Removing installation |
+
+> **New in Phase 4.5:** Pre-flight checks run automatically before installation to ensure your system is ready!
+
+## Pre-Flight Checks ✨ NEW
+
+Before installing, the system automatically checks:
+
+- ✅ macOS version (12.0+)
+- ✅ Disk space (5GB+ available)
+- ✅ Network connectivity
+- ✅ Already installed detection
+- ✅ Conflicting Emacs versions
+
+**Auto-Fix Capabilities:**
+
+- Installs Homebrew if missing
+- Installs Emacs if needed
+- Offers to clean up old Emacs versions
+- Provides detailed explanations for each action
 
 ## Quick Reference
 
