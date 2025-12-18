@@ -32,7 +32,7 @@ my_function <- function(x) {
   result <- x * 2
   return(result)
 }  # Cursor in function, press , s f
-```
+```bash
 
 ### Flycheck Integration
 
@@ -90,7 +90,7 @@ my_variable          # , g r on this
 
 # Rename symbol
 old_name <- 1        # , r s to rename
-```
+```bash
 
 ### Company Mode
 
@@ -144,7 +144,7 @@ calculate_stats <- function(data,
                            na.rm = TRUE) {
   # implementation
 }
-```
+```text
 
 **Features:**
 
@@ -187,7 +187,7 @@ my_func <- function(x, y) {
   result <- x + y
   return(result)
 }
-```
+```text
 
 **Disable for Project:**
 
@@ -195,7 +195,7 @@ Create `.dir-locals.el` in project root:
 
 ```elisp
 ((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
-```
+```bash
 
 ### Usethis Integration
 
@@ -209,7 +209,7 @@ Quick commands for R package scaffolding.
 
 **Example:**
 
-```
+```text
 , u r
 Prompt: utils
 Creates: R/utils.R
@@ -217,7 +217,7 @@ Creates: R/utils.R
 , u t
 Prompt: utils
 Creates: tests/testthat/test-utils.R
-```
+```bash
 
 ### S7 Support
 
@@ -243,7 +243,7 @@ MyClass <- S7::new_class(
     # Validation logic
   }
 )
-```
+```bash
 
 ## Additional Integrations
 
@@ -316,7 +316,7 @@ Or run:
 
 ```bash
 ~/.emacs.d/bin/export-gui-path.sh
-```
+```bash
 
 ### Keybinding Optimization
 
@@ -367,7 +367,7 @@ rcheck         # R CMD check
 SPC f f        # Open file
 , h i          # Add roxygen
 SPC f s        # Save (auto-format)
-```
+```bash
 
 ### Claude Code Integration
 

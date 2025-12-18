@@ -56,7 +56,7 @@ git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 # Use develop branch (recommended)
 cd ~/.emacs.d
 git checkout develop
-```
+```bash
 
 ### Step 2: Install emacs-r-devkit Configuration
 
@@ -74,7 +74,7 @@ cp dotspacemacs.el ~/.spacemacs
 mkdir -p ~/.emacs.d/bin
 cp bin/* ~/.emacs.d/bin/
 chmod +x ~/.emacs.d/bin/*
-```
+```bash
 
 ### Step 3: First Launch
 
@@ -84,7 +84,7 @@ emacs
 
 # Or GUI
 open -a Emacs
-```
+```text
 
 **During first launch:**
 
@@ -124,7 +124,7 @@ If you have custom functions in `init.el`, add them to `dotspacemacs/user-config
   ;; Custom keybindings
   (spacemacs/set-leader-keys "o c" 'my-custom-function)
 )
-```
+```bash
 
 ## Keybinding Translation
 
@@ -229,7 +229,7 @@ Or add custom keybindings in `dotspacemacs/user-config`:
 
 ```elisp
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-```
+```bash
 
 ### "Spacemacs is slow!"
 
@@ -290,7 +290,7 @@ cp ~/.emacs.d/init.el.backup ~/.emacs.d/init.el
 
 # Restart Emacs
 emacs
-```
+```bash
 
 ## Next Steps
 

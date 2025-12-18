@@ -13,7 +13,15 @@ echo "==========================="
 echo ""
 
 # Run tests in batch mode
+# We need to initialize packages so Spacemacs layers are found
 emacs -batch \
+  --eval "(let ((elpa-dir (expand-file-name \"~/.emacs.d/elpa/\")))
+            (when (file-exists-p elpa-dir)
+              (dolist (version-dir (directory-files elpa-dir t \"^[0-9]\"))
+                (let ((develop-dir (expand-file-name \"develop\" version-dir)))
+                  (when (file-exists-p develop-dir)
+                    (let ((default-directory develop-dir))
+                      (normal-top-level-add-subdirs-to-load-path)))))))" \
   -l ert \
   -l "$TEST_FILE" \
   -f ert-run-tests-batch-and-exit

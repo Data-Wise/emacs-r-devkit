@@ -1,0 +1,256 @@
+╔════════════════════════════════════════════════════════╗
+║  emacs-r-devkit Test Suite                            ║
+╚════════════════════════════════════════════════════════╝
+
+═══ Test Suite A: Documentation ═══
+📚 Documentation Test Suite
+============================
+
+Running Python tests...
+🧪 Running Documentation Tests
+
+Testing: Link Validation... [92m✓ PASS[0m
+Testing: Markdown Syntax... [92m✓ PASS[0m
+Testing: Code Blocks... [92m✓ PASS[0m
+Testing: Unclosed Code Blocks... [92m✓ PASS[0m
+Testing: Missing Images... [92m✓ PASS[0m
+Testing: YAML Frontmatter... [92m✓ PASS[0m
+Testing: MkDocs Build... [92m✓ PASS[0m
+Testing: Cross References... [92m✓ PASS[0m
+
+============================================================
+Results: [92m8 passed[0m, [91m0 failed[0m
+
+[93mWarnings:[0m
+  ⚠ markdownlint not installed, skipping
+
+Testing MkDocs build...
+INFO    -  Cleaning site directory
+INFO    -  Building documentation to directory: /Users/dt/projects/dev-tools/emacs-r-devkit/site
+INFO    -  Documentation built in 0.72 seconds
+
+⚠ markdown-link-check not installed, skipping link check
+
+✅ All documentation tests passed!
+✅ Documentation tests PASSED
+
+═══ Test Suite B: Emacs Lisp ═══
+🧪 Running Emacs Lisp Tests
+===========================
+
+Loading /Users/dt/projects/dev-tools/emacs-r-devkit/init.el (source)...
+Loading /Users/dt/.emacs.d/recentf...
+Cleaning up the recentf list...
+Cleaning up the recentf list...done (0 removed)
+[yas] Prepared just-in-time loading of snippets (but no snippets found).
+Running 25 tests (2025-12-18 14:10:04-0700, selector ‘t’)
+   passed   1/25  test-company-configuration (0.000071 sec)
+   passed   2/25  test-company-in-r-mode (1.151855 sec)
+   passed   3/25  test-empty-r-buffer (0.000509 sec)
+   passed   4/25  test-ess-configuration (0.000031 sec)
+   passed   5/25  test-ess-eval-bindings (0.000439 sec)
+   passed   6/25  test-exec-path-from-shell (0.000025 sec)
+   passed   7/25  test-flycheck-in-r-mode (0.000472 sec)
+   passed   8/25  test-helper-scripts-executable (0.000050 sec)
+   passed   9/25  test-helper-scripts-exist (0.000091 sec)
+   passed  10/25  test-lsp-backend-configured (0.000023 sec)
+   passed  11/25  test-major-mode-leader-bindings (0.000440 sec)
+   passed  12/25  test-r-mode-activation (0.000415 sec)
+Styler on save: disabled
+   passed  13/25  test-r-mode-in-non-r-buffer (0.000044 sec)
+   passed  14/25  test-roxygen-skeleton-function-exists (0.000025 sec)
+   passed  15/25  test-roxygen-skeleton-no-function (0.000423 sec)
+   passed  16/25  test-s7-functions-exist (0.000030 sec)
+   passed  17/25  test-s7-insert-class-basic (0.000443 sec)
+   passed  18/25  test-s7-insert-generic-basic (0.000430 sec)
+   passed  19/25  test-s7-insert-method-basic (0.000449 sec)
+   passed  20/25  test-spacemacs-layers-loaded (0.000041 sec)
+   passed  21/25  test-styler-disabled-state (0.000603 sec)
+   passed  22/25  test-styler-guard-nonexistent-file (0.000416 sec)
+Styler on save: enabled
+Styler on save: disabled
+   passed  23/25  test-styler-toggle (0.000043 sec)
+   passed  24/25  test-styler-toggle-function-exists (0.000026 sec)
+   passed  25/25  test-which-key-integration (0.000030 sec)
+
+Ran 25 tests, 25 results as expected, 0 unexpected (2025-12-18 14:10:05-0700, 1.158297 sec)
+
+
+✅ All Emacs Lisp tests passed!
+✅ Emacs Lisp tests PASSED
+
+═══ Test Suite C: R Packages ═══
+
+══ Testing test_r_packages.R ═══════════════════════════════════════════════════
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 0 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 2 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 3 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 4 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 5 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 6 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 7 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 8 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 9 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 10 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 11 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 12 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 13 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 14 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 15 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 16 ]Styling  1  files:
+ /var/folders/ks/18k8m75d55g71zc5btp253nc0000gn/T//RtmpB2QPwS/file17467ce60c89.R ✔ 
+───────────────────────────────────────────────────────────────────────────────
+Status	Count	Legend 
+✔ 	1	File unchanged.
+ℹ 	0	File changed.
+✖ 	0	Styling threw an error.
+───────────────────────────────────────────────────────────────────────────────
+
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 17 ]
+[ FAIL 0 | WARN 0 | SKIP 0 | PASS 18 ]Styling  1  files:
+ /var/folders/ks/18k8m75d55g71zc5btp253nc0000gn/T//RtmpB2QPwS/file174688e1daf.R 
+[ FAIL 0 | WARN 1 | SKIP 0 | PASS 18 ]⚠ 
+──────────────────────────────────────────────────────────────────────────────
+Status	Count	Legend 
+✔ 	0	File unchanged.
+ℹ 	0	File changed.
+✖ 	1	Styling threw an error.
+──────────────────────────────────────────────────────────────────────────────
+
+[ FAIL 0 | WARN 1 | SKIP 0 | PASS 19 ]
+[ FAIL 0 | WARN 1 | SKIP 0 | PASS 20 ]
+🧪 Running R Package Tests
+==========================
+
+
+
+── Warning ('test_r_packages.R:188:13'): Styler handles syntax errors gracefully ──
+When processing file174688e1daf.R:
+Caused by error:
+✖ Styling failed
+Caused by error in `parse()`:
+! <text>:1:12: unexpected '{'
+1: function(x {
+               ^
+Backtrace:
+     ▆
+  1. ├─base::tryCatch(...) at test_r_packages.R:186:5
+  2. │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+  3. │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+  4. │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+  5. ├─styler::style_file(bad_file, strict = FALSE) at test_r_packages.R:188:13
+  6. │ └─styler:::transform_files(...)
+  7. │   └─purrr::map_lgl(...)
+  8. │     └─purrr:::map_("logical", .x, .f, ..., .progress = .progress)
+  9. │       ├─purrr:::with_indexed_errors(...)
+ 10. │       │ └─base::withCallingHandlers(...)
+ 11. │       ├─purrr:::call_with_cleanup(...)
+ 12. │       └─styler (local) .f(.x[[i]], ...)
+ 13. │         └─styler:::transform_code(path, fun = fun, ..., dry = dry)
+ 14. │           └─styler:::transform_utf8(path, fun = fun, ..., dry = dry)
+ 15. │             ├─... %>% set_names(path)
+ 16. │             └─purrr::map_lgl(path, transform_utf8_one, fun = fun, dry = dry)
+ 17. │               └─purrr:::map_("logical", .x, .f, ..., .progress = .progress)
+ 18. │                 ├─purrr:::with_indexed_errors(...)
+ 19. │                 │ └─base::withCallingHandlers(...)
+ 20. │                 ├─purrr:::call_with_cleanup(...)
+ 21. │                 └─styler (local) .f(.x[[i]], ...)
+ 22. │                   ├─rlang::try_fetch(...)
+ 23. │                   │ ├─base::tryCatch(...)
+ 24. │                   │ │ └─base (local) tryCatchList(expr, classes, parentenv, handlers)
+ 25. │                   │ │   └─base (local) tryCatchOne(expr, names, parentenv, handlers[[1L]])
+ 26. │                   │ │     └─base (local) doTryCatch(return(expr), name, parentenv, handler)
+ 27. │                   │ └─base::withCallingHandlers(...)
+ 28. │                   └─styler (local) fun(file_with_info$text)
+ 29. │                     └─styler:::parse_transform_serialize_r(...)
+ 30. │                       └─styler::compute_parse_data_nested(text, transformers, more_specs)
+ 31. │                         └─styler:::text_to_flat_pd(text, transformers, more_specs = more_specs)
+ 32. │                           ├─... %>% shallowify()
+ 33. │                           └─styler:::tokenize(text)
+ 34. │                             ├─... %>% enhance_mapping_special()
+ 35. │                             └─styler:::get_parse_data(text, include_text = TRUE)
+ 36. │                               └─styler:::parse_safely(text, keep.source = TRUE)
+ 37. │                                 ├─base::withCallingHandlers(...)
+ 38. │                                 └─base::parse(text = text, ...)
+ 39. ├─rlang::set_names(., path)
+ 40. ├─styler:::shallowify(.)
+ 41. │ └─base::order(pd$line1, pd$col1, -pd$line2, -pd$col2, as.integer(pd$terminal))
+ 42. ├─styler:::add_attributes_caching(., transformers, more_specs = more_specs)
+ 43. │ └─base::nrow(pd_flat)
+ 44. ├─styler:::add_stylerignore(.)
+ 45. │ └─base::trimws(pd_flat$text)
+ 46. │   ├─base (local) mysub(...)
+ 47. │   │ └─base::sub(re, "", x, perl = TRUE)
+ 48. │   │   └─base::is.factor(x)
+ 49. │   └─base (local) mysub(paste0("^", whitespace, "+"), x)
+ 50. │     └─base::sub(re, "", x, perl = TRUE)
+ 51. │       └─base::is.factor(x)
+ 52. ├─styler:::add_terminal_token_after(.)
+ 53. │ └─pd_flat %>% filter(terminal) %>% arrange_pos_id()
+ 54. ├─styler:::arrange_pos_id(.)
+ 55. ├─styler:::filter(., terminal)
+ 56. │ └─base::subset(.data, ...)
+ 57. ├─styler:::add_terminal_token_before(.)
+ 58. │ └─pd_flat %>% filter(terminal) %>% arrange_pos_id()
+ 59. ├─styler:::arrange_pos_id(.)
+ 60. ├─styler:::filter(., terminal)
+ 61. │ └─base::subset(.data, ...)
+ 62. ├─styler:::enhance_mapping_special(.)
+ 63. ├─styler:::ensure_correct_txt(., text)
+ 64. │ └─styler:::is_insufficiently_parsed_string(pd)
+ 65. │   └─base::grepl("^\\[", pd$text)
+ 66. │     └─base::is.factor(x)
+ 67. ├─base::.handleSimpleError(...)
+ 68. │ └─styler (local) h(simpleError(msg, call))
+ 69. │   └─cli::cli_abort(msg, parent = e, call = NULL)
+ 70. │     └─rlang::abort(...)
+ 71. │       └─rlang:::signal_abort(cnd, .file)
+ 72. │         └─base::signalCondition(cnd)
+ 73. └─rlang (local) `<fn>`(`<rlng_rrr>`)
+ 74.   └─handlers[[1L]](cnd)
+ 75.     └─cli::cli_warn("When processing {show_path}:", parent = e)
+
+[ FAIL 0 | WARN 1 | SKIP 0 | PASS 20 ]
+✅ R package tests PASSED
+
+═══ Test Suite D: Integration ═══
+🧪 Integration Tests
+====================
+
+Test 1: Spacemacs configuration...
+  ✓ ~/.spacemacs exists
+
+Test 2: Helper scripts...
+  ✓ r-styler-check.R exists in project bin/
+  ✓ export-gui-path.sh exists in project bin/
+
+Test 3: R availability...
+  ✓ R is in PATH
+  ℹ R version 4.5.2 (2025-10-31) -- "[Not] Part in a Rumble"
+
+Test 4: Required R packages...
+  ✓ devtools installed
+  ✓ usethis installed
+  ✓ roxygen2 installed
+  ✓ testthat installed
+  ✓ lintr installed
+  ✓ styler installed
+  ✓ languageserver installed
+
+Test 5: Emacs functionality...
+  ✓ Emacs is in PATH
+  ℹ GNU Emacs 30.2
+  ✓ ESS can be loaded
+
+Test 6: Documentation...
+  ✓ MkDocs is installed
+  ✓ Documentation builds successfully
+
+✅ Integration tests complete!
+✅ Integration tests PASSED
+
+╔════════════════════════════════════════════════════════╗
+║  ✅ ALL TESTS PASSED                                   ║
+╚════════════════════════════════════════════════════════╝

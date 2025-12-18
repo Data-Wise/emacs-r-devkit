@@ -27,7 +27,7 @@ dotspacemacs-configuration-layers
   syntax-checking
   ;; Add more layers here
 )
-```
+```bash
 
 ### 2. `dotspacemacs/init`
 
@@ -36,7 +36,7 @@ Set Spacemacs settings (theme, fonts, etc.):
 ```elisp
 dotspacemacs-themes '(spacemacs-dark spacemacs-light)
 dotspacemacs-default-font '("Source Code Pro" :size 13)
-```
+```bash
 
 ### 3. `dotspacemacs/user-config`
 
@@ -47,7 +47,7 @@ Your custom configuration and keybindings:
   "Configuration for user code."
   ;; Your customizations here
 )
-```
+```bash
 
 ## Common Customizations
 
@@ -60,7 +60,7 @@ dotspacemacs-themes '(doom-one spacemacs-dark spacemacs-light)
 ;; Then install doom-themes layer
 ;; In dotspacemacs/layers, add:
 dotspacemacs-additional-packages '(doom-themes)
-```
+```bash
 
 ### Adjust Completion Delay
 
@@ -69,7 +69,7 @@ dotspacemacs-additional-packages '(doom-themes)
 (setq company-idle-delay 0.2)  ; Faster (default: 0.2)
 (setq company-idle-delay 0.5)  ; Slower
 (setq company-idle-delay nil)  ; Manual only
-```
+```bash
 
 ### Disable Auto-Formatting
 
@@ -78,7 +78,7 @@ dotspacemacs-additional-packages '(doom-themes)
 ```elisp
 ;; In dotspacemacs/user-config
 (setq emacs-r-devkit/styler-enabled nil)
-```
+```bash
 
 #### Per Project
 
@@ -86,7 +86,7 @@ Create `.dir-locals.el` in project root:
 
 ```elisp
 ((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
-```
+```bash
 
 ### Configure Font
 
@@ -96,7 +96,7 @@ dotspacemacs-default-font '("JetBrains Mono"
                             :size 14
                             :weight normal
                             :width normal)
-```
+```text
 
 Popular fonts for coding:
 
@@ -112,7 +112,7 @@ Popular fonts for coding:
 dotspacemacs-line-numbers t           ; Enable
 dotspacemacs-line-numbers 'relative   ; Relative numbers
 dotspacemacs-line-numbers nil         ; Disable
-```
+```bash
 
 ## Layer Configuration
 
@@ -124,7 +124,7 @@ dotspacemacs-line-numbers nil         ; Disable
      ess-r-backend 'lsp              ; Use LSP (default)
      ess-r-backend 'ess              ; Use ESS only
      ess-assign-key nil)             ; Disable _ -> <- conversion
-```
+```bash
 
 ### LSP Layer Options
 
@@ -134,7 +134,7 @@ dotspacemacs-line-numbers nil         ; Disable
      lsp-ui-doc-enable t             ; Show documentation popup
      lsp-ui-sideline-enable t        ; Show info in sideline
      lsp-lens-enable nil)            ; Disable code lens
-```
+```bash
 
 ### Auto-Completion Layer
 
@@ -144,7 +144,7 @@ dotspacemacs-line-numbers nil         ; Disable
                  auto-completion-enable-help-tooltip t
                  auto-completion-enable-snippets-in-popup t
                  auto-completion-enable-sort-by-usage t)
-```
+```bash
 
 ## R-Specific Configuration
 
@@ -153,14 +153,14 @@ dotspacemacs-line-numbers nil         ; Disable
 ```elisp
 ;; In dotspacemacs/user-config
 (setq inferior-R-args "--no-save --no-restore --quiet")
-```
+```bash
 
 ### Use Radian Instead of R
 
 ```elisp
 ;; In dotspacemacs/user-config
 (setq inferior-R-program-name "radian")
-```
+```bash
 
 ### R Startup File
 
@@ -177,7 +177,7 @@ if (interactive()) {
   suppressMessages(require(devtools))
   suppressMessages(require(usethis))
 }
-```
+```bash
 
 ## Custom Keybindings
 
@@ -187,7 +187,7 @@ if (interactive()) {
 ;; In dotspacemacs/user-config
 (spacemacs/set-leader-keys "o c" 'my-custom-function)
 ;; Access with: SPC o c
-```
+```bash
 
 ### Add R Mode Keybinding
 
@@ -196,14 +196,14 @@ if (interactive()) {
 (spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
   "x" 'my-r-function)
 ;; Access in R files with: , x
-```
+```bash
 
 ### Remap Existing Keybinding
 
 ```elisp
 ;; In dotspacemacs/user-config
 (define-key ess-r-mode-map (kbd "C-c C-r") 'ess-eval-region)
-```
+```bash
 
 ## Performance Tuning
 
@@ -212,7 +212,7 @@ if (interactive()) {
 ```elisp
 ;; In dotspacemacs/init
 dotspacemacs-enable-lazy-installation 'unused  ; Lazy load layers
-```
+```bash
 
 ### LSP Performance
 
@@ -220,7 +220,7 @@ dotspacemacs-enable-lazy-installation 'unused  ; Lazy load layers
 ;; In dotspacemacs/user-config
 (setq lsp-file-watch-threshold 10000)  ; For large projects
 (setq lsp-enable-symbol-highlighting nil)  ; Disable if slow
-```
+```bash
 
 ### Flycheck Configuration
 
@@ -228,7 +228,7 @@ dotspacemacs-enable-lazy-installation 'unused  ; Lazy load layers
 ;; In dotspacemacs/user-config
 (setq flycheck-check-syntax-automatically '(save mode-enabled))
 (setq flycheck-idle-change-delay 2.0)
-```
+```bash
 
 ## Project-Specific Configuration
 
@@ -240,7 +240,7 @@ Create `.dir-locals.el` in project root:
 ((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil)
                 (flycheck-disabled-checkers . (r-lintr))
                 (lsp-mode . nil))))
-```
+```text
 
 Common uses:
 
@@ -268,7 +268,7 @@ dotspacemacs-configuration-layers
   docker
   python  ; If you also use Python
 )
-```
+```text
 
 Then reload: `SPC f e R`
 
@@ -300,7 +300,7 @@ Then reload: `SPC f e R`
 ;; Bind to keybinding
 (spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
   "h c" 'my-roxygen-template)
-```
+```bash
 
 ## Environment Variables
 
@@ -308,7 +308,7 @@ Then reload: `SPC f e R`
 ;; In dotspacemacs/user-config
 (setenv "R_LIBS_USER" "~/R/library")
 (setenv "GITHUB_PAT" "your-token")
-```
+```bash
 
 ## Backup and Auto-Save
 
@@ -318,14 +318,14 @@ Then reload: `SPC f e R`
 ;; In dotspacemacs/user-config
 (setq backup-directory-alist
       '((".*" . "~/.emacs.d/backups/")))
-```
+```bash
 
 ### Disable Backups
 
 ```elisp
 ;; In dotspacemacs/user-config
 (setq make-backup-files nil)
-```
+```bash
 
 ## Debugging Configuration
 
@@ -334,20 +334,20 @@ Then reload: `SPC f e R`
 ```elisp
 ;; Add to top of dotspacemacs/user-config temporarily
 (setq debug-on-error t)
-```
+```bash
 
 ### Check Startup Time
 
-```
+```text
 SPC h d v emacs-init-time RET
-```
+```bash
 
 ### Profile Startup
 
-```
+```text
 M-x profiler-start RET
 M-x profiler-report RET
-```
+```bash
 
 ## Reset Configuration
 
@@ -359,7 +359,7 @@ mv ~/.spacemacs ~/.spacemacs.backup
 
 # Restart Spacemacs - will regenerate ~/.spacemacs
 emacs
-```
+```bash
 
 ### Reset Packages
 
@@ -368,7 +368,7 @@ emacs
 rm -rf ~/.emacs.d/elpa/
 
 # Restart Spacemacs to reinstall
-```
+```bash
 
 ## Configuration Examples
 
@@ -385,7 +385,7 @@ dotspacemacs-configuration-layers
 ;; In dotspacemacs/user-config
 (setq company-idle-delay nil)  ; Manual completion
 (setq emacs-r-devkit/styler-enabled nil)
-```
+```bash
 
 ### Maximum Features (Powerful Machines)
 
@@ -407,23 +407,23 @@ dotspacemacs-configuration-layers
 ;; In dotspacemacs/user-config
 (setq company-idle-delay 0)
 (setq lsp-file-watch-threshold 50000)
-```
+```bash
 
 ## Getting Help
 
 ### Check Configuration Values
 
-```
+```text
 SPC h d v variable-name RET    ; Describe variable
 SPC h d f function-name RET    ; Describe function
-```
+```bash
 
 ### Reload Configuration
 
-```
+```text
 SPC f e R    ; Reload configuration
 SPC f e d    ; Open ~/.spacemacs
-```
+```bash
 
 ### Test Configuration
 
@@ -433,7 +433,7 @@ emacs -Q
 
 # Load Spacemacs manually
 M-x load-file RET ~/.emacs.d/init.el RET
-```
+```text
 
 ---
 

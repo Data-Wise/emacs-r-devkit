@@ -42,7 +42,7 @@ echo ""
 
 # Test Suite C: R Packages
 echo "═══ Test Suite C: R Packages ═══"
-if Rscript "$SCRIPT_DIR/test_r_packages.R"; then
+if Rscript -e "testthat::test_file('$SCRIPT_DIR/test_r_packages.R')"; then
     echo "✅ R package tests PASSED"
 else
     echo "❌ R package tests FAILED"

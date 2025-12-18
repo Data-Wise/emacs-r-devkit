@@ -42,7 +42,7 @@ if (length(missing) > 0) {
   cat(paste("Missing:", missing, collapse="\n"))
   quit(status=1)
 }'
-```
+```bash
 
 ### B. Tune Emacs Garbage Collection
 Update `init.el` to use more modern memory limits:
@@ -52,7 +52,7 @@ Update `init.el` to use more modern memory limits:
           (lambda () 
             ;; Increase threshold to 100MB for better LSP performance
             (setq gc-cons-threshold (* 100 1024 1024))))
-```
+```bash
 
 ### C. Persistent Formatting (LSP)
 To eliminate the `styler` process overhead, transition from a shell-based `Rscript` call to **LSP-driven formatting**.

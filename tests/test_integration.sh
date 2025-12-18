@@ -32,6 +32,8 @@ echo ""
 echo "Test 2: Helper scripts..."
 if [ -f ~/.emacs.d/bin/r-styler-check.R ]; then
     echo "  ✓ r-styler-check.R exists"
+elif [ -f "$PROJECT_ROOT/bin/r-styler-check.R" ]; then
+    echo "  ✓ r-styler-check.R exists in project bin/"
 else
     echo "  ⚠ r-styler-check.R not found"
 fi
@@ -43,6 +45,8 @@ if [ -f ~/.emacs.d/bin/export-gui-path.sh ]; then
     else
         echo "  ⚠ export-gui-path.sh not executable"
     fi
+elif [ -f "$PROJECT_ROOT/bin/export-gui-path.sh" ]; then
+    echo "  ✓ export-gui-path.sh exists in project bin/"
 else
     echo "  ⚠ export-gui-path.sh not found"
 fi
@@ -81,10 +85,18 @@ if command -v emacs &> /dev/null; then
     echo "  ℹ $EMACS_VERSION"
     
     # Test Emacs can load ESS
-    if emacs -batch -l ess 2>/dev/null; then
+    if emacs -batch \
+      --eval "(let ((elpa-dir (expand-file-name \"~/.emacs.d/elpa/\")))
+                (when (file-exists-p elpa-dir)
+                  (dolist (version-dir (directory-files elpa-dir t \"^[0-9]\"))
+                    (let ((develop-dir (expand-file-name \"develop\" version-dir)))
+                      (when (file-exists-p develop-dir)
+                        (let ((default-directory develop-dir))
+                          (normal-top-level-add-subdirs-to-load-path)))))))" \
+      -l ess 2>/dev/null; then
         echo "  ✓ ESS can be loaded"
     else
-        echo "  ⚠ ESS not available (may need Spacemacs running)"
+        echo "  ⚠ ESS not available (check ~/.emacs.d/elpa)"
     fi
 else
     echo "  ✗ Emacs not found in PATH"

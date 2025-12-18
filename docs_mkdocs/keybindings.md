@@ -299,51 +299,51 @@ Spacemacs uses **Vim-style modal editing**:
 
 ### Add Documentation to Function
 
-```
+```text
 1. Place cursor on function definition
 2. , h i                # Insert roxygen skeleton
 3. Fill in @param, @return, @examples
 4. , s b                # Build package to update docs
-```
+```bash
 
 ### Navigate Code
 
-```
+```text
 1. , g g                # Jump to definition
 2. Explore code
 3. , g b                # Jump back
-```
+```bash
 
 ### Fix Syntax Errors
 
-```
+```text
 1. SPC e l              # List all errors
 2. SPC e n              # Jump to next error
 3. Fix code (in Insert mode: i)
 4. ESC                  # Return to Normal mode
 5. SPC f s              # Save
-```
+```bash
 
 ### Test R Code Interactively
 
-```
+```text
 1. SPC SPC R            # Start R console
 2. Write code in R file
 3. , s l                # Send line to R
 4. Check output in R console
 5. , s s                # Jump to R console if needed
-```
+```bash
 
 ### Git Workflow
 
-```
+```text
 1. SPC g s              # Open Magit status
 2. s                    # Stage files
 3. c c                  # Commit
 4. Write commit message
 5. C-c C-c              # Confirm commit
 6. P p                  # Push
-```
+```bash
 
 ## macOS-Specific Notes
 
@@ -379,7 +379,7 @@ To add custom keybindings, edit `~/.spacemacs` in the `dotspacemacs/user-config`
   ;; Add global keybinding
   (spacemacs/set-leader-keys "o c" 'my-custom-function)
 )
-```
+```bash
 
 ## Quick Reference Card
 

@@ -58,7 +58,7 @@ Add the following Elisp functions to your `init.el` or `config.el` to expose the
 (global-set-key (kbd "C-c o l") 'obs-r-link-project)
 (global-set-key (kbd "C-c o f") 'obs-log-file)
 (global-set-key (kbd "C-c o t") 'obs-fetch-theory)
-```
+```bash
 
 ## Common Use Cases
 

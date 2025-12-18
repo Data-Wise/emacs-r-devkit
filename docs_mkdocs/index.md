@@ -128,7 +128,7 @@ install.packages(c(
   "lintr",
   "styler"
 ))
-```
+```bash
 
 ### Optional R Packages
 
@@ -139,7 +139,7 @@ install.packages(c(
   "covr",            # For test coverage
   "pkgdown"          # For package websites
 ))
-```
+```bash
 
 ## 🎨 Integrated Workflow
 
