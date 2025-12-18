@@ -130,7 +130,7 @@ install.packages(c(
 
 ```bash
 # Run dependency checker
-./check-dependencies.sh
+./scripts/check-dependencies.sh
 ```text
 
 Expected output:

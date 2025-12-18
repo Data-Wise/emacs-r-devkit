@@ -432,7 +432,7 @@ SPC f e d    ; Open ~/.spacemacs
 emacs -Q
 
 # Load Spacemacs manually
-M-x load-file RET ~/.emacs.d/init.el RET
+M-x load-file RET ~/.emacs.d/config/init.el RET
 ```text
 
 ---
