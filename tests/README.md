@@ -1,98 +1,140 @@
-# Test Files
+# Test Suite
 
-**Verification and testing resources for emacs-r-devkit**
+Comprehensive test suite for emacs-r-devkit.
 
----
+## Test Suites
 
-## 📋 Files
+### A) Documentation Tests (`test_documentation.py`)
 
-### Test Scripts
+- Link validation (internal and external)
+- Markdown syntax validation
+- Code block language specification
+- MkDocs build verification
+- Cross-reference validation
 
-1. **[test-features.R](test-features.R)**
-   - Interactive feature testing for all emacs-r-devkit capabilities
-   - Tests ESS, Flycheck, LSP, Company, Roxygen2, and more
-   - Run in Emacs to verify environment setup
+**Run:** `./run_doc_tests.sh`
 
-2. **[test-roxygen.R](test-roxygen.R)**
-   - Roxygen skeleton generation testing
-   - Tests parameter detection with complex function signatures
-   - Validates roxygen insertion functionality
+### B) Emacs Lisp Tests (`test-emacs-r-devkit.el`)
 
-### Checklists
+- Configuration tests (layers, ESS, company)
+- Custom function tests (roxygen, styler, S7)
+- Keybinding tests
+- Mode activation tests
+- LSP backend tests
+- Helper script tests
 
-3. **[TEST-CHECKLIST.md](TEST-CHECKLIST.md)**
-   - Comprehensive verification checklist
-   - Systematic testing procedure
-   - Covers all features and integrations
+**Run:** `./run_elisp_tests.sh`
 
----
+### C) R Package Tests (`test_r_packages.R`)
 
-## 🚀 Usage
+- Required package installation
+- Styler functionality
+- Lintr functionality
+- Roxygen2 functionality
+- Language server availability
+- Helper script functionality
+- devtools/usethis functions
 
-### Run Interactive Tests
+**Run:** `Rscript test_r_packages.R`
 
-```bash
-# Open test file in Emacs
-emacs tests/test-features.R
+### D) Integration Tests (`test_integration.sh`)
 
-# In Emacs:
-# 1. Start R console: M-x R
-# 2. Execute code blocks with C-RET
-# 3. Verify each feature works as expected
-```
+- Spacemacs configuration exists
+- Helper scripts present and executable
+- R availability and version
+- Required R packages installed
+- Emacs functionality
+- Documentation builds
 
-### Run Roxygen Tests
+**Run:** `./test_integration.sh`
 
-```bash
-# Open roxygen test file
-emacs tests/test-roxygen.R
-
-# In Emacs:
-# 1. Place cursor on function
-# 2. Insert roxygen: C-c r r
-# 3. Verify parameters detected correctly
-```
-
-### Follow Checklist
+## Running All Tests
 
 ```bash
-# View checklist
-cat tests/TEST-CHECKLIST.md
-
-# Or open in Emacs
-emacs tests/TEST-CHECKLIST.md
+./run_all_tests.sh
 ```
 
----
+This runs all test suites in order and provides a summary.
 
-## ✅ What to Test
+## Requirements
 
-### Core Features
-- ESS integration and R console
-- Flycheck with lintr and styler
-- LSP mode (go to definition, find references)
-- Company completion
-- Roxygen2 skeleton generation
+### Python
 
-### Advanced Features
-- Auto-formatting with styler
-- S7 snippets
-- Git integration (Magit)
-- Project management (Projectile)
+- Python 3.6+
+- No additional packages required
 
-### macOS Integration
-- GUI Emacs PATH setup
-- Option key as Meta
-- Command key bindings
+### R
 
----
+- R 4.0+
+- testthat package
 
-## 📚 Related
+### Optional
 
-**Main documentation:** [emacs-r-devkit](../)
-**Troubleshooting:** [guides/TROUBLESHOOTING.md](../guides/TROUBLESHOOTING.md)
-**Configuration:** [docs_mkdocs/configuration.md](../docs_mkdocs/configuration.md)
+- markdownlint (for enhanced markdown checking)
+- markdown-link-check (for link validation)
 
----
+## Test Output
 
-**Last Updated:** 2025-12-07
+Tests use color-coded output:
+
+- 🟢 Green = Pass
+- 🔴 Red = Fail
+- 🟡 Yellow = Warning
+
+## CI/CD Integration
+
+These tests can be integrated into GitHub Actions:
+
+```yaml
+name: Tests
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run tests
+        run: cd tests && ./run_all_tests.sh
+```
+
+## Adding New Tests
+
+### Documentation Tests
+
+Add test methods to `DocumentationTester` class in `test_documentation.py`.
+
+### Emacs Lisp Tests
+
+Add `ert-deftest` definitions to `test-emacs-r-devkit.el`.
+
+### R Package Tests
+
+Add `test_that` blocks to `test_r_packages.R`.
+
+### Integration Tests
+
+Add test sections to `test_integration.sh`.
+
+## Troubleshooting
+
+### Documentation tests fail
+
+- Ensure you're running from project root
+- Check mkdocs.yml exists
+- Verify all referenced files exist
+
+### Emacs tests fail
+
+- Ensure Spacemacs is installed
+- Check ~/.spacemacs exists
+- Verify ESS and other packages are installed
+
+### R tests fail
+
+- Install required R packages: `install.packages(c("devtools", "usethis", "roxygen2", "testthat", "lintr", "styler", "languageserver"))`
+- Check R is in PATH
+
+### Integration tests fail
+
+- Follow installation guide in docs
+- Verify all dependencies are installed
