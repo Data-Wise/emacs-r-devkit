@@ -73,62 +73,73 @@ mkdir -p ~/.emacs.d/bin && cp bin/* ~/.emacs.d/bin/ && chmod +x ~/.emacs.d/bin/*
 Rscript -e 'install.packages(c("devtools", "usethis", "roxygen2", "testthat", "lintr", "styler", "languageserver"))'
 
 # Verify installation
-./check-dependencies.sh
-```
-
 ### First Launch
 
 ```bash
-# Start Spacemacs (first launch takes 10-15 minutes for layer installation)
-emacs
-
-# Or use GUI
-open -a Emacs
-```
-
-**During first launch:**
-
-The smart installer handles everything automatically:
+## ⚡ Installation (Copy-Paste This)
 
 ```bash
-# Clone the repository
 git clone https://github.com/Data-Wise/spacemacs-rstats.git
 cd spacemacs-rstats
-
-# Run the smart installer
 ./scripts/install.sh
 ```
 
-The installer will:
+**Done!** ☕ Grab coffee (~10 min install time)
 
-- ✅ Check your system health
-- ✅ Install Emacs (if needed)
-- ✅ Install Spacemacs (develop branch)
-- ✅ Configure everything for R development
-- ✅ Install required R packages
+<details>
+<summary>🔍 What's happening?</summary>
 
-**First launch takes 10-15 minutes** as Spacemacs installs packages.
+**The installer automatically:**
 
-### Installation Management
+1. ✅ Checks macOS version, disk space, network
+2. ✅ Installs Homebrew (if needed)
+3. ✅ Installs Emacs with native compilation
+4. ✅ Installs Spacemacs
+5. ✅ Configures for R development
+6. ✅ Installs R packages
+
+**First Emacs launch:** Takes 10-15 min (packages installing)
+
+</details>
+
+<details>
+<summary>⚙️ Troubleshooting</summary>
+
+**Already installed?**
 
 ```bash
-# Check system health
-./scripts/health-check.sh
+./scripts/health-check.sh --pre-flight
+```
 
-# Update existing installation
-./scripts/patch.sh
+Shows 4 options: check health, update, repair, or reinstall.
 
-# Repair issues
-./scripts/repair.sh
+**Something broke?**
 
-# Uninstall (3 levels)
-./scripts/uninstall.sh
+```bash
+./scripts/repair.sh  # Interactive menu
+```
 
-# Force reinstall
+**Start over?**
+
+```bash
 ./scripts/install.sh --force
 ```
 
-See [Installation Guide](https://data-wise.github.io/spacemacs-rstats/getting-started/) for details.
+</details>
+
+<details>
+<summary>🤓 Advanced options</summary>
+
+```bash
+./scripts/install.sh --skip-checks  # Skip pre-flight (not recommended)
+./scripts/install.sh --yes          # No prompts
+./scripts/patch.sh                  # Update only
+./scripts/uninstall.sh              # Remove (3 levels)
+```
+
+See [Installation Management](https://data-wise.github.io/spacemacs-rstats/installation-management/) for details.
+
+</details>
 etup guide
 
 - [**Migration Guide**](https://data-wise.github.io/spacemacs-rstats/migration-guide/) - Migrating from vanilla Emacs

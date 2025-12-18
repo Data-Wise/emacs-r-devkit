@@ -19,13 +19,30 @@ BLUE='\033[0;34m'
 BOLD='\033[1m'
 NC='\033[0m' # No Color
 
-# Configuration
+# Get script directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
+# Default values
 FORCE_REINSTALL=false
 UPDATE_ONLY=false
-AUTO_YES=false
+YES_TO_ALL=false
 SKIP_CHECKS=false
+
+# Progress indicator function
+show_progress() {
+    local current=$1
+    local total=$2
+    local desc=$3
+    local time_est=$4
+    
+    echo ""
+    echo "╔════════════════════════════════════════════════════════╗"
+    printf "║  Step %d/%d: %-40s ║\n" "$current" "$total" "$desc"
+    printf "║  ⏱️  Estimated time: %-35s ║\n" "$time_est"
+    echo "╚════════════════════════════════════════════════════════╝"
+    echo ""
+}
 
 # Parse arguments
 parse_args() {
@@ -249,23 +266,29 @@ fresh_install() {
     echo "╚════════════════════════════════════════════════════════╝"
     echo ""
     
-    # Check/Install Emacs
-    if ! command -v emacs &> /dev/null; then
-        install_emacs || return 1
-    else
-        log_success "Emacs already installed"
-    fi
+    # Step 1: Check/Install Emacs
+    show_progress 1 4 "Installing Emacs..." "5 minutes ☕"
+    install_emacs || {
+        log_error "Emacs installation failed"
+        return 1
+    }
     
-    # Install Spacemacs
-    install_spacemacs || return 1
+    # Step 2: Install Spacemacs
+    show_progress 2 4 "Installing Spacemacs..." "2 minutes"
+    install_spacemacs || {
+        log_error "Spacemacs installation failed"
+        return 1
+    }
     
-    # Install our configuration
-    install_config || return 1
+    # Step 3: Install configuration
+    show_progress 3 4 "Configuring for R development..." "1 minute"
+    install_config || {
+        log_error "Configuration installation failed"
+        return 1
+    }
     
-    # Install R packages
-    log_step "Installing R packages..."
-    log_info "This may take several minutes..."
-    
+    # Step 4: Install R packages
+    show_progress 4 4 "Installing R packages..." "3 minutes"
     if command -v Rscript &> /dev/null; then
         Rscript -e 'install.packages(c("devtools", "usethis", "roxygen2", "testthat", "lintr", "styler", "languageserver"), repos="https://cloud.r-project.org")' || {
             log_warning "Some R packages failed to install. You can install them later."

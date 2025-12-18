@@ -1,5 +1,8 @@
 # Installation Management
 
+> **TL;DR:** Run `./scripts/install.sh` - it does everything automatically.  
+> Already installed? Run `./scripts/health-check.sh` to check status.
+
 The spacemacs-rstats includes a comprehensive installation management system that handles all aspects of installation, updates, repairs, and removal.
 
 ## System Overview

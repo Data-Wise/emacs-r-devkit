@@ -1,5 +1,9 @@
 # Getting Started
 
+> **⚡ QUICK START:** `git clone https://github.com/Data-Wise/spacemacs-rstats.git && cd spacemacs-rstats && ./scripts/install.sh` → Done!
+>
+> **Time:** ~10 minutes | **Difficulty:** Easy | **Prerequisites:** macOS 12+
+
 This guide will walk you through installing and setting up spacemacs-rstats with Spacemacs on your macOS system.
 
 ## What is Spacemacs?
