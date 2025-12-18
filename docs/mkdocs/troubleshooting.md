@@ -1,13 +1,9 @@
 # Troubleshooting
 
-Solutions to common issues with spacemacs-rstats Spacemacs environment on macOS.
+> **TL;DR:** Run `./scripts/health-check.sh` to diagnose issues.  
+> Common fixes: `./scripts/repair.sh` (interactive menu)
 
-!!! tip "Quick Diagnosis"
-    Run the dependency checker first:
-    ```bash
-    ./check-dependencies.sh
-    ```
-    This identifies most common problems automatically.
+Solutions to common issues with spacemacs-rstats Spacemacs environment on macOS.
 
 ## Installation Issues
 

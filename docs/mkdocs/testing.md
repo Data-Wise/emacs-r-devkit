@@ -1,5 +1,8 @@
 # Testing Guide
 
+> **TL;DR:** Run all tests: `./tests/run_all_tests.sh`  
+> Or individual suites: `pytest tests/test_documentation.py -v`
+
 The spacemacs-rstats includes comprehensive testing infrastructure with 88 automated tests.
 
 ## Test Suites

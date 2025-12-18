@@ -3,7 +3,7 @@
 # Monitor Spacemacs installation progress
 # Usage: ./installation-checkpoint.sh
 
-set -euo pipefail
+set -uo pipefail
 
 # Colors
 GREEN='\033[0;32m'
@@ -33,12 +33,13 @@ check_item() {
     if eval "$test_cmd" &> /dev/null; then
         echo -e "${GREEN}✓${NC}"
         ((PASSED++))
-        return 0
     else
         echo -e "${RED}✗${NC}"
         ((FAILED++))
-        return 1
     fi
+    
+    # Always return 0 to prevent script exit with set -e
+    return 0
 }
 
 echo "Checking installation components..."
@@ -52,8 +53,13 @@ check_item "Emacs installed" "command -v emacs"
 
 # 3. Emacs version
 if command -v emacs &> /dev/null; then
-    VERSION=$(emacs --version | head -1 | grep -oE '[0-9]+\.[0-9]+' | head -1)
-    check_item "Emacs version >= 27" "[[ \$(echo \"$VERSION >= 27\" | bc) -eq 1 ]]"
+    VERSION=$(emacs --version | head -1 | grep -oE '[0-9]+' | head -1)
+    if [[ $VERSION -ge 27 ]]; then
+        check_item "Emacs version >= 27" "true"
+    else
+        echo -e "Emacs version >= 27                                ${RED}✗${NC} (Found: $VERSION)"
+        ((FAILED++))
+    fi
 else
     echo -e "Emacs version >= 27                                ${RED}✗${NC} (Emacs not found)"
     ((FAILED++))
