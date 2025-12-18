@@ -138,6 +138,7 @@ test_that("usethis functions are available", {
 cat("\n🧪 Running R Package Tests\n")
 cat("==========================\n\n")
 
-test_results <- test_dir(".", reporter = "summary")
+# Run tests from this file
+test_file(sys.frame(1)$ofile)
 
 cat("\n✅ R package tests complete!\n")

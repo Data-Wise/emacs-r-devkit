@@ -188,6 +188,10 @@ class DocumentationTester:
             refs = ref_pattern.findall(content)
             
             for text, ref_file in refs:
+                # Skip external URLs (GitHub, etc.)
+                if ref_file.startswith(('http://', 'https://')):
+                    continue
+                
                 # Extract filename without path
                 ref_name = Path(ref_file).stem
                 
