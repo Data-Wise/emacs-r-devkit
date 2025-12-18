@@ -5,7 +5,7 @@
 
 echo "╔════════════════════════════════════════════════════════════════╗"
 echo "║  R Development Workflow Test Checklist                        ║"
-echo "║  emacs-plus@30 with emacs-r-devkit configuration              ║"
+echo "║  emacs-plus@30 with spacemacs-rstats configuration              ║"
 echo "╚════════════════════════════════════════════════════════════════╝"
 echo ""
 echo "This is an INTERACTIVE checklist. Follow the prompts and test"
@@ -202,9 +202,9 @@ fi
 echo "Next steps:"
 if [ $FAILED -eq 0 ]; then
     echo "  ✅ Start using Emacs for R development!"
-    echo "  ✅ Reference: ~/projects/dev-tools/emacs-r-devkit/guides/CHEAT-SHEET.md"
+    echo "  ✅ Reference: ~/projects/dev-tools/spacemacs-rstats/guides/CHEAT-SHEET.md"
 else
-    echo "  📖 Check: ~/projects/dev-tools/emacs-r-devkit/guides/TROUBLESHOOTING.md"
+    echo "  📖 Check: ~/projects/dev-tools/spacemacs-rstats/guides/TROUBLESHOOTING.md"
     echo "  📧 Review error messages in *Messages* buffer (C-h e)"
 fi
 echo ""

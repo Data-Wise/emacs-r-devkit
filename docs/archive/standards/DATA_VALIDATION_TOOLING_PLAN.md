@@ -1,6 +1,6 @@
-# Tooling Plan: Data Validation Module Support in emacs-r-devkit
+# Tooling Plan: Data Validation Module Support in spacemacs-rstats
 
-**Objective:** Enhance `emacs-r-devkit` to provide first-class support for building robust data validation modules using S7 and `checkmate`.
+**Objective:** Enhance `spacemacs-rstats` to provide first-class support for building robust data validation modules using S7 and `checkmate`.
 
 This plan focuses on the **Editor Support** layer—what we need to add to Emacs to make writing the validation code faster and less error-prone.
 
@@ -55,7 +55,7 @@ S7::method(validate, ${1:ValidatorClass}) <- function(x, data, ...) {
 
 Enhance `test-features.R` or creating a new helper function in `init.el` to scaffold validation tests.
 
-**Proposed Function:** `emacs-r-devkit/insert-validation-test`
+**Proposed Function:** `spacemacs-rstats/insert-validation-test`
 **Keybinding:** `C-c r t v` (Test Validation)
 **Action:** Inserts a `testthat` block specifically for validation edge cases.
 
@@ -102,7 +102,7 @@ Add a section to `guides/TUTORIAL.md` on "Workflow: Building Type-Safe Packages"
 ## 5. ✅ Implementation Checklist
 
 - [ ] Create `snippets/ess-mode/s7-validation.yasnippet`
-- [ ] Implement `emacs-r-devkit/insert-validation-test` in `init.el`
+- [ ] Implement `spacemacs-rstats/insert-validation-test` in `init.el`
 - [ ] Bind `C-c r t v`
 - [ ] Document the workflow in `guides/`
 

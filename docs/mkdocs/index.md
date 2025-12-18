@@ -1,10 +1,10 @@
-# emacs-r-devkit
+# spacemacs-rstats
 
 **Professional Emacs environment for R package development on macOS**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/release/Data-Wise/emacs-r-devkit.svg)](https://github.com/Data-Wise/emacs-r-devkit/releases)
-[![GitHub stars](https://img.shields.io/github/stars/Data-Wise/emacs-r-devkit.svg?style=social)](https://github.com/Data-Wise/emacs-r-devkit/stargazers)
+[![GitHub release](https://img.shields.io/github/release/Data-Wise/spacemacs-rstats.svg)](https://github.com/Data-Wise/spacemacs-rstats/releases)
+[![GitHub stars](https://img.shields.io/github/stars/Data-Wise/spacemacs-rstats.svg?style=social)](https://github.com/Data-Wise/spacemacs-rstats/stargazers)
 
 ---
 
@@ -68,8 +68,8 @@
 
     ```bash
     # Clone the repository
-    git clone https://github.com/Data-Wise/emacs-r-devkit.git
-    cd emacs-r-devkit
+    git clone https://github.com/Data-Wise/spacemacs-rstats.git
+    cd spacemacs-rstats
 
     # Run the installer
     ./install-init.sh
@@ -143,7 +143,7 @@ install.packages(c(
 
 ## 🎨 Integrated Workflow
 
-emacs-r-devkit is designed to work seamlessly with your existing R development workflow:
+spacemacs-rstats is designed to work seamlessly with your existing R development workflow:
 
 === "Emacs (Editing)"
 
@@ -179,7 +179,7 @@ emacs-r-devkit is designed to work seamlessly with your existing R development w
     - ++ctrl+x++ ++ctrl+f++ - Open file
     - ++ctrl+x++ ++ctrl+s++ - Save file
     - ++option+x++ - Execute command (`M-x`)
-    - ++ctrl+c++ ++r++ - emacs-r-devkit prefix (shows all options)
+    - ++ctrl+c++ ++r++ - spacemacs-rstats prefix (shows all options)
 
 !!! warning "macOS Important"
     **Meta key** (M-) = **Option (⌥)**, NOT Command!
@@ -204,7 +204,7 @@ Works seamlessly with:
 
 ## 📄 License
 
-MIT License - see [LICENSE](https://github.com/Data-Wise/emacs-r-devkit/blob/main/LICENSE) for details.
+MIT License - see [LICENSE](https://github.com/Data-Wise/spacemacs-rstats/blob/main/LICENSE) for details.
 
 ## 🙏 Acknowledgments
 

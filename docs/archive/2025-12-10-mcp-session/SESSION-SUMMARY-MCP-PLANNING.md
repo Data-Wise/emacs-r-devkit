@@ -424,7 +424,7 @@ Main work: RMediation simulation study
 ### With Existing Tools:
 - ✅ claude-statistical-research MCP (extending)
 - ✅ zsh-claude-workflow (workflow bridge)
-- ✅ emacs-r-devkit (Emacs integration)
+- ✅ spacemacs-rstats (Emacs integration)
 - ✅ obsidian-cli-ops (vault management)
 
 ### With Obsidian Vaults:

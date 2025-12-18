@@ -104,7 +104,7 @@ if [ -e "/Applications/Emacs.app" ]; then
     echo "  3. Set as default editor (if desired)"
     echo ""
     echo "Next: Run the verification script"
-    echo "  bash ~/projects/dev-tools/emacs-r-devkit/post-install-verification.sh"
+    echo "  bash ~/projects/dev-tools/spacemacs-rstats/post-install-verification.sh"
     echo ""
 else
     echo -e "${RED}❌ Verification failed${NC}"

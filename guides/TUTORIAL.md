@@ -1,6 +1,6 @@
-# emacs-r-devkit Tutorial
+# spacemacs-rstats Tutorial
 
-A beginner-friendly guide to using emacs-r-devkit for R package development.
+A beginner-friendly guide to using spacemacs-rstats for R package development.
 
 ## About This Tutorial
 
@@ -39,7 +39,7 @@ open -a Emacs test.R
 **First Launch:**
 - Takes 10-15 minutes (package installation & compilation)
 - You'll see compilation messages (normal!)
-- Wait for: `emacs-r-devkit loaded! [macOS GUI | 30.2] Key prefix: C-c r`
+- Wait for: `spacemacs-rstats loaded! [macOS GUI | 30.2] Key prefix: C-c r`
 
 ### Understanding Emacs Notation (macOS)
 
@@ -148,7 +148,7 @@ C-g     (Control-g) → Cancel/escape (VERY IMPORTANT!)
 
 ## Keybindings Reference
 
-### emacs-r-devkit Commands (Prefix: `C-c r`)
+### spacemacs-rstats Commands (Prefix: `C-c r`)
 
 **Quick Reference:** Press `C-c r` and wait - which-key will show all available commands!
 
@@ -496,13 +496,13 @@ options(styler.cache_root = NULL)  # Disable caching
 **Change keybindings:**
 ```elisp
 ;; Add to ~/.emacs.d/init.el
-(global-set-key (kbd "C-c d") 'emacs-r-devkit/insert-roxygen-skeleton)
+(global-set-key (kbd "C-c d") 'spacemacs-rstats/insert-roxygen-skeleton)
 ```
 
 **Disable auto-styling for specific projects:**
 ```elisp
 ;; Create .dir-locals.el in project root
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil))))
 ```
 
 ### Troubleshooting Common Issues

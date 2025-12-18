@@ -12,7 +12,7 @@ This directory contains comprehensive documentation standards for all Data-Wise 
 
 1. **[DOCUMENTATION_STANDARDS.md](DOCUMENTATION_STANDARDS.md)**
    - MkDocs documentation standards for tools and frameworks
-   - Applies to: emacs-r-devkit, claude-r-dev
+   - Applies to: spacemacs-rstats, claude-r-dev
    - Features claude-r-dev navigation and content patterns ⭐
 
 2. **[MEDIATIONVERSE_STANDARDS.md](MEDIATIONVERSE_STANDARDS.md)**
@@ -87,10 +87,10 @@ rdev        # Full development cycle
 
 ## 🔗 Related
 
-**Parent project:** [emacs-r-devkit](../)
+**Parent project:** [spacemacs-rstats](../)
 **Claude skill:** `~/.claude/skills/data-wise-documentation.md`
 **Examples:**
-- MkDocs: claude-r-dev, emacs-r-devkit
+- MkDocs: claude-r-dev, spacemacs-rstats
 - pkgdown: mediationverse, medfit
 
 ---

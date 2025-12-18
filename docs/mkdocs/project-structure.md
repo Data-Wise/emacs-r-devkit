@@ -1,11 +1,11 @@
 # Project Structure
 
-The emacs-r-devkit project follows a clean, organized structure:
+The spacemacs-rstats project follows a clean, organized structure:
 
 ## Directory Layout
 
 ```
-emacs-r-devkit/
+spacemacs-rstats/
 ├── config/              # Emacs configuration
 │   ├── init.el         # Main configuration file
 │   ├── dotspacemacs.el # Spacemacs configuration
@@ -89,8 +89,8 @@ After installation, files are placed in:
 1. **Clone repository**
 
    ```bash
-   git clone https://github.com/Data-Wise/emacs-r-devkit.git
-   cd emacs-r-devkit
+   git clone https://github.com/Data-Wise/spacemacs-rstats.git
+   cd spacemacs-rstats
    ```
 
 2. **Install dependencies**

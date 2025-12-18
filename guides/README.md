@@ -1,6 +1,6 @@
 # User Guides
 
-**Comprehensive guides for using emacs-r-devkit**
+**Comprehensive guides for using spacemacs-rstats**
 
 ---
 
@@ -9,7 +9,7 @@
 ### Complete Documentation
 
 1. **[TUTORIAL.md](TUTORIAL.md)**
-   - Complete user guide for emacs-r-devkit
+   - Complete user guide for spacemacs-rstats
    - Installation, configuration, and usage
    - macOS-specific setup instructions
    - Comprehensive keybinding reference with ⌃/⌥/⌘ notation
@@ -37,7 +37,7 @@
 
 ## 🎯 Which Guide Should I Use?
 
-### New to emacs-r-devkit?
+### New to spacemacs-rstats?
 
 → Start with **[TUTORIAL.md](TUTORIAL.md)**
 
@@ -65,20 +65,20 @@
 
 ## 📖 Additional Resources
 
-**Online Documentation:** <https://data-wise.github.io/emacs-r-devkit/>
+**Online Documentation:** <https://data-wise.github.io/spacemacs-rstats/>
 
 **Specific Topics:**
 
-- [Getting Started](https://data-wise.github.io/emacs-r-devkit/getting-started/)
-- [Features](https://data-wise.github.io/emacs-r-devkit/features/)
-- [Keybindings](https://data-wise.github.io/emacs-r-devkit/keybindings/)
-- [Configuration](https://data-wise.github.io/emacs-r-devkit/configuration/)
+- [Getting Started](https://data-wise.github.io/spacemacs-rstats/getting-started/)
+- [Features](https://data-wise.github.io/spacemacs-rstats/features/)
+- [Keybindings](https://data-wise.github.io/spacemacs-rstats/keybindings/)
+- [Configuration](https://data-wise.github.io/spacemacs-rstats/configuration/)
 
 **Testing:**
 
 - [Testing Quick Reference](TESTING-QUICK-REF.md) - Test suite overview
 - See [tests/](../tests/) for verification procedures
-- [Edge Case Testing](https://data-wise.github.io/emacs-r-devkit/edge-case-testing/) - Online docs
+- [Edge Case Testing](https://data-wise.github.io/spacemacs-rstats/edge-case-testing/) - Online docs
 
 ---
 
@@ -86,7 +86,7 @@
 
 ### macOS Keybindings
 
-emacs-r-devkit is configured for macOS:
+spacemacs-rstats is configured for macOS:
 
 - <kbd>⌃</kbd> = Control
 - <kbd>⌥</kbd> = Option (Meta in Emacs)
@@ -109,10 +109,10 @@ emacs-r-devkit is configured for macOS:
 
 Found an issue or have suggestions?
 
-- Report bugs: [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)
+- Report bugs: [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)
 - Improve guides: [CONTRIBUTING.md](../CONTRIBUTING.md)
 
 ---
 
 **Last Updated:** 2025-12-07
-**Related:** [emacs-r-devkit](../) | [tests/](../tests/) | [standards/](../standards/)
+**Related:** [spacemacs-rstats](../) | [tests/](../tests/) | [standards/](../standards/)

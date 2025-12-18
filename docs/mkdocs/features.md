@@ -1,6 +1,6 @@
 # Features
 
-emacs-r-devkit provides a complete, integrated development environment for R package development powered by Spacemacs.
+spacemacs-rstats provides a complete, integrated development environment for R package development powered by Spacemacs.
 
 ## Core Components
 
@@ -194,7 +194,7 @@ my_func <- function(x, y) {
 Create `.dir-locals.el` in project root:
 
 ```elisp
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil))))
 ```bash
 
 ### Usethis Integration
@@ -353,7 +353,7 @@ Pre-configured for performance:
 
 ## Workflow Integration
 
-emacs-r-devkit integrates seamlessly with:
+spacemacs-rstats integrates seamlessly with:
 
 ### Terminal Workflow
 
@@ -373,7 +373,7 @@ SPC f s        # Save (auto-format)
 
 Works with Claude Code for AI assistance:
 
-- Access via `~/.claude/skills/emacs-r-devkit.md`
+- Access via `~/.claude/skills/spacemacs-rstats.md`
 - Context-aware help
 - Workflow automation
 
@@ -399,7 +399,7 @@ See [Configuration](configuration.md) for details.
 
 ## Feature Comparison
 
-| Feature | Without emacs-r-devkit | With emacs-r-devkit |
+| Feature | Without spacemacs-rstats | With spacemacs-rstats |
 |---------|----------------------|-------------------|
 | Code Editing | Basic text editing | Syntax highlighting, smart indentation |
 | Documentation | Manual roxygen | Auto-generated skeletons |

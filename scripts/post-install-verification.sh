@@ -120,7 +120,7 @@ echo "━━━━━━━━━━━━━━━━━━━━━━━━�
 echo ""
 
 # Test 7: Check init.el
-INIT_EL="$HOME/projects/dev-tools/emacs-r-devkit/init.el"
+INIT_EL="$HOME/projects/dev-tools/spacemacs-rstats/init.el"
 if [ -f "$INIT_EL" ]; then
     test_result 0 "init.el found at $INIT_EL"
 

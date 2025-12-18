@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Integration Tests for emacs-r-devkit
+# Integration Tests for spacemacs-rstats
 #
 # Tests the complete workflow:
 # 1. Spacemacs starts

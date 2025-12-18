@@ -6,7 +6,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TEST_FILE="$SCRIPT_DIR/test-emacs-r-devkit.el"
+TEST_FILE="$SCRIPT_DIR/test-spacemacs-rstats.el"
 
 echo "🧪 Running Emacs Lisp Tests"
 echo "==========================="

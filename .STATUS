@@ -1,4 +1,4 @@
-project: emacs-r-devkit
+project: spacemacs-rstats
 status: stable
 priority: P2
 progress: 100

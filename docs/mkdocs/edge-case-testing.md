@@ -1,6 +1,6 @@
 # Edge Case Testing Guide
 
-This document describes the edge case tests included in emacs-r-devkit and how to use them for development and debugging.
+This document describes the edge case tests included in spacemacs-rstats and how to use them for development and debugging.
 
 ## Overview
 
@@ -250,7 +250,7 @@ cat tests/test_run.log | grep -A 20 "FAILED"
 
 ```bash
 # Emacs Lisp
-emacs --batch -l tests/test-emacs-r-devkit.el \
+emacs --batch -l tests/test-spacemacs-rstats.el \
   -f ert-run-tests-batch-and-exit
 
 # R

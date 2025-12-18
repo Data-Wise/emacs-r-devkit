@@ -7,7 +7,7 @@ Quick guide to verify your Spacemacs configuration is working correctly.
 Run the automated test suite:
 
 ```bash
-cd ~/projects/dev-tools/emacs-r-devkit/tests
+cd ~/projects/dev-tools/spacemacs-rstats/tests
 ./run_all_tests.sh
 ```
 
@@ -96,4 +96,4 @@ M-x which-key-mode
 
 - [Spacemacs Learning Curriculum](02-LEARNING-CURRICULUM.md)
 - [Full Testing Guide](../../tests/README.md)
-- [Edge Case Testing](https://data-wise.github.io/emacs-r-devkit/edge-case-testing/)
+- [Edge Case Testing](https://data-wise.github.io/spacemacs-rstats/edge-case-testing/)

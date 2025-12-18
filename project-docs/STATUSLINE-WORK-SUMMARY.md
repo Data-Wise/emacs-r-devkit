@@ -481,7 +481,7 @@ git push
 **Expected result:**
 
 ```
-╭─ ░▒▓ ⚙️ emacs-r-devkit  main ▓▒░
+╭─ ░▒▓ ⚙️ spacemacs-rstats  main ▓▒░
 ╰─ Sonnet 4.5 │ HH:MM │ ⏱ 0m │ ⚡84% W:11%
 ```
 

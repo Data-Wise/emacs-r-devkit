@@ -64,7 +64,7 @@ EOF
 
 cat > "$FIXTURES_DIR/installed/.spacemacs" << 'EOF'
 ;; -*- mode: emacs-lisp; lexical-binding: t -*-
-;; emacs-r-devkit configuration
+;; spacemacs-rstats configuration
 
 (defun dotspacemacs/layers ()
   (setq-default
@@ -93,7 +93,7 @@ cat > "$FIXTURES_DIR/installed/README.md" << 'EOF'
 Simulates complete installation:
 - Emacs installed
 - Spacemacs installed
-- emacs-r-devkit configuration
+- spacemacs-rstats configuration
 - Helper scripts
 
 Expected health level: 0 (HEALTHY) or shows "Already Installed"
@@ -158,7 +158,7 @@ cat > "$FIXTURES_DIR/spacemacs-vanilla/.emacs.d/init.el" << 'EOF'
 EOF
 
 cat > "$FIXTURES_DIR/spacemacs-vanilla/.spacemacs" << 'EOF'
-;; Vanilla Spacemacs configuration (no emacs-r-devkit)
+;; Vanilla Spacemacs configuration (no spacemacs-rstats)
 (defun dotspacemacs/layers ()
   (setq-default
    dotspacemacs-configuration-layers
@@ -170,7 +170,7 @@ cat > "$FIXTURES_DIR/spacemacs-vanilla/README.md" << 'EOF'
 
 Simulates:
 - Spacemacs installed
-- No emacs-r-devkit configuration
+- No spacemacs-rstats configuration
 
 Expected health level: 3 (NEEDS_REINSTALL) or 1 (NEEDS_UPDATE)
 EOF
@@ -185,7 +185,7 @@ Mock environments for testing installation scripts without affecting the real sy
 
 1. **fresh/** - Fresh system (nothing installed)
 2. **emacs-only/** - Emacs but no Spacemacs
-3. **installed/** - Complete emacs-r-devkit installation
+3. **installed/** - Complete spacemacs-rstats installation
 4. **conflicting/** - Multiple Emacs versions
 5. **corrupted/** - Broken installation
 6. **spacemacs-vanilla/** - Spacemacs without our config

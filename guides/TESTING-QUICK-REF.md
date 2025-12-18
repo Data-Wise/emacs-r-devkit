@@ -1,6 +1,6 @@
 # Testing Guide
 
-Quick reference for running the emacs-r-devkit test suite.
+Quick reference for running the spacemacs-rstats test suite.
 
 ## Quick Start
 

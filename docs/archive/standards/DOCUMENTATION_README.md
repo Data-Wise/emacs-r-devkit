@@ -42,7 +42,7 @@ This directory contains the comprehensive documentation standards framework cove
 
 **Apply to:**
 - claude-r-dev ⭐ (reference implementation)
-- emacs-r-devkit
+- spacemacs-rstats
 - Future tool/framework projects
 
 **Focus:** Just 2 MkDocs projects - concise and practical
@@ -131,7 +131,7 @@ site_name: Your Project Name
 - Progress tracking
 
 **Repositories Identified:**
-- **MkDocs:** emacs-r-devkit ✅, claude-r-dev ⚠️
+- **MkDocs:** spacemacs-rstats ✅, claude-r-dev ⚠️
 - **MediationVerse:** mediationverse, medfit, probmed, rmediation, medrobust, medsim
 - **Others:** TBD by user
 
@@ -162,7 +162,7 @@ cd ~/path/to/project
 
 # 1. Update mkdocs.yml to inherit base config
 cat >> mkdocs.yml <<'EOF'
-INHERIT: https://raw.githubusercontent.com/Data-Wise/emacs-r-devkit/main/mkdocs-base.yml
+INHERIT: https://raw.githubusercontent.com/Data-Wise/spacemacs-rstats/main/mkdocs-base.yml
 EOF
 
 # 2. Ensure required pages exist
@@ -287,9 +287,9 @@ rpkgcommit "message"  # doc → test → style → commit
 
 ## 📁 File Locations
 
-**Standards (in emacs-r-devkit):**
+**Standards (in spacemacs-rstats):**
 ```
-/Users/dt/emacs-r-devkit/
+/Users/dt/spacemacs-rstats/
 ├── DOCUMENTATION_README.md          # This file (overview)
 ├── DOCUMENTATION_STANDARDS.md       # MkDocs standards (2 projects)
 ├── MEDIATIONVERSE_STANDARDS.md      # R package standards (6+ packages)
@@ -308,7 +308,7 @@ rpkgcommit "message"  # doc → test → style → commit
 
 **Examples:**
 ```
-/Users/dt/emacs-r-devkit/            # MkDocs example
+/Users/dt/spacemacs-rstats/            # MkDocs example
 /Users/dt/R-packages/active/mediationverse/_pkgdown.yml  # MediationVerse example
 /Users/dt/R-packages/active/medfit/_pkgdown.yml          # MathJax example
 ```
@@ -396,4 +396,4 @@ Every documentation site should have:
 **Framework Version:** 1.0
 **Last Updated:** 2025-12-07
 **Maintained By:** Data-Wise Organization
-**Contact:** Documentation questions → emacs-r-devkit issues
+**Contact:** Documentation questions → spacemacs-rstats issues

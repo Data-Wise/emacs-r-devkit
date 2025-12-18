@@ -1,6 +1,6 @@
 # Spacemacs Keybindings Guide
 
-**A comprehensive introduction to Spacemacs for emacs-r-devkit users**
+**A comprehensive introduction to Spacemacs for spacemacs-rstats users**
 
 ---
 

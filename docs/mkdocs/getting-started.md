@@ -1,6 +1,6 @@
 # Getting Started
 
-This guide will walk you through installing and setting up emacs-r-devkit with Spacemacs on your macOS system.
+This guide will walk you through installing and setting up spacemacs-rstats with Spacemacs on your macOS system.
 
 ## What is Spacemacs?
 
@@ -60,12 +60,12 @@ cd ~/.emacs.d
 git checkout develop
 ```bash
 
-### Step 2: Clone emacs-r-devkit
+### Step 2: Clone spacemacs-rstats
 
 ```bash
 cd ~/
-git clone https://github.com/Data-Wise/emacs-r-devkit.git
-cd emacs-r-devkit
+git clone https://github.com/Data-Wise/spacemacs-rstats.git
+cd spacemacs-rstats
 ```bash
 
 ### Step 3: Backup Existing Configuration
@@ -137,7 +137,7 @@ Expected output:
 
 ```text
 ================================================
-  emacs-r-devkit Dependency Checker
+  spacemacs-rstats Dependency Checker
 ================================================
 
 System Requirements:
@@ -342,7 +342,7 @@ Now that you're set up:
 
 - [Spacemacs Learning](spacemacs-learning.md) - Complete learning curriculum
 - [Troubleshooting Guide](troubleshooting.md) - Solutions to common problems
-- [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues) - Report bugs
+- [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues) - Report bugs
 - Press `SPC h d` in Spacemacs to access help documentation
 - Press `SPC ?` to see all available keybindings
 

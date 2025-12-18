@@ -277,7 +277,7 @@ Spacemacs uses **Vim-style modal editing**:
 | `C-g` | Cancel | Cancel completion |
 | `SPC i c` | Complete | Manual trigger |
 
-## Custom emacs-r-devkit Commands
+## Custom spacemacs-rstats Commands
 
 ### Usethis Integration
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # repair.sh
-# Repair specific issues with emacs-r-devkit installation
+# Repair specific issues with spacemacs-rstats installation
 #
 # Usage:
 #   ./scripts/repair.sh                    # Interactive mode
@@ -72,7 +72,7 @@ parse_args() {
 
 show_help() {
     cat << EOF
-Repair Tool for emacs-r-devkit
+Repair Tool for spacemacs-rstats
 
 Usage: $0 [OPTIONS]
 
@@ -265,7 +265,7 @@ show_menu() {
     cat << EOF
 
 ╔════════════════════════════════════════════════════════╗
-║  ${BOLD}emacs-r-devkit Repair Tool${NC}                            ║
+║  ${BOLD}spacemacs-rstats Repair Tool${NC}                            ║
 ╚════════════════════════════════════════════════════════╝
 
 What would you like to repair?

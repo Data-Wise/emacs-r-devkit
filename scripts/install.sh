@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # install.sh
-# Smart installer for emacs-r-devkit
+# Smart installer for spacemacs-rstats
 # Orchestrates installation based on system health check
 #
 # Usage:
@@ -62,7 +62,7 @@ parse_args() {
 
 show_help() {
     cat << EOF
-Smart Installer for emacs-r-devkit
+Smart Installer for spacemacs-rstats
 
 Usage: $0 [OPTIONS]
 
@@ -209,7 +209,7 @@ install_spacemacs() {
 
 # Install our configuration
 install_config() {
-    log_step "Installing emacs-r-devkit configuration..."
+    log_step "Installing spacemacs-rstats configuration..."
     
     # Backup existing .spacemacs if it exists
     if [[ -f "$HOME/.spacemacs" ]]; then
@@ -399,7 +399,7 @@ show_next_steps() {
     echo "   ${BLUE}./scripts/health-check.sh${NC}"
     echo ""
     echo "4. Learn Spacemacs:"
-    echo "   ${BLUE}https://data-wise.github.io/emacs-r-devkit/spacemacs-learning/${NC}"
+    echo "   ${BLUE}https://data-wise.github.io/spacemacs-rstats/spacemacs-learning/${NC}"
     echo ""
     echo "════════════════════════════════════════════════════════"
 }
@@ -411,7 +411,7 @@ main() {
     # Show header
     echo ""
     echo "╔════════════════════════════════════════════════════════╗"
-    echo "║  ${BOLD}emacs-r-devkit Smart Installer${NC}                        ║"
+    echo "║  ${BOLD}spacemacs-rstats Smart Installer${NC}                        ║"
     echo "╚════════════════════════════════════════════════════════╝"
     echo ""
     

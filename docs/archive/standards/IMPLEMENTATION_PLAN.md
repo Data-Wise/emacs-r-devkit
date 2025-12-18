@@ -8,7 +8,7 @@
 
 | Project | Type | Current Docs | Standard Needed |
 |---------|------|--------------|-----------------|
-| **emacs-r-devkit** | Tool | MkDocs (new) | ✅ Already standard |
+| **spacemacs-rstats** | Tool | MkDocs (new) | ✅ Already standard |
 | **claude-r-dev** | Framework | MkDocs | Needs update |
 | **MediationVerse packages** | R packages | pkgdown (?) | Needs assessment |
 | **Other R packages** | R packages | pkgdown (?) | Needs assessment |
@@ -55,7 +55,7 @@ Create inventory of all projects:
 # Data-Wise Projects Inventory
 
 ## Documentation Sites (MkDocs)
-- emacs-r-devkit (✅ standardized)
+- spacemacs-rstats (✅ standardized)
 - claude-r-dev (⚠️ needs update)
 - [Other projects...]
 
@@ -107,8 +107,8 @@ Create inventory of all projects:
    ```yaml
    extra:
      projects:
-       - name: emacs-r-devkit
-         url: https://data-wise.github.io/emacs-r-devkit/
+       - name: spacemacs-rstats
+         url: https://data-wise.github.io/spacemacs-rstats/
          description: Emacs environment for R development
        - name: claude-r-dev
          url: https://data-wise.github.io/claude-r-dev/
@@ -281,7 +281,7 @@ Organization overview and project directory
 
 ## 🛠️ Development Tools
 
-- [emacs-r-devkit](https://data-wise.github.io/emacs-r-devkit/) -
+- [spacemacs-rstats](https://data-wise.github.io/spacemacs-rstats/) -
   Professional Emacs environment for R development
 
 - [claude-r-dev](https://data-wise.github.io/claude-r-dev/) -
@@ -354,7 +354,7 @@ When adding new project:
 
 ## 📋 Project-Specific Action Items
 
-### emacs-r-devkit
+### spacemacs-rstats
 - ✅ Already standardized
 - [ ] Add cross-project links when others updated
 
@@ -387,7 +387,7 @@ When adding new project:
    ```yaml
    extra:
      projects:
-       - emacs-r-devkit
+       - spacemacs-rstats
        - claude-r-dev (current)
        - [other projects]
    ```

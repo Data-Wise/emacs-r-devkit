@@ -2,7 +2,7 @@
 
 **Standards for Data-Wise tool and framework documentation sites**
 
-This document covers MkDocs-based documentation for development tools and frameworks (emacs-r-devkit, claude-r-dev).
+This document covers MkDocs-based documentation for development tools and frameworks (spacemacs-rstats, claude-r-dev).
 
 **For R packages:** See [MEDIATIONVERSE_STANDARDS.md](MEDIATIONVERSE_STANDARDS.md)
 
@@ -11,7 +11,7 @@ This document covers MkDocs-based documentation for development tools and framew
 ## 🎯 Scope
 
 **Applies to:**
-- emacs-r-devkit (Emacs configuration)
+- spacemacs-rstats (Emacs configuration)
 - claude-r-dev (AI development framework)
 - Future tool/framework projects
 
@@ -284,9 +284,9 @@ All sites link to other Data-Wise projects:
 ```yaml
 extra:
   projects:
-    - name: emacs-r-devkit
+    - name: spacemacs-rstats
       description: Professional Emacs environment for R package development
-      url: https://data-wise.github.io/emacs-r-devkit/
+      url: https://data-wise.github.io/spacemacs-rstats/
     - name: claude-r-dev
       description: AI-powered R package development with Claude Code
       url: https://data-wise.github.io/claude-r-dev/
@@ -310,8 +310,8 @@ extra:
 
 ---
 
-### emacs-r-devkit
-**URL:** https://data-wise.github.io/emacs-r-devkit/
+### spacemacs-rstats
+**URL:** https://data-wise.github.io/spacemacs-rstats/
 
 **Exemplifies:**
 - Complete standard structure
@@ -347,8 +347,8 @@ For each MkDocs site:
 mkdocs new project-name
 cd project-name
 
-# Copy mkdocs-base.yml from emacs-r-devkit
-cp ~/emacs-r-devkit/mkdocs-base.yml .
+# Copy mkdocs-base.yml from spacemacs-rstats
+cp ~/spacemacs-rstats/mkdocs-base.yml .
 
 # Update mkdocs.yml
 cat > mkdocs.yml <<'EOF'

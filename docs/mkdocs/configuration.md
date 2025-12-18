@@ -1,6 +1,6 @@
 # Configuration
 
-Customize emacs-r-devkit Spacemacs environment for your R development workflow.
+Customize spacemacs-rstats Spacemacs environment for your R development workflow.
 
 ## Configuration File
 
@@ -77,7 +77,7 @@ dotspacemacs-additional-packages '(doom-themes)
 
 ```elisp
 ;; In dotspacemacs/user-config
-(setq emacs-r-devkit/styler-enabled nil)
+(setq spacemacs-rstats/styler-enabled nil)
 ```bash
 
 #### Per Project
@@ -85,7 +85,7 @@ dotspacemacs-additional-packages '(doom-themes)
 Create `.dir-locals.el` in project root:
 
 ```elisp
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil))))
 ```bash
 
 ### Configure Font
@@ -237,7 +237,7 @@ dotspacemacs-enable-lazy-installation 'unused  ; Lazy load layers
 Create `.dir-locals.el` in project root:
 
 ```elisp
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil)
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil)
                 (flycheck-disabled-checkers . (r-lintr))
                 (lsp-mode . nil))))
 ```text
@@ -384,7 +384,7 @@ dotspacemacs-configuration-layers
 
 ;; In dotspacemacs/user-config
 (setq company-idle-delay nil)  ; Manual completion
-(setq emacs-r-devkit/styler-enabled nil)
+(setq spacemacs-rstats/styler-enabled nil)
 ```bash
 
 ### Maximum Features (Powerful Machines)

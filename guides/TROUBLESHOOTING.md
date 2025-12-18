@@ -1,6 +1,6 @@
-# Troubleshooting Guide - emacs-r-devkit
+# Troubleshooting Guide - spacemacs-rstats
 
-Quick solutions to common issues with emacs-r-devkit on macOS.
+Quick solutions to common issues with spacemacs-rstats on macOS.
 
 ## Quick Diagnosis
 
@@ -342,13 +342,13 @@ C-c r S                           # Re-enable
 **Disable globally:**
 ```elisp
 # Add to init.el:
-(setq emacs-r-devkit/styler-enabled nil)
+(setq spacemacs-rstats/styler-enabled nil)
 ```
 
 **Disable for specific project:**
 Create `.dir-locals.el` in project root:
 ```elisp
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil))))
 ```
 
 **Toggle per session:**
@@ -449,7 +449,7 @@ M-x which-key-mode                # Toggle on
 
 **Verify keybindings loaded:**
 ```
-M-: (fboundp 'emacs-r-devkit/insert-roxygen-skeleton) RET
+M-: (fboundp 'spacemacs-rstats/insert-roxygen-skeleton) RET
 ```
 
 Should return: `t`
@@ -616,7 +616,7 @@ emacs -Q
 
 # If that works, your config is the problem
 # Reinstall:
-cd /path/to/emacs-r-devkit
+cd /path/to/spacemacs-rstats
 ./install-init.sh
 ```
 
@@ -647,7 +647,7 @@ open -a Emacs
    ```
 
 2. **Check the Claude skill:**
-   - Your `emacs-r-devkit` skill has detailed info
+   - Your `spacemacs-rstats` skill has detailed info
 
 3. **Review TUTORIAL.md:**
    - Might have missed a setup step
@@ -668,7 +668,7 @@ open -a Emacs
 6. **Reinstall from scratch:**
    ```bash
    rm -rf ~/.emacs.d/
-   cd emacs-r-devkit
+   cd spacemacs-rstats
    ./install-init.sh
    ```
 

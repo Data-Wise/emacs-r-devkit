@@ -1,15 +1,15 @@
 # Project Structure
 
-**Organization of emacs-r-devkit repository**
+**Organization of spacemacs-rstats repository**
 
-This document explains the file and folder organization of the emacs-r-devkit project.
+This document explains the file and folder organization of the spacemacs-rstats project.
 
 ---
 
 ## 📂 Directory Structure
 
 ```text
-emacs-r-devkit/
+spacemacs-rstats/
 ├── .github/                # GitHub configuration
 │   ├── workflows/          # CI/CD workflows (MkDocs deployment)
 │   ├── ISSUE_TEMPLATE/     # Issue templates
@@ -67,7 +67,7 @@ emacs-r-devkit/
 ├── .lintr                  # Lintr configuration
 ├── check-dependencies.sh   # Dependency verification script
 ├── CONTRIBUTING.md         # Contribution guidelines
-├── emacs-r-devkit.code-workspace  # VS Code workspace
+├── spacemacs-rstats.code-workspace  # VS Code workspace
 ├── init.el                 # Main Emacs configuration
 ├── install-init.sh         # Installation script
 ├── KNOWLEDGE_INDEX.md      # Central knowledge map
@@ -92,7 +92,7 @@ emacs-r-devkit/
 - Entry point scripts (`install-init.sh`, `check-dependencies.sh`)
 - Documentation files (`README.md`, `CONTRIBUTING.md`, `LICENSE`)
 - Coordination files (`KNOWLEDGE_INDEX.md`, `ROADMAP.md`, `CHANGELOG.md`, `LEARNINGS.md`)
-- Workspace files (`emacs-r-devkit.code-workspace`)
+- Workspace files (`spacemacs-rstats.code-workspace`)
 
 ### Grouped by Purpose
 
@@ -116,7 +116,7 @@ emacs-r-devkit/
 
 ## 🎯 Finding What You Need
 
-### "I want to install and use emacs-r-devkit"
+### "I want to install and use spacemacs-rstats"
 
 → Start with [README.md](README.md)
 → Then [guides/TUTORIAL.md](guides/TUTORIAL.md)
@@ -138,7 +138,7 @@ emacs-r-devkit/
 
 → [guides/TROUBLESHOOTING.md](guides/TROUBLESHOOTING.md)
 → Run `./check-dependencies.sh`
-→ Check [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)
+→ Check [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)
 
 ### "I want to document other projects"
 
@@ -161,7 +161,7 @@ emacs-r-devkit/
 **Before:**
 
 ```text
-emacs-r-devkit/
+spacemacs-rstats/
 ├── TUTORIAL.md
 ├── CHEAT-SHEET.md
 ├── TROUBLESHOOTING.md
@@ -179,7 +179,7 @@ emacs-r-devkit/
 **After:**
 
 ```
-emacs-r-devkit/
+spacemacs-rstats/
 ├── guides/                # User documentation
 ├── tests/                 # Test files
 ├── standards/             # Documentation standards
@@ -234,7 +234,7 @@ emacs-r-devkit/
 
 **Main README:** [README.md](README.md)
 **Contributing:** [CONTRIBUTING.md](CONTRIBUTING.md)
-**Documentation:** <https://data-wise.github.io/emacs-r-devkit/>
+**Documentation:** <https://data-wise.github.io/spacemacs-rstats/>
 
 ---
 

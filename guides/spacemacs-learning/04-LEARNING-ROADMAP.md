@@ -17,7 +17,7 @@ This roadmap guides you from setting up your environment to mastering profession
 ## 2. Learning Goals
 
 ### Short-term Goals (1 Month)
-- [ ] Goal 1: Install and configure `emacs-r-devkit` successfully.
+- [ ] Goal 1: Install and configure `spacemacs-rstats` successfully.
 - [ ] Goal 2: Master basic Spacemacs navigation and keybindings (`SPC` leader key).
 - [ ] Goal 3: Create a simple "Hello World" R package using the devkit's tools.
 
@@ -28,7 +28,7 @@ This roadmap guides you from setting up your environment to mastering profession
 
 ### Long-term Goals (6 Months)
 - [ ] Goal 1: Publish a package to CRAN or GitHub.
-- [ ] Goal 2: Contribute to the `emacs-r-devkit` or other Open Source projects.
+- [ ] Goal 2: Contribute to the `spacemacs-rstats` or other Open Source projects.
 - [ ] Goal 3: Develop a fully keyboard-driven workflow (no mouse).
 
 ## 3. Complete Learning Path
@@ -174,6 +174,6 @@ This roadmap guides you from setting up your environment to mastering profession
 1.  **The "Pinky Problem"**: Overusing `Ctrl` in standard Emacs.
     *   *Fix*: Embrace the Spacemacs `SPC` leader key.
 2.  **Config Overload**: Trying to customize everything at once.
-    *   *Fix*: Stick to the default `emacs-r-devkit` config for the first month.
+    *   *Fix*: Stick to the default `spacemacs-rstats` config for the first month.
 3.  **Mouse Reliance**: Reaching for the mouse for navigation.
     *   *Fix*: Disable the mouse or force yourself to use `SPC w` for window management.

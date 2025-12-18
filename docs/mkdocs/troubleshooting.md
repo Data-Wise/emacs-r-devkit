@@ -1,6 +1,6 @@
 # Troubleshooting
 
-Solutions to common issues with emacs-r-devkit Spacemacs environment on macOS.
+Solutions to common issues with spacemacs-rstats Spacemacs environment on macOS.
 
 !!! tip "Quick Diagnosis"
     Run the dependency checker first:
@@ -13,7 +13,7 @@ Solutions to common issues with emacs-r-devkit Spacemacs environment on macOS.
 
 ### Configuration Not Found
 
-**Symptom:** Spacemacs starts but emacs-r-devkit features don't work
+**Symptom:** Spacemacs starts but spacemacs-rstats features don't work
 
 **Solution:**
 
@@ -21,8 +21,8 @@ Solutions to common issues with emacs-r-devkit Spacemacs environment on macOS.
 # Check if .spacemacs exists
 ls -la ~/.spacemacs
 
-# If missing, copy from emacs-r-devkit
-cd ~/emacs-r-devkit
+# If missing, copy from spacemacs-rstats
+cd ~/spacemacs-rstats
 cp dotspacemacs.el ~/.spacemacs
 
 # Verify helper scripts
@@ -40,7 +40,7 @@ ls -la ~/.emacs.d/bin/
 mv ~/.spacemacs ~/.spacemacs.backup
 
 # Copy fresh config
-cd ~/emacs-r-devkit
+cd ~/spacemacs-rstats
 cp dotspacemacs.el ~/.spacemacs
 
 # Restart Spacemacs
@@ -373,13 +373,13 @@ Styler failed: Error in parse(...)
 Disable globally (add to ~/.spacemacs user-config):
 
 ```elisp
-(setq emacs-r-devkit/styler-enabled nil)
+(setq spacemacs-rstats/styler-enabled nil)
 ```text
 
 Disable for specific project (`.dir-locals.el`):
 
 ```elisp
-((ess-r-mode . ((emacs-r-devkit/styler-enabled . nil))))
+((ess-r-mode . ((spacemacs-rstats/styler-enabled . nil))))
 ```text
 
 Toggle per session:
@@ -584,8 +584,8 @@ mv ~/.spacemacs ~/.spacemacs.broken
 # Start fresh Spacemacs (will regenerate config)
 emacs
 
-# If that works, restore emacs-r-devkit config:
-cd ~/emacs-r-devkit
+# If that works, restore spacemacs-rstats config:
+cd ~/spacemacs-rstats
 cp dotspacemacs.el ~/.spacemacs
 ```bash
 
@@ -608,8 +608,8 @@ rm ~/.spacemacs
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd ~/.emacs.d && git checkout develop
 
-# Install emacs-r-devkit config
-cd ~/emacs-r-devkit
+# Install spacemacs-rstats config
+cd ~/spacemacs-rstats
 cp dotspacemacs.el ~/.spacemacs
 open -a Emacs
 ```bash
@@ -628,7 +628,7 @@ open -a Emacs
 ## Additional Resources
 
 - [Configuration Guide](configuration.md) - Customization options
-- [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues) - Report bugs
+- [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues) - Report bugs
 - `TUTORIAL.md` - Complete user guide
 - `CHEAT-SHEET.md` - Quick reference
 

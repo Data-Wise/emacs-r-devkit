@@ -94,6 +94,6 @@ Complete learning path from **absolute beginner** to productive Spacemacs R deve
 
 ## 📝 Note
 
-These materials are designed for R developers using emacs-r-devkit who want to master Spacemacs and Vim-style modal editing.
+These materials are designed for R developers using spacemacs-rstats who want to master Spacemacs and Vim-style modal editing.
 
 **Ready to start?** Open `00-EMACS-BASICS.md` now! 👉

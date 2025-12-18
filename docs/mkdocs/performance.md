@@ -1,13 +1,13 @@
 # Performance Analysis & Optimization
 
-This document outlines the performance characteristics of `emacs-r-devkit`, identifies current bottlenecks, and provides optimization strategies for a smoother development experience.
+This document outlines the performance characteristics of `spacemacs-rstats`, identifies current bottlenecks, and provides optimization strategies for a smoother development experience.
 
 ## 1. Core Workflow Analysis
 
-The primary "hot path" in this environment is the **Edit-Save-Check** loop. Because `emacs-r-devkit` automates formatting and linting on save, the efficiency of these operations directly impacts perceived editor latency.
+The primary "hot path" in this environment is the **Edit-Save-Check** loop. Because `spacemacs-rstats` automates formatting and linting on save, the efficiency of these operations directly impacts perceived editor latency.
 
 ### The Styler Bottleneck
-Currently, `emacs-r-devkit/style-buffer-with-guard` executes a fresh `Rscript` process on every save:
+Currently, `spacemacs-rstats/style-buffer-with-guard` executes a fresh `Rscript` process on every save:
 1. **I/O Overhead**: Writes buffer to disk.
 2. **Process Fork**: Spawns a shell.
 3. **R Startup**: Loads the R interpreter and the `styler` package (~300ms - 800ms).

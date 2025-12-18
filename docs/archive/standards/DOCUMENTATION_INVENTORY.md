@@ -12,7 +12,7 @@ Last Updated: 2025-12-07
 
 | Repository | Current Status | Needs Update | Priority | Notes |
 |------------|---------------|--------------|----------|-------|
-| **emacs-r-devkit** | ✅ Standardized | No | - | Already follows DOCUMENTATION_STANDARDS.md |
+| **spacemacs-rstats** | ✅ Standardized | No | - | Already follows DOCUMENTATION_STANDARDS.md |
 | **claude-r-dev** | ⚠️ Needs Update | Yes | High | Has MkDocs but needs standardization |
 | **zsh-claude-workflow** | ❓ Unknown | TBD | Medium | Smart context manager for Claude Code + zsh |
 | **examark** | ❓ Unknown | TBD | Low | Markdown to Canvas QTI converter |
@@ -39,7 +39,7 @@ Last Updated: 2025-12-07
 
 ## 🔍 Detailed Status
 
-### 1. emacs-r-devkit ✅
+### 1. spacemacs-rstats ✅
 
 **Status:** Fully standardized
 
@@ -49,7 +49,7 @@ Last Updated: 2025-12-07
 - Follows DOCUMENTATION_STANDARDS.md
 - Has all required pages
 - Cross-project links in place
-- Deployed to: <https://data-wise.github.io/emacs-r-devkit/>
+- Deployed to: <https://data-wise.github.io/spacemacs-rstats/>
 
 **Action Required:** None - serves as reference implementation
 
@@ -75,11 +75,11 @@ Last Updated: 2025-12-07
   - [ ] Troubleshooting (troubleshooting.md) - **likely missing**
   - [ ] Contributing (contributing.md)
 - [ ] Add standard badges to homepage
-- [ ] Include cross-project links to emacs-r-devkit
+- [ ] Include cross-project links to spacemacs-rstats
 - [ ] Use standard theme configuration
 - [ ] Add feature grid to homepage
 
-**Priority:** High (framework used with emacs-r-devkit)
+**Priority:** High (framework used with spacemacs-rstats)
 
 **Expected URL:** <https://data-wise.github.io/claude-r-dev/>
 
@@ -261,7 +261,7 @@ All sites should link to each other:
 
 **MkDocs sites link to:**
 
-- Other MkDocs sites (emacs-r-devkit ↔ claude-r-dev)
+- Other MkDocs sites (spacemacs-rstats ↔ claude-r-dev)
 - Main MediationVerse hub (if applicable)
 
 **MediationVerse packages link to:**
@@ -277,12 +277,12 @@ All sites should link to each other:
 
 **Standards Documentation:**
 
-- MkDocs standards: `/Users/dt/emacs-r-devkit/DOCUMENTATION_STANDARDS.md`
-- Shared MkDocs config: `/Users/dt/emacs-r-devkit/mkdocs-base.yml`
-- Generic R package standards: `/Users/dt/emacs-r-devkit/R_PACKAGE_DOCS_STANDARDS.md`
+- MkDocs standards: `/Users/dt/spacemacs-rstats/DOCUMENTATION_STANDARDS.md`
+- Shared MkDocs config: `/Users/dt/spacemacs-rstats/mkdocs-base.yml`
+- Generic R package standards: `/Users/dt/spacemacs-rstats/R_PACKAGE_DOCS_STANDARDS.md`
 - MediationVerse standards: Will move to `/Users/dt/R-packages/active/mediationverse/.github/MEDIATIONVERSE_STANDARDS.md`
-- Implementation plan: `/Users/dt/emacs-r-devkit/IMPLEMENTATION_PLAN.md`
-- **This inventory:** `/Users/dt/emacs-r-devkit/DOCUMENTATION_INVENTORY.md`
+- Implementation plan: `/Users/dt/spacemacs-rstats/IMPLEMENTATION_PLAN.md`
+- **This inventory:** `/Users/dt/spacemacs-rstats/DOCUMENTATION_INVENTORY.md`
 
 **Skill File:**
 
@@ -298,7 +298,7 @@ All sites should link to each other:
 cd ~/path/to/project
 
 # Update mkdocs.yml
-# Add: INHERIT: https://raw.githubusercontent.com/Data-Wise/emacs-r-devkit/main/mkdocs-base.yml
+# Add: INHERIT: https://raw.githubusercontent.com/Data-Wise/spacemacs-rstats/main/mkdocs-base.yml
 
 # Ensure all required pages exist
 touch docs_mkdocs/troubleshooting.md  # if missing
@@ -339,7 +339,7 @@ rpkgpreview # Preview locally
 To complete this inventory, please identify:
 
 1. **claude-r-dev location:** Where is this repository located?
-2. **Other tool repositories:** Are there other tool/framework repos besides emacs-r-devkit and claude-r-dev?
+2. **Other tool repositories:** Are there other tool/framework repos besides spacemacs-rstats and claude-r-dev?
 3. **Other R packages:** Are there R packages outside the MediationVerse ecosystem?
 4. **Repository access:** Do all these repositories exist in Data-Wise GitHub organization?
 5. **Current URLs:** Which packages already have GitHub Pages deployed?
@@ -350,13 +350,13 @@ To complete this inventory, please identify:
 
 **Overall Status (as of 2025-12-09):**
 
-- ✅ **Completed:** 1/20 repositories (5%) - emacs-r-devkit
+- ✅ **Completed:** 1/20 repositories (5%) - spacemacs-rstats
 - ⚠️ **In Progress:** 3/20 repositories (15%) - claude-r-dev, mediationverse, medfit
 - ❓ **Needs Assessment:** 16/20 repositories (80%)
 
 **Discovered Ecosystem (20 repos):**
 
-- **Dev Tools:** emacs-r-devkit, claude-r-dev, zsh-claude-workflow, examark
+- **Dev Tools:** spacemacs-rstats, claude-r-dev, zsh-claude-workflow, examark
 - **AI/MCP:** claude-statistical-research-mcp, mediationverse-gemini-extension, r-package-dev-gemini
 - **MediationVerse:** mediationverse, medfit, probmed, rmediation, medrobust, medsim, missingmed
 - **Other R:** regression, causal-inference

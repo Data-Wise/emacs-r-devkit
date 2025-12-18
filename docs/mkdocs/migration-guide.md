@@ -58,11 +58,11 @@ cd ~/.emacs.d
 git checkout develop
 ```bash
 
-### Step 2: Install emacs-r-devkit Configuration
+### Step 2: Install spacemacs-rstats Configuration
 
 ```bash
-# Navigate to emacs-r-devkit
-cd ~/emacs-r-devkit
+# Navigate to spacemacs-rstats
+cd ~/spacemacs-rstats
 
 # Backup existing Spacemacs config (if any)
 mv ~/.spacemacs ~/.spacemacs.backup 2>/dev/null || true
@@ -273,7 +273,7 @@ Or add custom keybindings in `dotspacemacs/user-config`:
 Keep these handy:
 
 - **[Keybindings Reference](keybindings.md)** - Complete keybinding list
-- **[Spacemacs Cheat Sheet](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)** - Quick reference
+- **[Spacemacs Cheat Sheet](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)** - Quick reference
 
 ## Rollback Plan
 

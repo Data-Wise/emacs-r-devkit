@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # health-check.sh
-# Comprehensive health check for emacs-r-devkit installation
+# Comprehensive health check for spacemacs-rstats installation
 #
 # Exit Codes:
 #   0 = HEALTHY - Everything working perfectly
@@ -83,7 +83,7 @@ parse_args() {
 
 show_help() {
     cat << EOF
-Health Check for emacs-r-devkit
+Health Check for spacemacs-rstats
 
 Usage: $0 [OPTIONS]
 
@@ -182,17 +182,17 @@ check_already_installed() {
         is_installed=false
     elif [[ ! -f "$HOME/.spacemacs" ]]; then
         is_installed=false
-    elif ! grep -q "emacs-r-devkit" "$HOME/.spacemacs" 2>/dev/null; then
+    elif ! grep -q "spacemacs-rstats" "$HOME/.spacemacs" 2>/dev/null; then
         is_installed=false
     fi
     
     if [[ "$is_installed" == true ]]; then
         echo ""
         echo "╔════════════════════════════════════════════════════════╗"
-        echo "║  ${GREEN}✓${NC} emacs-r-devkit Already Installed                  ║"
+        echo "║  ${GREEN}✓${NC} spacemacs-rstats Already Installed                  ║"
         echo "╚════════════════════════════════════════════════════════╝"
         echo ""
-        log_success "emacs-r-devkit is already installed on this system"
+        log_success "spacemacs-rstats is already installed on this system"
         echo ""
         echo "What would you like to do?"
         echo ""
@@ -519,10 +519,10 @@ check_configuration() {
     log_success "~/.spacemacs found"
     
     # Check for our customizations (look for specific markers)
-    if grep -q "emacs-r-devkit" "$HOME/.spacemacs" 2>/dev/null; then
-        log_verbose "Configuration contains emacs-r-devkit customizations"
+    if grep -q "spacemacs-rstats" "$HOME/.spacemacs" 2>/dev/null; then
+        log_verbose "Configuration contains spacemacs-rstats customizations"
     else
-        log_warning "Configuration may not be from emacs-r-devkit"
+        log_warning "Configuration may not be from spacemacs-rstats"
         HEALTH_LEVEL=$((HEALTH_LEVEL > 1 ? HEALTH_LEVEL : 1))
     fi
     

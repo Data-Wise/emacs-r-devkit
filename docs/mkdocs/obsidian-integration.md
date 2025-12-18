@@ -1,6 +1,6 @@
 # Obsidian Research Lab Integration
 
-The **emacs-r-devkit** is designed to work seamlessly with the **Obsidian CLI Ops** (`obs`) tool, creating a powerful "Lab Notebook" workflow. This integration allows you to push results from your R environment directly into your permanent Knowledge Base.
+The **spacemacs-rstats** is designed to work seamlessly with the **Obsidian CLI Ops** (`obs`) tool, creating a powerful "Lab Notebook" workflow. This integration allows you to push results from your R environment directly into your permanent Knowledge Base.
 
 ## Prerequisites
 

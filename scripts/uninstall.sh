@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # uninstall.sh
-# Multi-level uninstaller for emacs-r-devkit
+# Multi-level uninstaller for spacemacs-rstats
 #
 # Uninstall Levels:
 #   1 = Config Only - Remove our configuration, keep Spacemacs & Emacs
@@ -27,7 +27,7 @@ NC='\033[0m' # No Color
 
 # Configuration
 TIMESTAMP=$(date +%Y%m%d%H%M%S)
-BACKUP_DIR="$HOME/.emacs-r-devkit-backups"
+BACKUP_DIR="$HOME/.spacemacs-rstats-backups"
 DRY_RUN=false
 AUTO_YES=false
 UNINSTALL_LEVEL=0  # 0 = not set, will prompt
@@ -63,7 +63,7 @@ parse_args() {
 
 show_help() {
     cat << EOF
-Uninstaller for emacs-r-devkit
+Uninstaller for spacemacs-rstats
 
 Usage: $0 [OPTIONS]
 
@@ -148,7 +148,7 @@ show_menu() {
     cat << EOF
 
 ╔════════════════════════════════════════════════════════╗
-║  ${BOLD}emacs-r-devkit Uninstaller${NC}                            ║
+║  ${BOLD}spacemacs-rstats Uninstaller${NC}                            ║
 ╚════════════════════════════════════════════════════════╝
 
 What would you like to remove?
@@ -215,7 +215,7 @@ create_backup() {
 
 # Level 1: Remove config only
 uninstall_config() {
-    log_info "Removing emacs-r-devkit configuration..."
+    log_info "Removing spacemacs-rstats configuration..."
     
     # Backup .spacemacs
     if [[ -f "$HOME/.spacemacs" ]]; then

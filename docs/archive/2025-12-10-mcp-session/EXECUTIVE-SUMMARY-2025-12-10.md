@@ -1,4 +1,4 @@
-# Executive Summary: emacs-r-devkit Status & Plan
+# Executive Summary: spacemacs-rstats Status & Plan
 **Date:** 2025-12-10
 **TL;DR:** Spacemacs installed but not configured. Need 9-13 hours to make functional.
 
@@ -15,7 +15,7 @@
 ### What's Broken ❌
 - **Spacemacs Configuration:** Empty user-config section - no custom functions loaded
 - **R Development Workflow:** Non-functional until functions ported
-- **Keybindings:** None configured for emacs-r-devkit features
+- **Keybindings:** None configured for spacemacs-rstats features
 
 ### Critical Issue ⚠️
 **Spacemacs is installed but unusable for R development.**
@@ -110,7 +110,7 @@
 ### Today/This Week (Dec 10-17):
 
 **Priority 1: Port Functions** (6-9 hours)
-1. Create `~/.emacs.d/private/emacs-r-devkit/funcs.el`
+1. Create `~/.emacs.d/private/spacemacs-rstats/funcs.el`
 2. Copy all custom functions from vanilla `init.el`
 3. Test each function works in Spacemacs
 

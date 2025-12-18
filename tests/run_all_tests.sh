@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Master Test Runner for emacs-r-devkit
+# Master Test Runner for spacemacs-rstats
 #
 # Runs all test suites in order:
 # 1. Documentation tests
@@ -14,7 +14,7 @@ set -e
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 echo "╔════════════════════════════════════════════════════════╗"
-echo "║  emacs-r-devkit Test Suite                            ║"
+echo "║  spacemacs-rstats Test Suite                            ║"
 echo "╚════════════════════════════════════════════════════════╝"
 echo ""
 

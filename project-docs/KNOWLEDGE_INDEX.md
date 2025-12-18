@@ -2,7 +2,7 @@
 
 **Central Map for Project Knowledge & Documentation**
 
-This index coordinates the three pillars of documentation within the `emacs-r-devkit` project. Use this map to find the right information based on your role and need.
+This index coordinates the three pillars of documentation within the `spacemacs-rstats` project. Use this map to find the right information based on your role and need.
 
 ---
 
@@ -12,7 +12,7 @@ This index coordinates the three pillars of documentation within the `emacs-r-de
 |--------|-----------|----------|---------|
 | **1. User Guides** | [`guides/`](guides/) | **Users** | Manuals, tutorials, and how-to guides for *using* this tool. |
 | **2. Meta-Standards** | [`standards/`](standards/) | **Architects** | Ecosystem-wide rules and standards for *other* Data-Wise projects. |
-| **3. Documentation Site** | [`docs_mkdocs/`](docs_mkdocs/) | **Publishers** | Source files for the public-facing [documentation website](https://data-wise.github.io/emacs-r-devkit/). |
+| **3. Documentation Site** | [`docs_mkdocs/`](docs_mkdocs/) | **Publishers** | Source files for the public-facing [documentation website](https://data-wise.github.io/spacemacs-rstats/). |
 
 ---
 

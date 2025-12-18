@@ -28,13 +28,13 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 
 ### 2025-12-09: Data-Wise Ecosystem Research
 
-**Context:** Understanding the relationship between `emacs-r-devkit` and `claude-r-dev`.
+**Context:** Understanding the relationship between `spacemacs-rstats` and `claude-r-dev`.
 **Insight:**
 
 - **Complementary Roles:**
-  - `emacs-r-devkit` is the **Environment (IDE)**: Focused on editing, interactive R (ESS), and developer ergonomics.
+  - `spacemacs-rstats` is the **Environment (IDE)**: Focused on editing, interactive R (ESS), and developer ergonomics.
   - `claude-r-dev` is the **Intelligence (AI)**: Focused on workflow automation (reviews, testing, refactoring) using Claude.
-- **Integration Point:** `emacs-r-devkit` is the perfect host for `claude-r-dev` workflows (via terminal or future MCP integration).
+- **Integration Point:** `spacemacs-rstats` is the perfect host for `claude-r-dev` workflows (via terminal or future MCP integration).
 - **Shared DNA:** Both enforce specific R package standards (S7, testthat, roxygen2).
 
 ### 2025-12-07: MkDocs Material Overrides
@@ -75,7 +75,7 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 
 - Used `gh repo list Data-Wise --limit 20 --json name,description,url` with timeout wrapper.
 - **20 repositories discovered** across categories:
-  - Dev Tools: emacs-r-devkit, claude-r-dev, zsh-claude-workflow, examark
+  - Dev Tools: spacemacs-rstats, claude-r-dev, zsh-claude-workflow, examark
   - AI/MCP: claude-statistical-research-mcp, mediationverse-gemini-extension, r-package-dev-gemini
   - MediationVerse: mediationverse, medfit, probmed, rmediation, medrobust, medsim, missingmed
   - Infrastructure: docs-standards, data-wise (org profile), homebrew-tap
@@ -407,10 +407,10 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
    - **Expected productivity:** 50% (Week 1-2) → 120%+ (Month 2+)
 
 7. **Custom Function Integration:**
-   - All emacs-r-devkit functions can be mapped to Spacemacs style
+   - All spacemacs-rstats functions can be mapped to Spacemacs style
    - Example mapping: `SPC m r r` → `insert-roxygen-skeleton`
    - Shorter alternative: `,` as major-mode leader (`, r r` same as `SPC m r r`)
-   - Can create custom Spacemacs layer for emacs-r-devkit
+   - Can create custom Spacemacs layer for spacemacs-rstats
 
 8. **Alternative Approach:**
    - Gradual migration possible via Evil + General.el
@@ -497,7 +497,7 @@ Use this file to capture knowledge that doesn't fit into formal documentation bu
 
 ### 2025-12-13: Emacs R Development Kit Enhancement Plan
 
-**Context:** Analysis of emacs-r-devkit project for creating a comprehensive enhancement plan.
+**Context:** Analysis of spacemacs-rstats project for creating a comprehensive enhancement plan.
 **Insight:**
 
 - **Critical Issue:** Spacemacs configuration installed but not properly configured - R development workflow is broken

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # patch.sh
-# Update existing emacs-r-devkit installation with minimal disruption
+# Update existing spacemacs-rstats installation with minimal disruption
 #
 # Usage:
 #   ./scripts/patch.sh                  # Update everything
@@ -56,7 +56,7 @@ parse_args() {
 
 show_help() {
     cat << EOF
-Patch Tool for emacs-r-devkit
+Patch Tool for spacemacs-rstats
 
 Usage: $0 [OPTIONS]
 
@@ -286,7 +286,7 @@ main() {
     # Show header
     echo ""
     echo "╔════════════════════════════════════════════════════════╗"
-    echo "║  ${BOLD}emacs-r-devkit Patch Tool${NC}                             ║"
+    echo "║  ${BOLD}spacemacs-rstats Patch Tool${NC}                             ║"
     echo "╚════════════════════════════════════════════════════════╝"
     echo ""
     

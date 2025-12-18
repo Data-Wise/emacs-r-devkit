@@ -437,18 +437,18 @@ add_one <- function(x) {
 
 ### Day 16: Custom R Keybindings
 
-**Learn:** Your emacs-r-devkit functions in Spacemacs
+**Learn:** Your spacemacs-rstats functions in Spacemacs
 
 **Map to Spacemacs style:**
 
 ```elisp
 ;; Add to .spacemacs config:
 (spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
-  "rr" 'emacs-r-devkit/insert-roxygen-skeleton
-  "ur" 'emacs-r-devkit/usethis-use-r
-  "ut" 'emacs-r-devkit/usethis-use-test
-  "sc" 'emacs-r-devkit/s7-insert-class
-  "sm" 'emacs-r-devkit/s7-insert-method)
+  "rr" 'spacemacs-rstats/insert-roxygen-skeleton
+  "ur" 'spacemacs-rstats/usethis-use-r
+  "ut" 'spacemacs-rstats/usethis-use-test
+  "sc" 'spacemacs-rstats/s7-insert-class
+  "sm" 'spacemacs-rstats/s7-insert-method)
 ```
 
 **Practice:**

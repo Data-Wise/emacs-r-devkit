@@ -1,11 +1,11 @@
-site_name: emacs-r-devkit
+site_name: spacemacs-rstats
 site_description: Professional Emacs Environment for R Package Development on macOS
 site_author: Data-Wise
-site_url: https://data-wise.github.io/emacs-r-devkit/
+site_url: https://data-wise.github.io/spacemacs-rstats/
 docs_dir: docs/mkdocs
 
-repo_name: Data-Wise/emacs-r-devkit
-repo_url: https://github.com/Data-Wise/emacs-r-devkit
+repo_name: Data-Wise/spacemacs-rstats
+repo_url: https://github.com/Data-Wise/spacemacs-rstats
 
 theme:
   name: material
@@ -101,6 +101,6 @@ nav:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Data-Wise/emacs-r-devkit
+      link: https://github.com/Data-Wise/spacemacs-rstats
 
 copyright: Copyright &copy; 2024-2025 Data-Wise

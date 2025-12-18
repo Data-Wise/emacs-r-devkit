@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # check-dependencies.sh
-# Verify all dependencies for emacs-r-devkit are installed
+# Verify all dependencies for spacemacs-rstats are installed
 # Usage: ./check-dependencies.sh
 
 set -euo pipefail
@@ -18,7 +18,7 @@ WARNINGS=0
 ERRORS=0
 
 echo "================================================"
-echo "  emacs-r-devkit Dependency Checker"
+echo "  spacemacs-rstats Dependency Checker"
 echo "================================================"
 echo ""
 
@@ -173,7 +173,7 @@ if [ -f "$HOME/.emacs.d/init.el" ]; then
         echo -e "${GREEN}✓${NC} init.el exists (${BLUE}${INIT_SIZE} lines${NC})"
     else
         echo -e "${YELLOW}⚠${NC} init.el exists but seems small (${INIT_SIZE} lines)"
-        echo -e "   ${YELLOW}Expected:${NC} ~600 lines for full emacs-r-devkit config"
+        echo -e "   ${YELLOW}Expected:${NC} ~600 lines for full spacemacs-rstats config"
         WARNINGS=$((WARNINGS + 1))
     fi
 else
@@ -280,13 +280,13 @@ echo "================================================"
 if [ "$ALL_OK" = true ] && [ "$WARNINGS" -eq 0 ]; then
     echo -e "${GREEN}✓ All dependencies satisfied!${NC}"
     echo ""
-    echo "You're ready to use emacs-r-devkit!"
+    echo "You're ready to use spacemacs-rstats!"
     exit 0
 elif [ "$ALL_OK" = true ]; then
     echo -e "${YELLOW}⚠ All required dependencies satisfied${NC}"
     echo -e "${YELLOW}  But $WARNINGS optional dependencies missing${NC}"
     echo ""
-    echo "emacs-r-devkit will work, but some features may be unavailable."
+    echo "spacemacs-rstats will work, but some features may be unavailable."
     echo "Install optional dependencies for full functionality."
     exit 0
 else
@@ -295,6 +295,6 @@ else
         echo -e "${YELLOW}  And $WARNINGS optional dependencies missing${NC}"
     fi
     echo ""
-    echo "Please install missing required dependencies before using emacs-r-devkit."
+    echo "Please install missing required dependencies before using spacemacs-rstats."
     exit 1
 fi

@@ -10,7 +10,7 @@ Spacemacs combines the best of Emacs and Vim, providing a powerful, discoverable
 
 **New to Spacemacs?** Start here:
 
-- **[Quick Start Guide](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/00-QUICK-START.md)** - Get productive in 30 minutes
+- **[Quick Start Guide](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/00-QUICK-START.md)** - Get productive in 30 minutes
   - Essential keybindings
   - Modal editing basics
   - R workflow primer
@@ -19,7 +19,7 @@ Spacemacs combines the best of Emacs and Vim, providing a powerful, discoverable
 
 ### 1. Fundamentals
 
-**[Emacs Basics](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/00-EMACS-BASICS.md)**
+**[Emacs Basics](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/00-EMACS-BASICS.md)**
 
 - Understanding buffers, windows, and frames
 - The minibuffer and echo area
@@ -28,7 +28,7 @@ Spacemacs combines the best of Emacs and Vim, providing a powerful, discoverable
 
 ### 2. Spacemacs Essentials
 
-**[Spacemacs Guide](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/01-SPACEMACS-GUIDE.md)**
+**[Spacemacs Guide](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/01-SPACEMACS-GUIDE.md)**
 
 - Modal editing (Normal, Insert, Visual modes)
 - Leader key (`SPC`) paradigm
@@ -38,7 +38,7 @@ Spacemacs combines the best of Emacs and Vim, providing a powerful, discoverable
 
 ### 3. Structured Learning
 
-**[Learning Curriculum](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md)**
+**[Learning Curriculum](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md)**
 
 - **Week 1**: Modal editing and basic navigation
 - **Week 2**: File and buffer management
@@ -49,20 +49,20 @@ Daily lessons with practice exercises and real-world R coding tasks.
 
 ### 4. Reference Materials
 
-**[Cheat Sheets](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)**
+**[Cheat Sheets](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)**
 
 - Modal editing commands
 - Spacemacs keybindings
 - R-specific commands
 - Quick reference tables
 
-**[Learning Roadmap](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/04-LEARNING-ROADMAP.md)**
+**[Learning Roadmap](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/04-LEARNING-ROADMAP.md)**
 
 - Beginner to advanced progression
 - Skill milestones
 - Practice recommendations
 
-**[Spacemacs Reference](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/SPACEMACS-REFERENCE.md)**
+**[Spacemacs Reference](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/SPACEMACS-REFERENCE.md)**
 
 - Complete keybinding reference
 - Layer documentation
@@ -206,9 +206,9 @@ Use your actual R projects to practice:
 
 ## Next Steps
 
-1. **Start with Quick Start** - [00-QUICK-START.md](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/00-QUICK-START.md)
-2. **Follow the Curriculum** - [02-LEARNING-CURRICULUM.md](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md)
-3. **Keep Cheat Sheets Handy** - [03-CHEAT-SHEETS.md](https://github.com/Data-Wise/emacs-r-devkit/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)
+1. **Start with Quick Start** - [00-QUICK-START.md](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/00-QUICK-START.md)
+2. **Follow the Curriculum** - [02-LEARNING-CURRICULUM.md](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md)
+3. **Keep Cheat Sheets Handy** - [03-CHEAT-SHEETS.md](https://github.com/Data-Wise/spacemacs-rstats/blob/main/guides/spacemacs-learning/03-CHEAT-SHEETS.md)
 4. **Practice with Real R Code** - Apply to your projects
 
 ---

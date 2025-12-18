@@ -175,7 +175,7 @@ bun run typecheck
 
 ### **Ready to Commit:**
 ```bash
-# In emacs-r-devkit/
+# In spacemacs-rstats/
 git status
 # Modified:
 #   SESSION-SUMMARY-MCP-PLANNING.md
@@ -204,7 +204,7 @@ git status
 
 ### **Suggested Commit Messages:**
 
-**For emacs-r-devkit:**
+**For spacemacs-rstats:**
 ```
 feat(mcp): Complete Track B quick_capture + Track A specs
 

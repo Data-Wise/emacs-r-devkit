@@ -1,6 +1,6 @@
 # Installation Management
 
-The emacs-r-devkit includes a comprehensive installation management system that handles all aspects of installation, updates, repairs, and removal.
+The spacemacs-rstats includes a comprehensive installation management system that handles all aspects of installation, updates, repairs, and removal.
 
 ## System Overview
 
@@ -136,8 +136,8 @@ Available repairs:
 ### Fresh Installation
 
 ```bash
-git clone https://github.com/Data-Wise/emacs-r-devkit.git
-cd emacs-r-devkit
+git clone https://github.com/Data-Wise/spacemacs-rstats.git
+cd spacemacs-rstats
 ./scripts/install.sh
 ```
 
@@ -193,7 +193,7 @@ The health check verifies:
 ### Configuration
 
 - ✓ ~/.spacemacs exists
-- ✓ Contains emacs-r-devkit customizations
+- ✓ Contains spacemacs-rstats customizations
 - ✓ Required layers enabled (ess, lsp, etc.)
 
 ### Helper Scripts
@@ -286,7 +286,7 @@ The health check verifies:
 #   "status": "NEEDS_UPDATE",
 #   "level": 1,
 #   "issues": ["Helper scripts missing"],
-#   "warnings": ["Configuration may not be from emacs-r-devkit"],
+#   "warnings": ["Configuration may not be from spacemacs-rstats"],
 #   "recommendations": ["Run: ./scripts/patch.sh to update configuration"]
 # }
 ```

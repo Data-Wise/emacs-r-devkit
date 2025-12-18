@@ -1,9 +1,9 @@
-# emacs-r-devkit
+# spacemacs-rstats
 
 **Context for Gemini Agent**
 
 ## Project Overview
-`emacs-r-devkit` is a professional Emacs integrated development environment (IDE) configuration tailored for R package development on macOS. It provides a pre-configured, batteries-included setup that integrates ESS (Emacs Speaks Statistics), LSP (Language Server Protocol), and modern Emacs packages to rival commercial IDEs.
+`spacemacs-rstats` is a professional Emacs integrated development environment (IDE) configuration tailored for R package development on macOS. It provides a pre-configured, batteries-included setup that integrates ESS (Emacs Speaks Statistics), LSP (Language Server Protocol), and modern Emacs packages to rival commercial IDEs.
 
 **Key Goals:**
 - Provide a robust R package development workflow (devtools, testthat, roxygen2).
@@ -75,7 +75,7 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
 ### Code Style
 - **R:** Tidyverse style guide. Enforced by `lintr` and `styler`.
-- **Emacs Lisp:** Standard conventions. Custom functions must be prefixed with `emacs-r-devkit/`.
+- **Emacs Lisp:** Standard conventions. Custom functions must be prefixed with `spacemacs-rstats/`.
 
 ### Testing
 - **Automated Checks:** `check-dependencies.sh` ensures the environment is correct.
@@ -86,6 +86,6 @@ Follow [Conventional Commits](https://www.conventionalcommits.org/):
 - **Package Management:** Uses `package.el` and `use-package`.
 - **macOS Integration:** `exec-path-from-shell` ensures GUI Emacs inherits the shell environment.
 - **Custom Functions:**
-    - `emacs-r-devkit/insert-roxygen-skeleton`: Smart doc insertion.
-    - `emacs-r-devkit/style-buffer-with-guard`: Safe auto-formatting.
-    - `emacs-r-devkit/s7-*`: Snippets for S7 OOP.
+    - `spacemacs-rstats/insert-roxygen-skeleton`: Smart doc insertion.
+    - `spacemacs-rstats/style-buffer-with-guard`: Safe auto-formatting.
+    - `spacemacs-rstats/s7-*`: Snippets for S7 OOP.

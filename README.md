@@ -1,7 +1,7 @@
-# emacs-r-devkit
+# spacemacs-rstats
 
 [![Tests](https://img.shields.io/badge/tests-59%20passing-brightgreen)](tests/)
-[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://data-wise.github.io/emacs-r-devkit/)
+[![Documentation](https://img.shields.io/badge/docs-mkdocs-blue)](https://data-wise.github.io/spacemacs-rstats/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Platform](https://img.shields.io/badge/platform-macOS-lightgrey)](https://www.apple.com/macos/)
 [![Emacs](https://img.shields.io/badge/Emacs-27.1+-purple)](https://www.gnu.org/software/emacs/)
@@ -11,10 +11,10 @@
 **Professional Spacemacs environment for R package development on macOS**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub release](https://img.shields.io/github/v/release/Data-Wise/emacs-r-devkit)](https://github.com/Data-Wise/emacs-r-devkit/releases)
-[![GitHub stars](https://img.shields.io/github/stars/Data-Wise/emacs-r-devkit?style=social)](https://github.com/Data-Wise/emacs-r-devkit/stargazers)
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://data-wise.github.io/emacs-r-devkit/)
-[![CI](https://img.shields.io/github/actions/workflow/status/Data-Wise/emacs-r-devkit/mkdocs.yml?branch=main&label=docs)](https://github.com/Data-Wise/emacs-r-devkit/actions)
+[![GitHub release](https://img.shields.io/github/v/release/Data-Wise/spacemacs-rstats)](https://github.com/Data-Wise/spacemacs-rstats/releases)
+[![GitHub stars](https://img.shields.io/github/stars/Data-Wise/spacemacs-rstats?style=social)](https://github.com/Data-Wise/spacemacs-rstats/stargazers)
+[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://data-wise.github.io/spacemacs-rstats/)
+[![CI](https://img.shields.io/github/actions/workflow/status/Data-Wise/spacemacs-rstats/mkdocs.yml?branch=main&label=docs)](https://github.com/Data-Wise/spacemacs-rstats/actions)
 [![Emacs](https://img.shields.io/badge/Emacs-27%2B-7F5AB6?logo=gnu-emacs)](https://www.gnu.org/software/emacs/)
 [![Spacemacs](https://img.shields.io/badge/Spacemacs-develop-9266CC)](https://www.spacemacs.org/)
 [![R](https://img.shields.io/badge/R-4.0%2B-276DC3?logo=r)](https://www.r-project.org/)
@@ -61,9 +61,9 @@ ln -s /opt/homebrew/opt/emacs-plus@30/Emacs.app /Applications/Emacs.app
 git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 cd ~/.emacs.d && git checkout develop
 
-# Clone emacs-r-devkit
-git clone https://github.com/Data-Wise/emacs-r-devkit.git ~/emacs-r-devkit
-cd ~/emacs-r-devkit
+# Clone spacemacs-rstats
+git clone https://github.com/Data-Wise/spacemacs-rstats.git ~/spacemacs-rstats
+cd ~/spacemacs-rstats
 
 # Install configuration
 cp dotspacemacs.el ~/.spacemacs
@@ -92,8 +92,8 @@ The smart installer handles everything automatically:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Data-Wise/emacs-r-devkit.git
-cd emacs-r-devkit
+git clone https://github.com/Data-Wise/spacemacs-rstats.git
+cd spacemacs-rstats
 
 # Run the smart installer
 ./scripts/install.sh
@@ -128,15 +128,15 @@ The installer will:
 ./scripts/install.sh --force
 ```
 
-See [Installation Guide](https://data-wise.github.io/emacs-r-devkit/getting-started/) for details.
+See [Installation Guide](https://data-wise.github.io/spacemacs-rstats/getting-started/) for details.
 etup guide
 
-- [**Migration Guide**](https://data-wise.github.io/emacs-r-devkit/migration-guide/) - Migrating from vanilla Emacs
-- [**Spacemacs Learning**](https://data-wise.github.io/emacs-r-devkit/spacemacs-learning/) - Complete learning curriculum
-- [**Features**](https://data-wise.github.io/emacs-r-devkit/features/) - Detailed feature documentation
-- [**Keybindings**](https://data-wise.github.io/emacs-r-devkit/keybindings/) - Complete keybinding reference
-- [**Configuration**](https://data-wise.github.io/emacs-r-devkit/configuration/) - Customization options
-- [**Troubleshooting**](https://data-wise.github.io/emacs-r-devkit/troubleshooting/) - Common issues and solutions
+- [**Migration Guide**](https://data-wise.github.io/spacemacs-rstats/migration-guide/) - Migrating from vanilla Emacs
+- [**Spacemacs Learning**](https://data-wise.github.io/spacemacs-rstats/spacemacs-learning/) - Complete learning curriculum
+- [**Features**](https://data-wise.github.io/spacemacs-rstats/features/) - Detailed feature documentation
+- [**Keybindings**](https://data-wise.github.io/spacemacs-rstats/keybindings/) - Complete keybinding reference
+- [**Configuration**](https://data-wise.github.io/spacemacs-rstats/configuration/) - Customization options
+- [**Troubleshooting**](https://data-wise.github.io/spacemacs-rstats/troubleshooting/) - Common issues and solutions
 
 ## 🎯 Key Keybindings
 
@@ -155,7 +155,7 @@ etup guide
 
 > **Note:** `,` is the major mode leader key (equivalent to `SPC m`). Press `, ?` in any R file to see all available commands via which-key.
 
-See the [complete keybinding reference](https://data-wise.github.io/emacs-r-devkit/keybindings/) for more.
+See the [complete keybinding reference](https://data-wise.github.io/spacemacs-rstats/keybindings/) for more.
 
 ## 🔧 What's Included
 
@@ -195,7 +195,7 @@ See the [complete keybinding reference](https://data-wise.github.io/emacs-r-devk
 
 ## 🌟 Workflow Integration
 
-emacs-r-devkit integrates seamlessly with:
+spacemacs-rstats integrates seamlessly with:
 
 - **Terminal Workflow** - Use with `rtest`, `rdoc`, `rcheck` aliases
 - **Claude Code** - AI-powered development assistance
@@ -231,7 +231,7 @@ Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for gui
 
 ### Ways to Contribute
 
-- 🐛 Report bugs via [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)
+- 🐛 Report bugs via [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)
 - 💡 Suggest features or improvements
 - 📝 Improve documentation
 - 🔧 Submit pull requests
@@ -295,8 +295,8 @@ emacs tests/test-features.R
 
 Having issues? Check:
 
-1. **[Troubleshooting Guide](https://data-wise.github.io/emacs-r-devkit/troubleshooting/)** - Common problems and solutions
-2. **[GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)** - Known issues and discussions
+1. **[Troubleshooting Guide](https://data-wise.github.io/spacemacs-rstats/troubleshooting/)** - Common problems and solutions
+2. **[GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)** - Known issues and discussions
 3. **Dependency Checker** - Run `./scripts/check-dependencies.sh`
 4. **Messages Buffer** - In Emacs: <kbd>⌃</kbd> <kbd>h</kbd> <kbd>e</kbd>
 
@@ -315,9 +315,9 @@ Built with:
 
 ## 📬 Contact
 
-- **Issues**: [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/Data-Wise/emacs-r-devkit/discussions)
-- **Website**: [data-wise.github.io/emacs-r-devkit](https://data-wise.github.io/emacs-r-devkit/)
+- **Issues**: [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Data-Wise/spacemacs-rstats/discussions)
+- **Website**: [data-wise.github.io/spacemacs-rstats](https://data-wise.github.io/spacemacs-rstats/)
 
 ---
 

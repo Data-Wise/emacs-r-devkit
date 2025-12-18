@@ -1,12 +1,12 @@
-# Contributing to emacs-r-devkit
+# Contributing to spacemacs-rstats
 
-Thank you for your interest in contributing to emacs-r-devkit! This document provides guidelines for contributing to the project.
+Thank you for your interest in contributing to spacemacs-rstats! This document provides guidelines for contributing to the project.
 
 ## 🤝 How to Contribute
 
 ### Reporting Bugs
 
-If you find a bug, please [open an issue](https://github.com/Data-Wise/emacs-r-devkit/issues/new?template=bug_report.md) with:
+If you find a bug, please [open an issue](https://github.com/Data-Wise/spacemacs-rstats/issues/new?template=bug_report.md) with:
 
 - **Description** - Clear description of the bug
 - **Steps to Reproduce** - Detailed steps to reproduce the issue
@@ -17,7 +17,7 @@ If you find a bug, please [open an issue](https://github.com/Data-Wise/emacs-r-d
 
 ### Suggesting Features
 
-Feature suggestions are welcome! Please [open an issue](https://github.com/Data-Wise/emacs-r-devkit/issues/new?template=feature_request.md) with:
+Feature suggestions are welcome! Please [open an issue](https://github.com/Data-Wise/spacemacs-rstats/issues/new?template=feature_request.md) with:
 
 - **Use Case** - Describe the problem you're trying to solve
 - **Proposed Solution** - Your idea for solving it
@@ -39,11 +39,11 @@ Documentation improvements are highly valued:
 
 ```bash
 # Fork and clone your fork
-git clone https://github.com/YOUR-USERNAME/emacs-r-devkit.git
-cd emacs-r-devkit
+git clone https://github.com/YOUR-USERNAME/spacemacs-rstats.git
+cd spacemacs-rstats
 
 # Add upstream remote
-git remote add upstream https://github.com/Data-Wise/emacs-r-devkit.git
+git remote add upstream https://github.com/Data-Wise/spacemacs-rstats.git
 
 # Create dev branch
 git checkout -b dev
@@ -94,7 +94,7 @@ git checkout -b dev
    ```
 
 6. **Create a Pull Request**:
-   - Go to the [Pull Requests page](https://github.com/Data-Wise/emacs-r-devkit/pulls)
+   - Go to the [Pull Requests page](https://github.com/Data-Wise/spacemacs-rstats/pulls)
    - Click "New Pull Request"
    - Select your fork and branch
    - Fill in the PR template
@@ -139,12 +139,12 @@ git checkout -b dev
 - Follow standard Emacs Lisp conventions
 - Use descriptive function and variable names
 - Add docstrings to all functions
-- Prefix custom functions with `emacs-r-devkit/`
+- Prefix custom functions with `spacemacs-rstats/`
 - Use `use-package` for package configuration
 
 **Example:**
 ```elisp
-(defun emacs-r-devkit/my-function (arg)
+(defun spacemacs-rstats/my-function (arg)
   "Brief description of what this function does.
 ARG is the argument description."
   (interactive "P")
@@ -280,7 +280,7 @@ docs: update keybinding reference for macOS
 
 ### Getting Started
 
-- Browse [good first issues](https://github.com/Data-Wise/emacs-r-devkit/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+- Browse [good first issues](https://github.com/Data-Wise/spacemacs-rstats/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 - Join discussions to understand priorities
 - Ask questions in issues or discussions
 - Review existing PRs to understand standards
@@ -303,9 +303,9 @@ docs: update keybinding reference for macOS
 
 ## 📬 Getting Help
 
-- **Questions** - [GitHub Discussions](https://github.com/Data-Wise/emacs-r-devkit/discussions)
-- **Issues** - [GitHub Issues](https://github.com/Data-Wise/emacs-r-devkit/issues)
-- **Documentation** - [Website](https://data-wise.github.io/emacs-r-devkit/)
+- **Questions** - [GitHub Discussions](https://github.com/Data-Wise/spacemacs-rstats/discussions)
+- **Issues** - [GitHub Issues](https://github.com/Data-Wise/spacemacs-rstats/issues)
+- **Documentation** - [Website](https://data-wise.github.io/spacemacs-rstats/)
 
 ## 📄 License
 
@@ -313,6 +313,6 @@ By contributing, you agree that your contributions will be licensed under the MI
 
 ---
 
-**Thank you for contributing to emacs-r-devkit!** 🎉
+**Thank you for contributing to spacemacs-rstats!** 🎉
 
 Your contributions help make R development in Emacs better for everyone.

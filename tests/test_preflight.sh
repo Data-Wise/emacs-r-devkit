@@ -102,8 +102,8 @@ test_preflight_system_checks() {
 test_already_installed_detection() {
     echo "Testing already installed detection..."
     
-    # If emacs-r-devkit is installed, should detect it
-    if [[ -f "$HOME/.spacemacs" ]] && grep -q "emacs-r-devkit" "$HOME/.spacemacs" 2>/dev/null; then
+    # If spacemacs-rstats is installed, should detect it
+    if [[ -f "$HOME/.spacemacs" ]] && grep -q "spacemacs-rstats" "$HOME/.spacemacs" 2>/dev/null; then
         local output
         local exit_code
         output=$("$PROJECT_ROOT/scripts/health-check.sh" --pre-flight 2>&1 || exit_code=$?)
@@ -169,7 +169,7 @@ test_install_executable() {
 test_already_installed_options() {
     echo "Testing already installed provides clear options..."
     
-    if [[ -f "$HOME/.spacemacs" ]] && grep -q "emacs-r-devkit" "$HOME/.spacemacs" 2>/dev/null; then
+    if [[ -f "$HOME/.spacemacs" ]] && grep -q "spacemacs-rstats" "$HOME/.spacemacs" 2>/dev/null; then
         local output
         output=$("$PROJECT_ROOT/scripts/health-check.sh" --pre-flight 2>&1 || true)
         

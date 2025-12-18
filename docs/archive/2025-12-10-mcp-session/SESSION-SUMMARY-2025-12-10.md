@@ -245,7 +245,7 @@ gmrpkg add error handling
 
 **Interactive testing:**
 ```bash
-cd ~/projects/dev-tools/emacs-r-devkit
+cd ~/projects/dev-tools/spacemacs-rstats
 bash test-r-workflow.sh
 ```
 
@@ -276,13 +276,13 @@ echo $EDITOR
 
 ```bash
 # Read basics guide
-open ~/projects/dev-tools/emacs-r-devkit/guides/spacemacs-learning/00-EMACS-BASICS.md
+open ~/projects/dev-tools/spacemacs-rstats/guides/spacemacs-learning/00-EMACS-BASICS.md
 
 # Try interactive demo (5 min)
 # Answer self-check questions
 
 # Then proceed to installation
-open ~/projects/dev-tools/emacs-r-devkit/guides/spacemacs-learning/README.md
+open ~/projects/dev-tools/spacemacs-rstats/guides/spacemacs-learning/README.md
 ```
 
 ### Option 4: Commit Today's Work
@@ -294,7 +294,7 @@ open ~/projects/dev-tools/emacs-r-devkit/guides/spacemacs-learning/README.md
 
 **Git workflow:**
 ```bash
-cd ~/projects/dev-tools/emacs-r-devkit
+cd ~/projects/dev-tools/spacemacs-rstats
 git status
 git add .
 git commit -m "feat: Add Day 0 Spacemacs guide and enhance shell config
@@ -412,4 +412,4 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 
 Generated: 2025-12-10
 By: Claude Sonnet 4.5
-Project: emacs-r-devkit
+Project: spacemacs-rstats

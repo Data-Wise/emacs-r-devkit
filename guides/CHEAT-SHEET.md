@@ -1,4 +1,4 @@
-# emacs-r-devkit Cheat Sheet (macOS)
+# spacemacs-rstats Cheat Sheet (macOS)
 
 **Focus**: Emacs keybindings only. For R workflow (`rtest`, `rdoc`, etc.), see `r-package-development` skill.
 
@@ -91,7 +91,7 @@ C-h m           Describe current mode
 
 ---
 
-## R Development (emacs-r-devkit)
+## R Development (spacemacs-rstats)
 ```
 PREFIX: C-c r   (Press and wait to see all options)
 

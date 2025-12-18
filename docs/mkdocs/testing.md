@@ -1,6 +1,6 @@
 # Testing Guide
 
-The emacs-r-devkit includes comprehensive testing infrastructure with 88 automated tests.
+The spacemacs-rstats includes comprehensive testing infrastructure with 88 automated tests.
 
 ## Test Suites
 
@@ -15,7 +15,7 @@ pytest tests/test_documentation.py -v
 **Emacs Lisp Tests** (ERT, 25 tests)
 
 ```bash
-emacs --batch -l tests/test-emacs-r-devkit.el -f ert-run-tests-batch-and-exit
+emacs --batch -l tests/test-spacemacs-rstats.el -f ert-run-tests-batch-and-exit
 ```
 
 **R Package Tests** (testthat, 20 tests)
@@ -77,7 +77,7 @@ Automated testing via GitHub Actions on every push:
 - Fresh installation test
 - All test suites
 
-View results: [GitHub Actions](https://github.com/Data-Wise/emacs-r-devkit/actions)
+View results: [GitHub Actions](https://github.com/Data-Wise/spacemacs-rstats/actions)
 
 ## Running All Tests
 
@@ -120,8 +120,8 @@ sudo dscl . -create /Users/emacs-test
 
 # Test installation
 su - emacs-test
-git clone https://github.com/Data-Wise/emacs-r-devkit.git
-cd emacs-r-devkit
+git clone https://github.com/Data-Wise/spacemacs-rstats.git
+cd spacemacs-rstats
 ./scripts/install.sh
 
 # Clean up

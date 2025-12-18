@@ -1,6 +1,6 @@
 # Spacemacs Migration Quick-Start
 
-**From vanilla emacs-r-devkit to Spacemacs in 4 weeks**
+**From vanilla spacemacs-rstats to Spacemacs in 4 weeks**
 
 ---
 
@@ -45,7 +45,7 @@ Edit `~/.emacs.d/init.el` (lines 133-137):
 ```bash
 # Backup current config
 cp -r ~/.emacs.d ~/.emacs.d.vanilla-backup
-cp ~/projects/dev-tools/emacs-r-devkit/init.el ~/init.el.backup
+cp ~/projects/dev-tools/spacemacs-rstats/init.el ~/init.el.backup
 
 # Verify backup
 ls -la ~/.emacs.d.vanilla-backup
@@ -78,7 +78,7 @@ Emacs will install packages (10-15 minutes).
 
 ### Day 2-7: Follow Curriculum Week 1
 
-Open: `~/projects/dev-tools/emacs-r-devkit/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md`
+Open: `~/projects/dev-tools/spacemacs-rstats/guides/spacemacs-learning/02-LEARNING-CURRICULUM.md`
 
 **Daily tasks:**
 
@@ -128,16 +128,16 @@ Learn `SPC` leader system:
 
 ### Day 15: Port Your Functions
 
-Create `~/.spacemacs.d/emacs-r-devkit.el`:
+Create `~/.spacemacs.d/spacemacs-rstats.el`:
 
 ```elisp
 ;; Copy all your custom functions from init.el
-(defun emacs-r-devkit/insert-roxygen-skeleton ()
+(defun spacemacs-rstats/insert-roxygen-skeleton ()
   ;; ... your code ...
 )
 
 ;; ... other functions ...
-(provide 'emacs-r-devkit)
+(provide 'spacemacs-rstats)
 ```
 
 Add to `~/.spacemacs` user-config:
@@ -145,17 +145,17 @@ Add to `~/.spacemacs` user-config:
 ```elisp
 (defun dotspacemacs/user-config ()
   ;; Load your functions
-  (require 'emacs-r-devkit)
+  (require 'spacemacs-rstats)
   
   ;; Map to Spacemacs style
   (spacemacs/set-leader-keys-for-major-mode 'ess-r-mode
-    "rr" 'emacs-r-devkit/insert-roxygen-skeleton
-    "ur" 'emacs-r-devkit/usethis-use-r
-    "ut" 'emacs-r-devkit/usethis-use-test
-    "up" 'emacs-r-devkit/usethis-use-package-doc
-    "sc" 'emacs-r-devkit/s7-insert-class
-    "sm" 'emacs-r-devkit/s7-insert-method
-    "sg" 'emacs-r-devkit/s7-insert-generic))
+    "rr" 'spacemacs-rstats/insert-roxygen-skeleton
+    "ur" 'spacemacs-rstats/usethis-use-r
+    "ut" 'spacemacs-rstats/usethis-use-test
+    "up" 'spacemacs-rstats/usethis-use-package-doc
+    "sc" 'spacemacs-rstats/s7-insert-class
+    "sm" 'spacemacs-rstats/s7-insert-method
+    "sg" 'spacemacs-rstats/s7-insert-generic))
 ```
 
 Now: `SPC m r r` inserts roxygen! (`, r r` also works)
