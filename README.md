@@ -88,17 +88,49 @@ open -a Emacs
 
 **During first launch:**
 
-- Choose `vim` editing style (recommended)
-- Choose `spacemacs` distribution
-- Choose `helm` completion framework
+The smart installer handles everything automatically:
 
-**Note:** The first launch installs Spacemacs layers and downloads packages from MELPA. Subsequent launches are fast (<5 seconds).
+```bash
+# Clone the repository
+git clone https://github.com/Data-Wise/emacs-r-devkit.git
+cd emacs-r-devkit
 
-## 📚 Documentation
+# Run the smart installer
+./scripts/install.sh
+```
 
-Comprehensive documentation is available at **[data-wise.github.io/emacs-r-devkit](https://data-wise.github.io/emacs-r-devkit/)**
+The installer will:
 
-- [**Getting Started**](https://data-wise.github.io/emacs-r-devkit/getting-started/) - Installation and setup guide
+- ✅ Check your system health
+- ✅ Install Emacs (if needed)
+- ✅ Install Spacemacs (develop branch)
+- ✅ Configure everything for R development
+- ✅ Install required R packages
+
+**First launch takes 10-15 minutes** as Spacemacs installs packages.
+
+### Installation Management
+
+```bash
+# Check system health
+./scripts/health-check.sh
+
+# Update existing installation
+./scripts/patch.sh
+
+# Repair issues
+./scripts/repair.sh
+
+# Uninstall (3 levels)
+./scripts/uninstall.sh
+
+# Force reinstall
+./scripts/install.sh --force
+```
+
+See [Installation Guide](https://data-wise.github.io/emacs-r-devkit/getting-started/) for details.
+etup guide
+
 - [**Migration Guide**](https://data-wise.github.io/emacs-r-devkit/migration-guide/) - Migrating from vanilla Emacs
 - [**Spacemacs Learning**](https://data-wise.github.io/emacs-r-devkit/spacemacs-learning/) - Complete learning curriculum
 - [**Features**](https://data-wise.github.io/emacs-r-devkit/features/) - Detailed feature documentation

@@ -84,6 +84,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Getting Started: getting-started.md
+  - Installation Management: installation-management.md
   - Project Structure: project-structure.md
   - Migration Guide: migration-guide.md
   - Spacemacs Learning: spacemacs-learning.md
